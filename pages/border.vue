@@ -1,17 +1,15 @@
 <template>
   <div class="container">
-    this an index
+    this is border radius page
   </div>
 </template>
 
 <script>
-
 export default {
-  components: {
-  }
+  name: 'Border'
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
