@@ -1,12 +1,14 @@
 <template>
   <div class="container">
-    this is border radius page
+    <BorderRadiusPreviewer />
   </div>
 </template>
 
 <script>
+import BorderRadiusPreviewer from '../components/BorderRadiusPreviewer'
 export default {
-  name: 'Border'
+  name: 'Border',
+  components: { BorderRadiusPreviewer }
 }
 </script>
 
