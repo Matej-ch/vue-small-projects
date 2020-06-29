@@ -2,6 +2,18 @@
   <div>
     <div class="settings">
       <h4>Settings</h4>
+
+      <div>
+        <vs-select v-model="unit" label-placeholder="Unit" state="dark" shadow>
+          <vs-option label="px" value="px">
+            px
+          </vs-option>
+          <vs-option label="em" value="em">
+            em
+          </vs-option>
+        </vs-select>
+      </div>
+
       <div>
         <vs-input
           v-model="topLeftOne"
@@ -104,13 +116,11 @@ export default {
       bottomLeftOne: 5,
       bottomLeftTwo: 5,
       bottomRightOne: 5,
-      bottomRightTwo: 5
+      bottomRightTwo: 5,
+      unit: 'px'
     }
   },
   computed: {
-    unit () {
-      return 'px'
-    },
     styleObject () {
       return {
         borderTopLeftRadius: `${this.topLeftOne}${this.unit} ${this.topLeftTwo}${this.unit}`,

@@ -27,7 +27,7 @@
     "node-sass": "^4.14.1",
     "nuxt": "^2.13.0",
     "sass-loader": "^8.0.2",
-    "vuesax": "^4.0.1-alpha.20"
+    "vuesax": "^4.0.1-alpha.22"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
@@ -45,6 +45,8 @@
     "lint-staged": "^10.2.11",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
     "vue-jest": "^3.0.4"
   }
 }
