@@ -10,6 +10,12 @@
         Border radius previewer
       </nuxt-link>
     </div>
+
+    <div>
+      <nuxt-link :to="{name: 'bindec'}">
+        Bin 2 Dec
+      </nuxt-link>
+    </div>
   </nav>
 </template>
 

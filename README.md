@@ -5,6 +5,7 @@ Collection of beginner projects from https://webdevscom.github.io/resources/5
 Trying to create one project as one Vue component, and bundle them in this one repository
 
 * Border radius previewer
+* Bin2Dec
 
 ## Build Setup
 
