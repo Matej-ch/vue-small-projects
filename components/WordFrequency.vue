@@ -35,7 +35,7 @@
         style="flex-flow: wrap;"
       >
         <div class="word-map">
-          <span v-for="(wordCount,word) in wordCounts" :key="word" :style="'font-size:1.' + wordCount + 'em'">
+          <span v-for="(wordCount,word) in wordCounts" :key="word" :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
             {{ word }}
           </span>
         </div>
@@ -51,7 +51,8 @@ export default {
     return {
       textarea: null,
       wordCounts: {},
-      message: ''
+      message: '',
+      fontSize: '18'
     }
   },
   methods: {
