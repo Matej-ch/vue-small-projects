@@ -21,9 +21,9 @@
         style="flex-direction: column;"
         vs-w="6"
       >
-        <div v-for="(wordObj,index) in wordCounts" :key="index" class="word-wrapper">
-          <span style="font-weight: bold;">{{ index }}: </span>
-          <span>{{ wordObj }}</span>
+        <div v-for="(wordCount,word) in wordCounts" :key="word" class="word-wrapper">
+          <span style="font-weight: bold;">{{ word }}: </span>
+          <span>{{ wordCount }}</span>
           <span />
         </div>
       </vs-col>
@@ -35,8 +35,8 @@
         style="flex-flow: wrap;"
       >
         <div class="word-map">
-          <span v-for="(wordObj,index) in wordCounts" :key="index">
-            {{ index }}
+          <span v-for="(wordCount,word) in wordCounts" :key="word" :style="'font-size:1.' + wordCount + 'em'">
+            {{ word }}
           </span>
         </div>
       </vs-col>
