@@ -6,6 +6,10 @@
         <vs-button color="dark" type="filled" @click="translate">
           Translate
         </vs-button>
+        <vs-divider />
+        <vs-alert v-show="message" title="Alert" color="rgb(231, 154, 23)" style="padding: 15px; height: 100px;">
+          {{ message }}
+        </vs-alert>
       </vs-col>
     </vs-row>
 
@@ -27,9 +31,15 @@
       <vs-col
         vs-type="flex"
         vs-justify="center"
-        vs-align="center"
         vs-w="6"
-      />
+        style="flex-flow: wrap;"
+      >
+        <div class="word-map">
+          <span v-for="(wordObj,index) in wordCounts" :key="index">
+            {{ index }}
+          </span>
+        </div>
+      </vs-col>
     </vs-row>
   </div>
 </template>
@@ -39,12 +49,18 @@ export default {
   name: 'WordFrequency',
   data () {
     return {
-      textarea: '',
-      wordCounts: {}
+      textarea: null,
+      wordCounts: {},
+      message: ''
     }
   },
   methods: {
     translate () {
+      if (!this.textarea) {
+        this.message = 'Textarea empty'
+        return
+      }
+      this.message = null
       this.wordCounts = []
       const wordArray = this.textarea.split(' ')
       this.wordCounts = wordArray.reduce((prev, nxt) => {
@@ -63,5 +79,14 @@ export default {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 5px;
+  }
+
+  .word-map {
+    padding-top: 30px;
+
+    span {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 </style>
