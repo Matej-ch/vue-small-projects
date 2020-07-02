@@ -16,10 +16,18 @@
         Bin 2 Dec
       </nuxt-link>
     </div>
+
+    <div>
+      <nuxt-link :to="{name: 'freq'}">
+        Word frequency
+      </nuxt-link>
+    </div>
   </nav>
 </template>
 
 <script>
+import 'material-icons/iconfont/material-icons.css'
+
 export default {
   name: 'Navbar'
 }

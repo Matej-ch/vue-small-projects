@@ -4,13 +4,12 @@
       <h4>Settings</h4>
 
       <div>
-        <vs-select v-model="unit" label-placeholder="Unit" state="dark" shadow>
-          <vs-option label="px" value="px">
-            px
-          </vs-option>
-          <vs-option label="em" value="em">
-            em
-          </vs-option>
+        <vs-select
+          v-model="unit"
+          label-placeholder="Unit"
+        >
+          <vs-select-item value="px" text="px" />
+          <vs-select-item value="em" text="em" />
         </vs-select>
       </div>
 
