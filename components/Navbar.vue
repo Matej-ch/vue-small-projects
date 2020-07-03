@@ -22,6 +22,12 @@
         Word frequency
       </nuxt-link>
     </div>
+
+    <div>
+      <nuxt-link :to="{name: 'truefalse'}">
+        True or False
+      </nuxt-link>
+    </div>
   </nav>
 </template>
 

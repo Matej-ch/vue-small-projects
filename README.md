@@ -7,6 +7,7 @@ Trying to create one project as one Vue component, and bundle them in this one r
 * Border radius previewer
 * Bin2Dec
 * Word Frequency
+* TrueOrFalse
 
 ## Build Setup
 
