@@ -2,14 +2,16 @@
   <div class="center grid">
     <vs-row>
       <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" style="flex-direction: column;">
-        <vs-input
-          v-model="firstOperand"
-          label-placeholder="First value"
-          state="dark"
-          color="success"
-          shadow
-          @keyup="compareValues"
-        />
+        <div>
+          <vs-input
+            v-model="firstOperand"
+            label-placeholder="First value"
+            state="dark"
+            color="success"
+            shadow
+            @keyup="compareValues"
+          />
+        </div>
 
         <div style="margin-top: 17px;">
           <vs-select
@@ -29,14 +31,29 @@
           </vs-select>
         </div>
 
-        <vs-input
-          v-model="secondOperand"
-          label-placeholder="Second value"
-          state="dark"
-          color="success"
-          shadow
-          @keyup="compareValues"
-        />
+        <div>
+          <vs-input
+            v-model="secondOperand"
+            label-placeholder="Second value"
+            state="dark"
+            color="success"
+            shadow
+            @keyup="compareValues"
+          />
+        </div>
+
+        <div style="margin-top: 17px;">
+          <vs-radio v-model="forceType" vs-value="number">
+            Force number
+          </vs-radio>
+          <vs-radio v-model="forceType" color="success" vs-value="string">
+            Force String
+          </vs-radio>
+          <vs-radio v-model="forceType" color="danger" vs-value="bool">
+            Force boolean
+          </vs-radio>
+        </div>
+
         <vs-divider />
 
         <div v-show="result" class="result" :class="result === 'True' ? 'colorsuccessx' : 'colordangerx' ">
@@ -56,6 +73,7 @@ export default {
       secondOperand: '',
       comparator: '>',
       result: undefined,
+      forceType: undefined,
       operatorTable: this.operatorLookup()
     }
   },
@@ -73,9 +91,25 @@ export default {
       }
     },
     compareValues () {
-      console.log(this.firstOperand)
-      console.log(this.secondOperand)
-      if (this.operatorTable[this.comparator](this.firstOperand, this.secondOperand)) {
+      let firstOperand = this.firstOperand
+      let secondOperand = this.secondOperand
+
+      if (this.forceType === 'number') {
+        firstOperand = Number(firstOperand)
+        secondOperand = Number(secondOperand)
+      }
+
+      if (this.forceType === 'string') {
+        firstOperand = this.firstOperand.toString()
+        secondOperand = this.secondOperand.toString()
+      }
+
+      if (this.forceType === 'string') {
+        firstOperand = Boolean(this.firstOperand)
+        secondOperand = Boolean(this.secondOperand)
+      }
+
+      if (this.operatorTable[this.comparator](firstOperand, secondOperand)) {
         this.result = 'True'
       } else {
         this.result = 'False'
