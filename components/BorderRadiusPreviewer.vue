@@ -13,80 +13,34 @@
         </vs-select>
       </div>
 
-      <div>
-        <vs-input
-          v-model="topLeftOne"
-          label-placeholder="Top left radius one"
-          state="dark"
-          color="success"
-          type="number"
-          shadow
-        />
-        <vs-input
-          v-model="topLeftTwo"
-          label-placeholder="Top left radius two"
-          state="dark"
-          color="success"
-          type="number"
-          shadow
-        />
-      </div>
+      <div class="settings-wrapper">
+        <div style="max-width: 300px;">
+          <label>Top left 1:</label>
+          <vs-slider v-model="topLeftOne" color="success" max="500" />
+          <label>Top left 2:</label>
+          <vs-slider v-model="topLeftTwo" color="success" max="500" />
+        </div>
 
-      <div>
-        <vs-input
-          v-model="topRightOne"
-          label-placeholder="Top right radius one"
-          state="dark"
-          color="primary"
-          type="number"
-          shadow
-        />
-        <vs-input
-          v-model="topRightTwo"
-          label-placeholder="Top right radius two"
-          state="dark"
-          color="primary"
-          type="number"
-          shadow
-        />
-      </div>
+        <div style="max-width: 300px;">
+          <label>Top right 1:</label>
+          <vs-slider v-model="topRightOne" color="primary" max="500" />
+          <label>Top right 2:</label>
+          <vs-slider v-model="topRightTwo" color="primary" max="500" />
+        </div>
 
-      <div>
-        <vs-input
-          v-model="bottomRightOne"
-          label-placeholder="Bottom right radius one"
-          state="dark"
-          color="warn"
-          type="number"
-          shadow
-        />
-        <vs-input
-          v-model="bottomRightTwo"
-          label-placeholder="Bottom right radius two"
-          state="dark"
-          color="warn"
-          type="number"
-          shadow
-        />
-      </div>
+        <div style="max-width: 300px;">
+          <label>Bottom right 1:</label>
+          <vs-slider v-model="bottomRightOne" color="dark" max="500" />
+          <label>Bottom right 2:</label>
+          <vs-slider v-model="bottomRightTwo" color="dark" max="500" />
+        </div>
 
-      <div>
-        <vs-input
-          v-model="bottomLeftOne"
-          label-placeholder="Bottom left radius one"
-          state="dark"
-          color="danger"
-          type="number"
-          shadow
-        />
-        <vs-input
-          v-model="bottomLeftTwo"
-          label-placeholder="Bottom left radius two"
-          state="dark"
-          color="danger"
-          type="number"
-          shadow
-        />
+        <div style="max-width: 300px;">
+          <label>Bottom left 1:</label>
+          <vs-slider v-model="bottomLeftOne" color="danger" max="500" />
+          <label>Bottom left 2:</label>
+          <vs-slider v-model="bottomLeftTwo" color="danger" max="500" />
+        </div>
       </div>
     </div>
 
@@ -134,8 +88,8 @@ export default {
 
 <style scoped lang="scss">
   .block {
-    padding: 15px;
-    margin: 15px;
+    padding: 30px;
+    margin: 30px;
     border: 2px solid black;
   }
 
@@ -151,14 +105,20 @@ export default {
   }
 
   .settings {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+
     h4 {
       margin-bottom: 10px;
     }
+  }
 
-    div {
-      padding: 15px;
-      display: flex;
-      flex-direction: row;
-    }
+  .settings-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
   }
 </style>
