@@ -48,6 +48,6 @@
     "stylelint-config-standard": "^20.0.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.6"
   }
 }
