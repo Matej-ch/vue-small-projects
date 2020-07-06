@@ -28,6 +28,12 @@
         True or False
       </nuxt-link>
     </div>
+
+    <div>
+      <nuxt-link :to="{name: 'github'}">
+        Github status
+      </nuxt-link>
+    </div>
   </nav>
 </template>
 
