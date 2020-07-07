@@ -36,12 +36,11 @@ export default {
   methods: {
     async githubStatus () {
       this.$axios.setHeader('Access-Control-Allow-Origin', '*')
-      const page = await this.$axios({
+      await this.$axios({
         method: 'get',
         url: 'https://www.githubstatus.com',
         responseType: 'json'
       })
-      console.log(page)
     },
     async getStatus () {
       const page = await this.$axios.$get('https://www.githubstatus.com/api/v2/status.json', {

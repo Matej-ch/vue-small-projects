@@ -34,6 +34,12 @@
         Github status
       </nuxt-link>
     </div>
+
+    <div>
+      <nuxt-link :to="{name: 'calculator'}">
+        Calculator
+      </nuxt-link>
+    </div>
   </nav>
 </template>
 

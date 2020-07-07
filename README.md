@@ -8,6 +8,8 @@ Trying to create one project as one Vue component, and bundle them in this one r
 * Bin2Dec
 * Word Frequency
 * TrueOrFalse
+* calculator
+* github
 
 ## Build Setup
 
