@@ -21,11 +21,20 @@
         style="flex-direction: column;"
         vs-w="6"
       >
-        <div v-for="(wordCount,word) in wordCounts" :key="word" class="word-wrapper">
-          <span style="font-weight: bold;">{{ word }}: </span>
-          <span>{{ wordCount }}</span>
-          <span />
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Word</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(wordCount,word) in wordCounts" :key="word">
+              <td>{{ word }}</td>
+              <td>{{ wordCount }}</td>
+            </tr>
+          </tbody>
+        </table>
       </vs-col>
 
       <vs-col
