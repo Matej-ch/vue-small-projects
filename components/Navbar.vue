@@ -36,7 +36,7 @@
     </div>
 
     <div>
-      <nuxt-link :to="{name: 'calculator'}">
+      <nuxt-link :to="{name: 'calc'}">
         Calculator
       </nuxt-link>
     </div>

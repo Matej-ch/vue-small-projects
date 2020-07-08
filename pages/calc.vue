@@ -6,7 +6,7 @@
 import Calculator from '../components/Calculator'
 export default {
 
-  name: 'Calculator',
+  name: 'Calc',
   components: { Calculator }
 }
 </script>
