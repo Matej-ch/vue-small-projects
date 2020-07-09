@@ -21,7 +21,7 @@
         style="flex-direction: column;"
         vs-w="6"
       >
-        <table>
+        <table v-show="wordCounts" class="resp-table">
           <thead>
             <tr>
               <th>Word</th>
@@ -59,7 +59,7 @@ export default {
   data () {
     return {
       textarea: null,
-      wordCounts: {},
+      wordCounts: null,
       message: '',
       fontSize: '18'
     }
@@ -72,6 +72,7 @@ export default {
       }
       this.message = null
       this.wordCounts = []
+      this.textarea = this.textarea.replace(/[.,;:!]/gi, '')
       const wordArray = this.textarea.split(' ')
       this.wordCounts = wordArray.reduce((prev, nxt) => {
         prev[nxt] = (prev[nxt] + 1) || 1
