@@ -130,6 +130,26 @@ html {
   margin: 10px;
 }
 
+.navigation {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 30px;
+  justify-content: center;
+  margin-top: 30px;
+
+  .link {
+    background: transparent;
+    box-shadow: 4px 4px 7px 0 rgba(0, 0, 0, 0.2), -4px -4px 9px 0 rgba(255, 255, 255, 0.55);
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .resp-table {
   margin: auto;
   min-width: 300px;
