@@ -16,30 +16,30 @@
       <div class="settings-wrapper">
         <div style="max-width: 300px;">
           <label>Top left 1:</label>
-          <vs-slider v-model="topLeftOne" color="success" max="500" />
+          <vs-slider v-model="topLeftOne" color="success" max="500" step="0.1" :step-decimals="unit!=='px'" />
           <label>Top left 2:</label>
-          <vs-slider v-model="topLeftTwo" color="success" max="500" />
+          <vs-slider v-model="topLeftTwo" color="success" max="500" step="0.1" :step-decimals="unit!=='px'" />
         </div>
 
         <div style="max-width: 300px;">
           <label>Top right 1:</label>
-          <vs-slider v-model="topRightOne" color="primary" max="500" />
+          <vs-slider v-model="topRightOne" color="primary" max="500" step="0.1" :step-decimals="unit!=='px'" />
           <label>Top right 2:</label>
-          <vs-slider v-model="topRightTwo" color="primary" max="500" />
+          <vs-slider v-model="topRightTwo" color="primary" max="500" step="0.1" :step-decimals="unit!=='px'" />
         </div>
 
         <div style="max-width: 300px;">
           <label>Bottom right 1:</label>
-          <vs-slider v-model="bottomRightOne" color="dark" max="500" />
+          <vs-slider v-model="bottomRightOne" color="dark" max="500" step="0.1" :step-decimals="unit!=='px'" />
           <label>Bottom right 2:</label>
-          <vs-slider v-model="bottomRightTwo" color="dark" max="500" />
+          <vs-slider v-model="bottomRightTwo" color="dark" max="500" step="0.1" :step-decimals="unit!=='px'" />
         </div>
 
         <div style="max-width: 300px;">
           <label>Bottom left 1:</label>
-          <vs-slider v-model="bottomLeftOne" color="danger" max="500" />
+          <vs-slider v-model="bottomLeftOne" color="danger" max="500" step="0.1" :step-decimals="unit!=='px'" />
           <label>Bottom left 2:</label>
-          <vs-slider v-model="bottomLeftTwo" color="danger" max="500" />
+          <vs-slider v-model="bottomLeftTwo" color="danger" max="500" step="0.1" :step-decimals="unit!=='px'" />
         </div>
       </div>
     </div>

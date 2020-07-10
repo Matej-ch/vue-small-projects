@@ -18,6 +18,20 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100vh;
+}
+
 *,
 *::before,
 *::after {
@@ -135,10 +149,9 @@ html {
   flex-direction: row;
   padding: 15px 30px;
   justify-content: center;
-  margin-top: 30px;
 
   .link {
-    background: transparent;
+    background-color: white;
     box-shadow: 4px 4px 7px 0 rgba(0, 0, 0, 0.2), -4px -4px 9px 0 rgba(255, 255, 255, 0.55);
     border-radius: 10px;
     padding: 15px;
