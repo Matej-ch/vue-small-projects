@@ -46,7 +46,7 @@
     "lint-staged": "^10.2.11",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
-    "stylus": "^0.54.7",
+    "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
     "vue-jest": "^3.0.6"
   }
