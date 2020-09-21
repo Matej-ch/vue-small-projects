@@ -44,7 +44,7 @@
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "stylelint": "^13.7.0",
-    "lint-staged": "^10.3.0",
+    "lint-staged": "^10.4.0",
     "stylelint-config-standard": "^20.0.0",
     "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
