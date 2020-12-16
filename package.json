@@ -26,7 +26,7 @@
     "@nuxtjs/axios": "^5.12.3",
     "material-icons": "^0.5.1",
     "node-sass": "^5.0.0",
-    "nuxt": "^2.14.7",
+    "nuxt": "^2.14.12",
     "sass-loader": "^10.1.0",
     "vuesax": "3.12.2"
   },
