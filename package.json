@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.3",
+    "@nuxtjs/axios": "^5.12.4",
     "material-icons": "^0.5.1",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.12",
