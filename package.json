@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
-    "material-icons": "^0.5.3",
+    "material-icons": "^0.5.4",
     "node-sass": "^5.0.0",
     "nuxt": "^2.15.2",
     "sass-loader": "^10.1.1",
