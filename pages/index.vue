@@ -1,17 +1,15 @@
 <template>
-  <div class="container">
-    this an index
-  </div>
+    <div class="container">
+        this an index
+    </div>
 </template>
 
 <script>
-
 export default {
-  components: {
-  }
+    components: {
+    }
 }
 </script>
 
 <style>
-
 </style>
