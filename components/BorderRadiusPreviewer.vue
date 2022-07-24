@@ -1,58 +1,66 @@
 <template>
-  <div>
-    <div class="settings">
-      <h4>Settings</h4>
+    <div>
+        <div class="settings">
+            <h4>Settings</h4>
 
-      <div>
-          <label for="">Unit</label>
-          <select v-model="unit">
-              <option value="px">px</option>
-              <option value="em">em</option>
-          </select>
-      </div>
+            <div>
+                <label for="">Unit</label>
+                <select v-model="unit">
+                    <option value="px">px</option>
+                    <option value="em">em</option>
+                </select>
+            </div>
 
-      <div class="settings-wrapper">
-        <div style="max-width: 300px;">
-          <label>Top left 1:</label>
-          <vs-slider v-model="topLeftOne" color="success" max="500" step="0.1" :step-decimals="unit!=='px'" />
-          <label>Top left 2:</label>
-          <vs-slider v-model="topLeftTwo" color="success" max="500" step="0.1" :step-decimals="unit!=='px'" />
+            <div class="settings-wrapper">
+                <div style="max-width: 300px;">
+                    <label>Top left 1:</label>
+                    <input v-model="topLeftOne" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                    <label>Top left 2:</label>
+                    <input v-model="topLeftTwo" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                </div>
+
+                <div style="max-width: 300px;">
+                    <label>Top right 1:</label>
+                    <input v-model="topRightOne" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                    <label>Top right 2:</label>
+                    <input v-model="topRightTwo" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                </div>
+
+                <div style="max-width: 300px;">
+                    <label>Bottom right 1:</label>
+                    <input v-model="bottomRightOne" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                    <label>Bottom right 2:</label>
+                    <input v-model="bottomRightTwo" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                </div>
+
+                <div style="max-width: 300px;">
+                    <label>Bottom left 1:</label>
+                    <input v-model="bottomLeftOne" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                    <label>Bottom left 2:</label>
+                    <input v-model="bottomLeftTwo" type="range" id="volume" name="volume" min="0" max="500"
+                           :step="unit!=='px' ? 0.1 : 1">
+                </div>
+            </div>
         </div>
 
-        <div style="max-width: 300px;">
-          <label>Top right 1:</label>
-          <vs-slider v-model="topRightOne" color="primary" max="500" step="0.1" :step-decimals="unit!=='px'" />
-          <label>Top right 2:</label>
-          <vs-slider v-model="topRightTwo" color="primary" max="500" step="0.1" :step-decimals="unit!=='px'" />
+        <div class="block" :style="styleObject">
+            DIV
         </div>
 
-        <div style="max-width: 300px;">
-          <label>Bottom right 1:</label>
-          <vs-slider v-model="bottomRightOne" color="dark" max="500" step="0.1" :step-decimals="unit!=='px'" />
-          <label>Bottom right 2:</label>
-          <vs-slider v-model="bottomRightTwo" color="dark" max="500" step="0.1" :step-decimals="unit!=='px'" />
+        <div class="copy">
+            <div>border-top-left-radius: {{styleObject.borderTopLeftRadius}};</div>
+            <div> border-top-right-radius: {{styleObject.borderTopRightRadius}};</div>
+            <div>border-bottom-right-radius: {{styleObject.borderBottomRightRadius}};</div>
+            <div>border-bottom-left-radius: {{styleObject.borderBottomLeftRadius}};</div>
         </div>
-
-        <div style="max-width: 300px;">
-          <label>Bottom left 1:</label>
-          <vs-slider v-model="bottomLeftOne" color="danger" max="500" step="0.1" :step-decimals="unit!=='px'" />
-          <label>Bottom left 2:</label>
-          <vs-slider v-model="bottomLeftTwo" color="danger" max="500" step="0.1" :step-decimals="unit!=='px'" />
-        </div>
-      </div>
     </div>
-
-    <div class="block" :style="styleObject">
-      DIV
-    </div>
-
-    <div class="copy">
-      <div>border-top-left-radius: {{ styleObject.borderTopLeftRadius }}; </div>
-      <div> border-top-right-radius:    {{ styleObject.borderTopRightRadius }};</div>
-      <div>border-bottom-right-radius: {{ styleObject.borderBottomRightRadius }};</div>
-      <div>border-bottom-left-radius:  {{ styleObject.borderBottomLeftRadius }};</div>
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -80,38 +88,38 @@ const styleObject = computed(() => {
 </script>
 
 <style scoped lang="scss">
-  .block {
+.block {
     padding: 30px;
     margin: 30px;
     border: 2px solid black;
-  }
+}
 
-  .copy {
+.copy {
     background-color: #b4b6bb;
     padding: 15px;
     text-align: left;
 
     div {
-      padding-top: 5px;
-      padding-bottom: 15px;
+        padding-top: 5px;
+        padding-bottom: 15px;
     }
-  }
+}
 
-  .settings {
+.settings {
     display: flex;
     flex-flow: wrap;
     flex-direction: column;
 
     h4 {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
     }
-  }
+}
 
-  .settings-wrapper {
+.settings-wrapper {
     padding-top: 15px;
     padding-bottom: 15px;
     display: flex;
     flex-flow: wrap;
     flex-direction: row;
-  }
+}
 </style>

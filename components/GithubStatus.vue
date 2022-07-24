@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <div class="center grid">
-      <vs-row>
-        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" style="flex-direction: column;">
-          <vs-button color="dark" @click="getStatus">
-            Get status
-          </vs-button>
-        </vs-col>
-        <vs-divider />
+    <div>
+        <div class="center grid">
 
-        <div v-show="currentStatus" style="width: 100%; text-align: center;">
-          <div>
-            {{ currentStatus }}
-          </div>
-          <vs-divider />
+            <div class="flex flex-col justify-center items-center w-full">
+                <button @click="getStatus">
+                    Get status
+                </button>
+            </div>
+            <hr>
+            <div v-show="currentStatus" style="width: 100%; text-align: center;">
+                <div>
+                    {{currentStatus}}
+                </div>
+                <hr>
+            </div>
+
+
         </div>
-
-        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" style="flex-direction: column;" />
-      </vs-row>
     </div>
-  </div>
 </template>
 
 <script setup>
-import {ref,onMounted} from 'vue';
+import {ref, onMounted} from 'vue';
 import {useFetch} from "nuxt/app";
 
 const currentStatus = ref(undefined);
@@ -33,7 +31,7 @@ onMounted(() => {
 });
 
 async function githubStatus() {
-    await useFetch('https://www.githubstatus.com',{
+    await useFetch('https://www.githubstatus.com', {
         method: 'get',
         headers: {
             'Access-Control-Allow-Origin': '*'

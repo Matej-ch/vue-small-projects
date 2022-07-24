@@ -1,56 +1,51 @@
 <template>
-  <div class="center grid">
-    <vs-row>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" style="flex-direction: column;">
-        <vs-textarea v-model="textarea" label="Text to analyze" width="500px" rows="10" counter="2048" />
-        <vs-button color="dark" type="filled" @click="translate">
-          Translate
-        </vs-button>
-        <vs-divider />
-        <vs-alert v-show="message" title="Alert" color="rgb(231, 154, 23)" style="padding: 15px; height: 100px;">
-          {{ message }}
-        </vs-alert>
-      </vs-col>
-    </vs-row>
+    <div class="center grid">
+        <div>
+            <div class="flex flex-col justify-center items-center w-12">
+                <label for="">Text to analyze</label>
+                <textarea v-model="textarea" name="" id="" cols="30" rows="10"></textarea>
 
-    <vs-row>
-      <vs-col
-        vs-type="flex"
-        vs-justify="center"
-        vs-align="center"
-        style="flex-direction: column;"
-        vs-w="6"
-      >
-        <table v-show="wordCounts" class="resp-table">
-          <thead>
-            <tr>
-              <th>Word</th>
-              <th>Count</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(wordCount,word) in wordCounts" :key="word">
-              <td>{{ word }}</td>
-              <td>{{ wordCount }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </vs-col>
+                <button @click="translate">
+                    Translate
+                </button>
 
-      <vs-col
-        vs-type="flex"
-        vs-justify="center"
-        vs-w="6"
-        style="flex-flow: wrap;"
-      >
-        <div class="word-map">
-          <span v-for="(wordCount,word) in wordCounts" :key="word" :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
-            {{ word }}
-          </span>
+                <hr>
+
+                <div v-show="message" title="Alert" class="bg-red-500"
+                     style="color: rgb(231, 154, 23);padding: 15px; height: 100px;">
+                    {{message}}
+                </div>
+            </div>
         </div>
-      </vs-col>
-    </vs-row>
-  </div>
+
+        <div>
+            <div class="flex flex-col justify-center items-center w-6/12">
+                <table v-show="wordCounts" class="resp-table">
+                    <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Count</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(wordCount,word) in wordCounts" :key="word">
+                        <td>{{word}}</td>
+                        <td>{{wordCount}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex flex-col justify-center items-center w-6/12 flex-wrap">
+                <div class="word-map">
+                    <span v-for="(wordCount,word) in wordCounts" :key="word"
+                          :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
+                        {{word}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -61,8 +56,7 @@ const wordCounts = ref(null);
 const message = ref('');
 const fontSize = ref('18');
 
-function translate()
-{
+function translate() {
     if (!textarea.value) {
         message.value = 'Textarea empty'
         return
@@ -79,20 +73,20 @@ function translate()
 </script>
 
 <style scoped lang="scss">
-  .word-wrapper {
+.word-wrapper {
     display: block;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 5px;
-  }
+}
 
-  .word-map {
+.word-map {
     padding-top: 30px;
 
     span {
-      padding-left: 10px;
-      padding-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-  }
+}
 </style>
