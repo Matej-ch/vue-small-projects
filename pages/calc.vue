@@ -2,13 +2,9 @@
   <div><Calculator /></div>
 </template>
 
-<script>
+<script setup>
 import Calculator from '../components/Calculator'
-export default {
 
-  name: 'Calc',
-  components: { Calculator }
-}
 </script>
 
 <style scoped>

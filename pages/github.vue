@@ -4,12 +4,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import GithubStatus from '../components/GithubStatus'
-export default {
-  name: 'Github',
-  comments: { GithubStatus }
-}
 </script>
 
 <style scoped>

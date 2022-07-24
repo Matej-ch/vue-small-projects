@@ -4,12 +4,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import BorderRadiusPreviewer from '../components/BorderRadiusPreviewer'
-export default {
-  name: 'Border',
-  components: { BorderRadiusPreviewer }
-}
 </script>
 
 <style scoped>

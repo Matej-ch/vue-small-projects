@@ -43,12 +43,8 @@
   </nav>
 </template>
 
-<script>
-import 'material-icons/iconfont/material-icons.css'
+<script setup>
 
-export default {
-  name: 'Navbar'
-}
 </script>
 
 <style scoped>

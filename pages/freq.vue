@@ -4,13 +4,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 
 import WordFrequency from '../components/WordFrequency'
-export default {
-  name: 'Freq',
-  components: { WordFrequency }
-}
+
 </script>
 
 <style scoped>
