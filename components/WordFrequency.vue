@@ -53,33 +53,28 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'WordFrequency',
-  data () {
-    return {
-      textarea: null,
-      wordCounts: null,
-      message: '',
-      fontSize: '18'
-    }
-  },
-  methods: {
-    translate () {
-      if (!this.textarea) {
-        this.message = 'Textarea empty'
+<script setup>
+import {ref} from 'vue';
+
+const textarea = ref(null);
+const wordCounts = ref(null);
+const message = ref('');
+const fontSize = ref('18');
+
+function translate()
+{
+    if (!textarea.value) {
+        message.value = 'Textarea empty'
         return
-      }
-      this.message = null
-      this.wordCounts = []
-      this.textarea = this.textarea.replace(/[.,;:!]/gi, '')
-      const wordArray = this.textarea.split(' ')
-      this.wordCounts = wordArray.reduce((prev, nxt) => {
+    }
+    message.value = null
+    wordCounts.value = []
+    textarea.value = textarea.value.replace(/[.,;:!]/gi, '')
+    const wordArray = textarea.value.split(' ')
+    wordCounts.value = wordArray.reduce((prev, nxt) => {
         prev[nxt] = (prev[nxt] + 1) || 1
         return prev
-      }, {})
-    }
-  }
+    }, {})
 }
 </script>
 

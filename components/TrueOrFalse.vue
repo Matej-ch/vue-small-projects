@@ -14,21 +14,18 @@
         </div>
 
         <div style="margin-top: 17px;">
-          <vs-select
-            v-model="comparator"
-            label-placeholder="Operator"
-            label="Comparison operator"
-            @change="compareValues"
-          >
-            <vs-select-item value=">" text=">" />
-            <vs-select-item value=">=" text=">=" />
-            <vs-select-item value="<" text="<" />
-            <vs-select-item value="<=" text="<=" />
-            <vs-select-item value="==" text="==" />
-            <vs-select-item value="===" text="===" />
-            <vs-select-item value="!=" text="!=" />
-            <vs-select-item value="!==" text="!==" />
-          </vs-select>
+
+            <label for="">Comparison operator</label>
+            <select v-model="comparator" @change="compareValues">
+                <option value=">">></option>
+                <option value=">=">>=</option>
+                <option value="<"><</option>
+                <option value="<="><=</option>
+                <option value="==">==</option>
+                <option value="===">===</option>
+                <option value="!=">!=</option>
+                <option value="!==">!==</option>
+            </select>
         </div>
 
         <div>
@@ -64,22 +61,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'TrueOrFalse',
-  data () {
+<script setup>
+import {ref} from 'vue';
+const firstOperand= ref('');
+const secondOperand= ref('');
+const comparator= ref('>');
+const result= ref(undefined);
+const forceType= ref(undefined);
+const operatorTable = ref(operatorLookup());
+
+function operatorLookup()
+{
     return {
-      firstOperand: '',
-      secondOperand: '',
-      comparator: '>',
-      result: undefined,
-      forceType: undefined,
-      operatorTable: this.operatorLookup()
-    }
-  },
-  methods: {
-    operatorLookup () {
-      return {
         '>' (a, b) { return a > b },
         '>=' (a, b) { return a >= b },
         '<' (a, b) { return a < b },
@@ -88,34 +81,33 @@ export default {
         '===' (a, b) { return a === b },
         '!=' (a, b) { return a != b },
         '!==' (a, b) { return a !== b }
-      }
-    },
-    compareValues () {
-      let firstOperand = this.firstOperand
-      let secondOperand = this.secondOperand
+    }
+}
+function compareValues()
+{
+    let firstOperand = firstOperand.value
+    let secondOperand = secondOperand.value
 
-      if (this.forceType === 'number') {
+    if (forceType.value === 'number') {
         firstOperand = Number(firstOperand)
         secondOperand = Number(secondOperand)
-      }
-
-      if (this.forceType === 'string') {
-        firstOperand = this.firstOperand.toString()
-        secondOperand = this.secondOperand.toString()
-      }
-
-      if (this.forceType === 'string') {
-        firstOperand = Boolean(this.firstOperand)
-        secondOperand = Boolean(this.secondOperand)
-      }
-
-      if (this.operatorTable[this.comparator](firstOperand, secondOperand)) {
-        this.result = 'True'
-      } else {
-        this.result = 'False'
-      }
     }
-  }
+
+    if (forceType.value === 'string') {
+        firstOperand = firstOperand.value.toString()
+        secondOperand = secondOperand.value.toString()
+    }
+
+    if (forceType.value === 'string') {
+        firstOperand = Boolean(firstOperand.value)
+        secondOperand = Boolean(secondOperand.value)
+    }
+
+    if (operatorTable.value[comparator.value](firstOperand, secondOperand)) {
+        result.value = 'True'
+    } else {
+        result.value = 'False'
+    }
 }
 </script>
 

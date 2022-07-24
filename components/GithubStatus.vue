@@ -22,36 +22,34 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'GithubStatus',
-  data () {
-    return {
-      currentStatus: undefined
-    }
-  },
-  created () {
-    this.githubStatus()
-  },
-  methods: {
-    async githubStatus () {
-      this.$axios.setHeader('Access-Control-Allow-Origin', '*')
-      await this.$axios({
+<script setup>
+import {ref,onMounted} from 'vue';
+import {useFetch} from "nuxt/app";
+
+const currentStatus = ref(undefined);
+
+onMounted(() => {
+    githubStatus();
+});
+
+async function githubStatus() {
+    await useFetch('https://www.githubstatus.com',{
         method: 'get',
-        url: 'https://www.githubstatus.com',
-        responseType: 'json'
-      })
-    },
-    async getStatus () {
-      const page = await this.$axios.$get('https://www.githubstatus.com/api/v2/status.json', {
         headers: {
-          'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*'
         }
-      })
-      this.currentStatus = page.status.description
-    }
-  }
+    })
 }
+
+async function getStatus() {
+    const page = await useFetch('https://www.githubstatus.com/api/v2/status.json', {
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        }
+    })
+    currentStatus.value = page.status.description
+}
+
 </script>
 
 <style scoped>

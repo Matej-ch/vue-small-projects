@@ -31,36 +31,33 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Bin2Dec',
-  data () {
-    return {
-      binaryNumber: '',
-      decimal: '',
-      errorMessage: ''
-    }
-  },
-  methods: {
-    checkBinary () {
-      for (const char of this.binaryNumber) {
-        if (char !== '0' && char !== '1') {
-          this.errorMessage = 'Binary number can only contain 0 a 1'
-        } else {
-          this.errorMessage = ''
-        }
-      }
-    },
-    convertBinary () {
-      let decimal = 0
-      for (let i = this.binaryNumber.length - 1; i >= 0; i--) {
-        decimal += parseInt(this.binaryNumber[i]) * Math.pow(2, this.binaryNumber.length - 1 - i)
-      }
+<script setup>
+import {ref} from 'vue';
+const binaryNumber = ref('');
+const decimal = ref('');
+const errorMessage = ref('');
 
-      this.decimal = decimal
+function checkBinary()
+{
+    for (const char of binaryNumber.value) {
+        if (char !== '0' && char !== '1') {
+            errorMessage.value = 'Binary number can only contain 0 a 1'
+        } else {
+            errorMessage.value = ''
+        }
     }
-  }
 }
+
+function convertBinary()
+{
+    let dec = 0
+    for (let i = binaryNumber.value.length - 1; i >= 0; i--) {
+        dec += parseInt(binaryNumber.value[i]) * Math.pow(2, binaryNumber.value.length - 1 - i)
+    }
+
+    decimal.value = dec;
+}
+
 </script>
 
 <style scoped lang="scss">

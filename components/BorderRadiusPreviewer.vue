@@ -4,13 +4,11 @@
       <h4>Settings</h4>
 
       <div>
-        <vs-select
-          v-model="unit"
-          label-placeholder="Unit"
-        >
-          <vs-select-item value="px" text="px" />
-          <vs-select-item value="em" text="em" />
-        </vs-select>
+          <label for="">Unit</label>
+          <select v-model="unit">
+              <option value="px">px</option>
+              <option value="em">em</option>
+          </select>
       </div>
 
       <div class="settings-wrapper">
@@ -57,33 +55,28 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'BorderRadiusPreviewer',
-  data () {
+<script setup>
+
+import {computed, ref} from 'vue';
+
+const topLeftOne = ref(5);
+const topLeftTwo = ref(5);
+const topRightOne = ref(5);
+const topRightTwo = ref(5);
+const bottomLeftOne = ref(5);
+const bottomLeftTwo = ref(5);
+const bottomRightOne = ref(5);
+const bottomRightTwo = ref(5);
+const unit = ref('px');
+
+const styleObject = computed(() => {
     return {
-      topLeftOne: 5,
-      topLeftTwo: 5,
-      topRightOne: 5,
-      topRightTwo: 5,
-      bottomLeftOne: 5,
-      bottomLeftTwo: 5,
-      bottomRightOne: 5,
-      bottomRightTwo: 5,
-      unit: 'px'
+        borderTopLeftRadius: `${topLeftOne.value}${unit.value} ${topLeftTwo.value}${unit.value}`,
+        borderTopRightRadius: `${topRightOne.value}${unit.value} ${topRightTwo.value}${unit.value}`,
+        borderBottomRightRadius: `${bottomRightOne.value}${unit} ${bottomRightTwo.value}${unit.value}`,
+        borderBottomLeftRadius: `${bottomLeftOne.value}${unit.value} ${bottomLeftTwo.value}${unit.value}`
     }
-  },
-  computed: {
-    styleObject () {
-      return {
-        borderTopLeftRadius: `${this.topLeftOne}${this.unit} ${this.topLeftTwo}${this.unit}`,
-        borderTopRightRadius: `${this.topRightOne}${this.unit} ${this.topRightTwo}${this.unit}`,
-        borderBottomRightRadius: `${this.bottomRightOne}${this.unit} ${this.bottomRightTwo}${this.unit}`,
-        borderBottomLeftRadius: `${this.bottomLeftOne}${this.unit} ${this.bottomLeftTwo}${this.unit}`
-      }
-    }
-  }
-}
+})
 </script>
 
 <style scoped lang="scss">

@@ -51,10 +51,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Calculator'
-}
+<script setup>
+
 </script>
 
 <style scoped>
