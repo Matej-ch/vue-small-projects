@@ -110,9 +110,9 @@
 </template>
 
 <script setup>
-import {useNavbarStore} from "../stores/navbarStore";
+/*import {useNavbarStore} from "../stores/navbarStore";
 
-const navbar = useNavbarStore();
+const navbar = useNavbarStore();*/
 
 </script>
 
