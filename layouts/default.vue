@@ -1,13 +1,14 @@
 <template>
-  <div>
-    <Navbar />
-      <slot />
-  </div>
+    <div class="flex flex-row">
+        <Navbar/>
+        <slot/>
+    </div>
 </template>
 
 <script>
 import Navbar from '../components/Navbar'
+
 export default {
-  components: { Navbar }
+    components: {Navbar}
 }
 </script>

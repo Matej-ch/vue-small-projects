@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <label for="">Binary number
             <input v-model="binaryNumber" @keyup="checkBinary">
         </label>

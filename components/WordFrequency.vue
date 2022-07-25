@@ -1,5 +1,5 @@
 <template>
-    <div class="center grid">
+    <div class="container">
         <div>
             <div class="flex flex-col justify-center items-center w-12">
                 <label for="">Text to analyze</label>

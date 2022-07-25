@@ -1,5 +1,5 @@
 <template>
-    <div class="center grid">
+    <div class="container">
         <div>
             <div class="flex justify-center items-center w-12 flex-col">
                 <div>

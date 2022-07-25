@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="center grid">
+    <div class="container">
+        <div>
 
             <div class="flex flex-col justify-center items-center w-full">
                 <button @click="getStatus">
