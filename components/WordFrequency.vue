@@ -1,6 +1,4 @@
 <template>
-
-
     <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3">
         <div class="flex flex-col">
             <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
