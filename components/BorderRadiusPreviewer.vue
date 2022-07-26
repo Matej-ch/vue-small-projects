@@ -12,14 +12,14 @@
                     <div class="flex flex-col text-white">
                         <div class="flex items-center justify-between mb-5">
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-kilograms">Top left 1:</label>
+                                <label class="mb-1">Top left 1:</label>
 
                                 <input v-model="topLeftOne" type="range" min="0" max="500"
                                        class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
                                        :step="unit!=='px' ? 0.1 : 1">
                             </div>
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-pounds">Top left 2:</label>
+                                <label class="mb-1">Top left 2:</label>
 
                                 <input v-model="topLeftTwo" type="range" min="0" max="500"
                                        :step="unit!=='px' ? 0.1 : 1"
@@ -29,14 +29,14 @@
 
                         <div class="flex items-center justify-between mb-5">
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-kilograms">Top right 1:</label>
+                                <label class="mb-1">Top right 1:</label>
 
                                 <input v-model="topRightOne" type="range" min="0" max="500"
                                        class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
                                        :step="unit!=='px' ? 0.1 : 1">
                             </div>
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-pounds">Top right 2:</label>
+                                <label class="mb-1">Top right 2:</label>
 
                                 <input v-model="topRightTwo" type="range" min="0" max="500"
                                        :step="unit!=='px' ? 0.1 : 1"
@@ -46,14 +46,14 @@
 
                         <div class="flex items-center justify-between mb-5">
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-kilograms">Bottom right 1:</label>
+                                <label class="mb-1">Bottom right 1:</label>
 
                                 <input v-model="bottomRightOne" type="range" min="0" max="500"
                                        class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
                                        :step="unit!=='px' ? 0.1 : 1">
                             </div>
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-pounds">Bottom right 2:</label>
+                                <label class="mb-1">Bottom right 2:</label>
 
                                 <input v-model="bottomRightTwo" type="range" min="0" max="500"
                                        :step="unit!=='px' ? 0.1 : 1"
@@ -63,14 +63,14 @@
 
                         <div class="flex items-center justify-between mb-5">
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-kilograms">Bottom right 1:</label>
+                                <label class="mb-1">Bottom right 1:</label>
 
                                 <input v-model="bottomLeftOne" type="range" min="0" max="500"
                                        class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
                                        :step="unit!=='px' ? 0.1 : 1">
                             </div>
                             <div class="flex flex-col text-center w-3/6 px-2">
-                                <label class="mb-1" for="weight-pounds">Bottom right 2:</label>
+                                <label class="mb-1">Bottom right 2:</label>
 
                                 <input v-model="bottomLeftTwo" type="range" min="0" max="500"
                                        :step="unit!=='px' ? 0.1 : 1"

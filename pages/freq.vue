@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <WordFrequency />
-  </div>
+    <div class="container">
+        <WordFrequency/>
+    </div>
 </template>
 
 <script setup>

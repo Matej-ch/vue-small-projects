@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <GithubStatus />
-  </div>
+    <div class="container">
+        <GithubStatus/>
+    </div>
 </template>
 
 <script setup>

@@ -1,6 +1,6 @@
 <template>
 
-    <div class="min-w-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div class="min-w-screen bg-slate-100 flex flex-col items-center justify-center">
         <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3">
             <div class="flex flex-col">
                 <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
@@ -15,7 +15,7 @@
                                 <label class="mb-1" for="weight-kilograms">Binary number</label>
 
                                 <input v-model="binaryNumber" @keyup="checkBinary"
-                                       class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
+                                       class="py-3 px-5 rounded focus:outline-none text-slate-600 focus:text-slate-600"
                                 >
                             </div>
                             <div class="flex flex-col text-center w-3/6 px-2">
