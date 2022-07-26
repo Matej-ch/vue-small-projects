@@ -1,50 +1,49 @@
 <template>
-    <div class="container">
-        <div>
-            <div class="flex justify-center items-center w-12 flex-col">
-                <div>
+    <div>
+        <div class="flex justify-center items-center w-12 flex-col">
+            <div>
 
-                    <label for="">First value
-                        <input v-model="firstOperand" @keyup="compareValues">
-                    </label>
-                </div>
+                <label for="">First value
+                    <input v-model="firstOperand" @keyup="compareValues">
+                </label>
+            </div>
 
-                <div style="margin-top: 17px;">
+            <div style="margin-top: 17px;">
 
-                    <label for="">Comparison operator</label>
-                    <select v-model="comparator" @change="compareValues">
-                        <option value=">">&gt;</option>
-                        <option value=">=">&gt;=</option>
-                        <option value="<">&lt;</option>
-                        <option value="<=">&lt;=</option>
-                        <option value="==">==</option>
-                        <option value="===">===</option>
-                        <option value="!=">!=</option>
-                        <option value="!==">!==</option>
-                    </select>
-                </div>
+                <label for="">Comparison operator</label>
+                <select v-model="comparator" @change="compareValues">
+                    <option value=">">&gt;</option>
+                    <option value=">=">&gt;=</option>
+                    <option value="<">&lt;</option>
+                    <option value="<=">&lt;=</option>
+                    <option value="==">==</option>
+                    <option value="===">===</option>
+                    <option value="!=">!=</option>
+                    <option value="!==">!==</option>
+                </select>
+            </div>
 
-                <div>
-                    <label for="">Second value
-                        <input v-model="secondOperand" @keyup="compareValues">
-                    </label>
-                </div>
+            <div>
+                <label for="">Second value
+                    <input v-model="secondOperand" @keyup="compareValues">
+                </label>
+            </div>
 
-                <div style="margin-top: 17px;">
+            <div style="margin-top: 17px;">
 
-                    <input v-model="forceType" type="radio" value="number">
-                    <input v-model="forceType" type="radio" value="string">
-                    <input v-model="forceType" type="radio" value="bool">
-                </div>
+                <input v-model="forceType" type="radio" value="number">
+                <input v-model="forceType" type="radio" value="string">
+                <input v-model="forceType" type="radio" value="bool">
+            </div>
 
-                <hr>
+            <hr>
 
-                <div v-show="result" class="result" :class="result === 'True' ? 'bg-green-500' : 'bg-red-500' ">
-                    {{result}}
-                </div>
+            <div v-show="result" class="result" :class="result === 'True' ? 'bg-green-500' : 'bg-red-500' ">
+                {{result}}
             </div>
         </div>
     </div>
+
 </template>
 
 <script setup>
