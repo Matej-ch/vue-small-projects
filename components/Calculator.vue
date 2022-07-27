@@ -148,13 +148,38 @@ import {ref} from "vue";
 const previousOperand = ref('')
 const currentOperand = ref('')
 const operation = ref('')
-const result = ref('0')
+const result = ref(0)
 
 function clear() {
     previousOperand.value = '';
     currentOperand.value = '';
     operation.value = '';
-    result.value = '0';
+    result.value = 0;
+}
+
+function appendNumber(number) {
+    if (number === '.' && currentOperand.value.includes('.')) return
+    currentOperand.value = currentOperand.value.toString() + number.toString()
+}
+
+function compute() {
+    switch (operation.value) {
+        case '+':
+            result.value = previousOperand.value + currentOperand.value;
+            break;
+        case '-':
+            result.value = previousOperand.value - currentOperand.value;
+            break;
+        case '*':
+            result.value = previousOperand.value * currentOperand.value;
+            break;
+        case '/':
+            result.value = previousOperand.value / currentOperand.value;
+            break;
+        case '%':
+            result.value = previousOperand.value % currentOperand.value;
+            break;
+    }
 }
 
 </script>
