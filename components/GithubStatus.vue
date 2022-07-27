@@ -3,7 +3,8 @@
         <div>
 
             <div class="flex flex-col justify-center items-center w-full">
-                <button @click="getStatus">
+                <button @click="getStatus"
+                        class="bg-green-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-green-700 transition duration-300">
                     Get status
                 </button>
             </div>
@@ -24,28 +25,12 @@
 import {ref, onMounted} from 'vue';
 import {useFetch} from "nuxt/app";
 
-const currentStatus = ref(undefined);
-
-onMounted(() => {
-    githubStatus();
-});
-
-async function githubStatus() {
-    await useFetch('https://www.githubstatus.com', {
-        method: 'get',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    })
-}
+const currentStatus = ref('');
 
 async function getStatus() {
-    const page = await useFetch('https://www.githubstatus.com/api/v2/status.json', {
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    })
-    currentStatus.value = page.status.description
+    const response = await useFetch('https://www.githubstatus.com/api/v2/status.json')
+
+    currentStatus.value = response.data.value.status.description
 }
 
 </script>
