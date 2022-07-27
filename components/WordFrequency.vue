@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3">
+    <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3 max-w-2xl">
         <div class="flex flex-col">
             <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
                 <div class="text-center uppercase text-2xl">Word frequency</div>
@@ -23,13 +23,12 @@
                 </div>
 
 
-                <div v-show="message" title="Alert" class="bg-red-500"
-                     style="color: rgb(231, 154, 23);padding: 15px; height: 100px;">
+                <div v-show="message" class="bg-red-300 text-red-500 p-4">
                     {{message}}
                 </div>
 
-                <div>
-                    <div class="flex flex-col justify-center items-center w-6/12">
+                <div class="flex flex-row items-start">
+                    <div class="flex flex-col pt-4">
                         <table v-show="wordCounts" class="resp-table">
                             <thead>
                             <tr>
@@ -46,20 +45,18 @@
                         </table>
                     </div>
 
-                    <div class="flex flex-col justify-center items-center w-6/12 flex-wrap">
-                        <div class="word-map">
-                            <span v-for="(wordCount,word) in wordCounts" :key="word"
-                                  :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
-                                {{word}}
-                            </span>
-                        </div>
+                    <div class="word-map flex flex-wrap">
+
+                        <span v-for="(wordCount,word) in wordCounts" :key="word"
+                              :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
+                            {{word}}
+                        </span>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-
 </template>
 
 <script setup>
