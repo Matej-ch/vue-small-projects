@@ -3,15 +3,15 @@
     <div class="w-full mx-auto rounded-xl bg-gray-100 shadow-xl text-gray-800 relative overflow-hidden"
          style="max-width:300px">
         <div class="w-full h-40 bg-gradient-to-b from-gray-800 to-gray-700 flex items-end text-right">
-            <div class="w-full py-5 px-6 text-6xl text-white font-thin">340.0</div>
+            <div class="w-full py-5 px-6 text-6xl text-white font-thin">{{result}}</div>
         </div>
 
         <div class="w-full bg-gradient-to-b from-indigo-400 to-indigo-500">
 
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button
-                        class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
+                    <button @click="clear"
+                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
                         C
                     </button>
                 </div>
@@ -22,14 +22,14 @@
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button
-                        class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
+                    <button @click="operation = '%'"
+                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
                         %
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button
-                        class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-2xl font-light">
+                    <button @click="operation = '/'"
+                            class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-2xl font-light">
                         ÷
                     </button>
                 </div>
@@ -55,8 +55,8 @@
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button
-                        class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
+                    <button @click="operation = '*'"
+                            class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
                         ⨉
                     </button>
                 </div>
@@ -82,8 +82,8 @@
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button
-                        class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
+                    <button @click="operation = '-'"
+                            class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
                         -
                     </button>
                 </div>
@@ -109,6 +109,7 @@
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button
+                        @click="operation = '+'"
                         class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
                         +
                     </button>
@@ -141,6 +142,20 @@
 </template>
 
 <script setup>
+
+import {ref} from "vue";
+
+const previousOperand = ref('')
+const currentOperand = ref('')
+const operation = ref('')
+const result = ref('0')
+
+function clear() {
+    previousOperand.value = '';
+    currentOperand.value = '';
+    operation.value = '';
+    result.value = '0';
+}
 
 </script>
 
