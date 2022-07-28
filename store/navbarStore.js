@@ -11,6 +11,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'truefalse', label: 'True or False'},
                 {url: 'github', label: 'Github status'},
                 {url: 'calc', label: 'Calculator'},
+                {url: 'random', label: 'Random number'},
             ]
         };
     }
