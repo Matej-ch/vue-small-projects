@@ -12,6 +12,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'github', label: 'Github status'},
                 {url: 'calc', label: 'Calculator'},
                 {url: 'random', label: 'Random number'},
+                {url: 'roman', label: 'Roman numerals'},
             ]
         };
     }
