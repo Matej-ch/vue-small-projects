@@ -25,7 +25,7 @@
                     </div>
 
                     <div v-show="msg.length"
-                         class="flex mb-5 font-bold justify-center text-center p-4 bg-red-300 bg-red-600">
+                         class="flex mb-5 font-bold justify-center text-center p-4 bg-red-300 text-red-600">
                         {{msg}}
                     </div>
                 </div>
