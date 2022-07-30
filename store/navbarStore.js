@@ -13,7 +13,6 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'calc', label: 'Calculator'},
                 {url: 'random', label: 'Random number'},
                 {url: 'roman', label: 'Roman numerals'},
-
                 {url: 'weather', label: 'Weather App'},
                 {url: 'meal', label: 'Random Meal Generator'},
                 {url: 'currency', label: 'Currency Converter'},

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
         public: {
             apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
             apiBase: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+            mealApiBase: '',
         }
     },
     alias: {
