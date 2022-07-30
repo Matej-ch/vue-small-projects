@@ -12,7 +12,7 @@
                         <div class="flex flex-col text-center w-3/6 px-2">
                             <label class="mb-1">Roman numeral</label>
 
-                            <input v-model="roman" type="text" @keyup="generateNumber"
+                            <input v-model="roman" type="text" @keyup="generateDecimal"
                                    class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
                             >
                         </div>
@@ -44,8 +44,8 @@ const numerals = {
     'CD': 400,
     'C': 100,
     'XC': 90,
-    'L': 50,
     'XL': 40,
+    'L': 50,
     'X': 10,
     'IX': 9,
     'V': 5,
@@ -57,12 +57,12 @@ const roman = ref('');
 const decimal = ref(0);
 const msg = ref('')
 
-function generateNumber() {
+function generateDecimal() {
 
     let result = 0;
     let tempRomanValue = roman.value;
     for (const [romanNum, number] of Object.entries(numerals)) {
-        while (tempRomanValue.indexOf(romanNum) !== -1) {
+        while (tempRomanValue.includes(romanNum)) {
             result += number;
             tempRomanValue = tempRomanValue.substring(romanNum.length);
         }
@@ -90,7 +90,3 @@ function generateRoman() {
 }
 
 </script>
-
-<style scoped>
-
-</style>
