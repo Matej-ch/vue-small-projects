@@ -2,7 +2,7 @@
     <nav class="flex flex-col w-64 h-screen px-4 py-8 bg-white border-r dark:bg-slate-800 dark:border-slate-600">
         <h2 class="text-3xl font-semibold text-slate-800 dark:text-white">Tier 1 projects</h2>
 
-        <div class="flex flex-col justify-between flex-1 mt-6">
+        <div class="flex flex-col justify-between flex-1 mt-6 overflow-auto">
             <nav>
                 <nuxt-link v-for="item in navbar.items" :to="{name: item.url}"
                            class="flex my-2 items-center px-4 py-2 text-slate-700 bg-slate-200 hover:bg-slate-600 rounded-md dark:bg-slate-700 dark:text-slate-200">
