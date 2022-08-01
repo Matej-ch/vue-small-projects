@@ -126,7 +126,7 @@ function compareValues() {
         secondOp = secondOp.toString()
     }
 
-    if (forceType.value === 'string') {
+    if (forceType.value === 'bool') {
         firstOp = Boolean(firstOp)
         secondOp = Boolean(secondOp)
     }

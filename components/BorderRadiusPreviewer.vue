@@ -129,7 +129,7 @@ const styleObject = computed(() => {
     return {
         borderTopLeftRadius: `${topLeftOne.value}${unit.value} ${topLeftTwo.value}${unit.value}`,
         borderTopRightRadius: `${topRightOne.value}${unit.value} ${topRightTwo.value}${unit.value}`,
-        borderBottomRightRadius: `${bottomRightOne.value}${unit} ${bottomRightTwo.value}${unit.value}`,
+        borderBottomRightRadius: `${bottomRightOne.value}${unit.value} ${bottomRightTwo.value}${unit.value}`,
         borderBottomLeftRadius: `${bottomLeftOne.value}${unit.value} ${bottomLeftTwo.value}${unit.value}`
     }
 })
@@ -151,23 +151,5 @@ const styleObject = computed(() => {
         padding-top: 5px;
         padding-bottom: 15px;
     }
-}
-
-.settings {
-    display: flex;
-    flex-flow: wrap;
-    flex-direction: column;
-
-    h4 {
-        margin-bottom: 10px;
-    }
-}
-
-.settings-wrapper {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    display: flex;
-    flex-flow: wrap;
-    flex-direction: row;
 }
 </style>

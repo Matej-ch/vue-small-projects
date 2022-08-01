@@ -2,11 +2,11 @@ import {defineNuxtConfig} from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    //ssr: false,
+    ssr: false,
     runtimeConfig: {
         public: {
-            apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
-            apiBase: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+            apiSecret: '', // overridden by NUXT_API_SECRET environment variable in .env file
+            apiBase: '', //  overridden by NUXT_PUBLIC_API_BASE environment variable in .env file
             mealApiBase: '',
             currencyApiKey: '',
             currencyApiBase: '',

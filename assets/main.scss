@@ -158,13 +158,13 @@ html {
   border-color: #bfbfbf;
 }
 
-.resp-table tr:first-child {
+.resp-table > thead > tr {
   border-top: none;
   background: #428bca;
   color: #fff;
 }
 
-.resp-table tr:nth-child(odd):not(:first-child) {
+.resp-table tbody tr:nth-child(odd) {
   background-color: #ebf3f9;
 }
 
