@@ -19,8 +19,26 @@
 
                     </div>
 
-                    <div v-show="Object.keys(meal).length !== 0">
-                        test
+                    <div v-show="meals.length">
+                        <div v-for="meal in meals">
+                            <div class="flex flex-row gap-2">
+                                <h2 class="font-bold">{{meal.strMeal}}</h2>
+                                <img :src=meal.strMealThumb :alt=meal.strMeal style="max-width: 100px;">
+                            </div>
+
+                            <div class="text-left">
+                                <p class="font-bold py-2">Instructions</p>
+                                {{meal.strInstructions}}
+                            </div>
+
+                            <div class="text-left py-4" v-if="meal.strYoutube.length">
+                                <iframe width="560" height="315" :src=getVideoUrl(meal.strYoutube)
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
@@ -34,16 +52,31 @@
 
 import {ref} from "vue";
 
-const meal = ref({})
+const meals = ref([])
 const config = useRuntimeConfig();
+
+const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
 
 function getMeal() {
     //const randomNumber = Math.floor(Math.random() * 52772);
     fetch(`${config.mealApiBase}${52772}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            meals.value = data.meals;
+
+            console.log(data.meals);
+
         }).catch(err => console.error(err))
+}
+
+function getVideoUrl(url) {
+    const match = url.match(regExp);
+
+    if (match && match[2].length === 11) {
+        return `https://www.youtube.com/embed/${match[2]}`;
+    }
+
+    return '';
 }
 </script>
 
