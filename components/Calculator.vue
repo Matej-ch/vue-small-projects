@@ -166,6 +166,7 @@ const result = computed(() => {
 function appendNumber(number) {
     if (number === '.' && currentOperand.value.includes('.')) return
     currentOperand.value = currentOperand.value.toString() + number.toString()
+    result.value = currentOperand.value;
 }
 
 function appendOperation(op) {
