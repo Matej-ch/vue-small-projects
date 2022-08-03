@@ -39,14 +39,17 @@
                         <div>
                             Humidity: {{main.humidity}}
                         </div>
+                        <div>
+                            Pressure: {{main.pressure}}
+                        </div>
                     </div>
 
                     <div v-show="dataIsLoaded === true">
-                        <span v-if="isNight" class="bg-blue-900 text-white rounded-full px-4 font-bold">
-                            N
+                        <span v-if="isNight" class="text-4xl">
+                            &#127765;
                         </span>
-                        <span v-else class="bg-yellow-600 text-white rounded-full px-4 font-bold">
-                            D
+                        <span v-else class="text-4xl">
+                            &#127774;
                         </span>
                     </div>
 

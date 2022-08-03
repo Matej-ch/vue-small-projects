@@ -1,5 +1,5 @@
 <template>
-    <nav class="flex flex-col w-64 h-screen px-4 py-8 bg-white border-r dark:bg-slate-800 dark:border-slate-600">
+    <nav class="flex flex-col w-64 h-screen px-2 py-8 bg-white border-r dark:bg-slate-800 dark:border-slate-600">
         <h2 class="text-3xl font-semibold text-slate-800 dark:text-white">Tier 1 projects</h2>
 
         <div class="flex flex-col justify-between flex-1 mt-6 overflow-auto">
