@@ -8,7 +8,7 @@
 
             <div class="px-4 py-5">
                 <div class="flex flex-col text-white">
-                    <div class="flex items-end justify-between mb-5">
+                    <div class="flex items-end justify-center mb-5">
 
                         <div class="flex flex-col text-center px-2">
                             <button @click="getMeal"
@@ -24,6 +24,22 @@
                             <div class="flex flex-row gap-2">
                                 <h2 class="font-bold">{{meal.strMeal}}</h2>
                                 <img :src=meal.strMealThumb :alt=meal.strMeal style="max-width: 100px;">
+                            </div>
+
+                            <div class="text-left">
+                                <p class="font-bold py-2">
+                                    Ingredients
+                                </p>
+
+                                <ul>
+                                    <li v-for="(attr, index) in meal">
+                                        <span v-if="index.includes('strIngredient')">
+                                            {{attr}} {{meal['strMeasure' + index.replace(/^\D+/g, '')]}}
+                                        </span>
+
+                                    </li>
+                                </ul>
+
                             </div>
 
                             <div class="text-left">
@@ -63,8 +79,6 @@ function getMeal() {
         .then(res => res.json())
         .then(data => {
             meals.value = data.meals;
-
-            console.log(data.meals);
 
         }).catch(err => console.error(err))
 }
