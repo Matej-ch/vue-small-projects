@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <RomanNumerals/>
-    </div>
+    <RomanNumerals/>
 </template>
 
 <script setup>

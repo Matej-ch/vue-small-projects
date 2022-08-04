@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <Calculator/>
-    </div>
+    <Calculator/>
 </template>
 
 <script setup>

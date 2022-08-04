@@ -1,62 +1,59 @@
 <template>
-    <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3 max-w-2xl">
-        <div class="flex flex-col">
-            <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-                <div class="text-center uppercase text-2xl">Word frequency</div>
+    <div>
+        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
+            <div class="text-center uppercase text-2xl">Word frequency</div>
+        </div>
+
+        <div class="px-4 py-5">
+
+            <div class="flex items-center justify-between mb-3 w-full flex-col">
+                <label class="mb-1">Text to analyze</label>
+                <textarea v-model="textarea" cols="30" rows="10"
+                          class="block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          placeholder="Text to analyze"></textarea>
+            </div>
+
+            <div>
+                <button @click="translate"
+                        class="bg-green-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-green-700 transition duration-300">
+                    Translate
+                </button>
             </div>
 
 
-            <div class="px-4 py-5">
+            <div v-show="message" class="bg-red-300 text-red-500 p-4">
+                {{message}}
+            </div>
 
-                <div class="flex items-center justify-between mb-3 w-full flex-col">
-                    <label class="mb-1">Text to analyze</label>
-                    <textarea v-model="textarea" cols="30" rows="10"
-                              class="block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                              placeholder="Text to analyze"></textarea>
+            <div class="flex flex-row items-start">
+                <div class="flex flex-col pt-4">
+                    <table v-show="wordCounts" class="resp-table">
+                        <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Count</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(wordCount,word) in wordCounts" :key="word">
+                            <td>{{word}}</td>
+                            <td>{{wordCount}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div>
-                    <button @click="translate"
-                            class="bg-green-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-green-700 transition duration-300">
-                        Translate
-                    </button>
+                <div class="word-map flex flex-wrap">
+
+                    <span v-for="(wordCount,word) in wordCounts" :key="word"
+                          :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
+                        {{word}}
+                    </span>
                 </div>
-
-
-                <div v-show="message" class="bg-red-300 text-red-500 p-4">
-                    {{message}}
-                </div>
-
-                <div class="flex flex-row items-start">
-                    <div class="flex flex-col pt-4">
-                        <table v-show="wordCounts" class="resp-table">
-                            <thead>
-                            <tr>
-                                <th>Word</th>
-                                <th>Count</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr v-for="(wordCount,word) in wordCounts" :key="word">
-                                <td>{{word}}</td>
-                                <td>{{wordCount}}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="word-map flex flex-wrap">
-
-                        <span v-for="(wordCount,word) in wordCounts" :key="word"
-                              :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
-                            {{word}}
-                        </span>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
+
 </template>
 
 <script setup>

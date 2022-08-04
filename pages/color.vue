@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <ColorCycle/>
-    </div>
+    <ColorCycle/>
 </template>
 
 <script setup>

@@ -1,82 +1,80 @@
 <template>
-    <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3">
-        <div class="flex flex-col">
+    <div>
+        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
+            <div class="text-center uppercase text-2xl">Password generator</div>
+        </div>
 
-            <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-                <div class="text-center uppercase text-2xl">Password generator</div>
-            </div>
+        <div class="px-4 py-5">
+            <div class="flex flex-col text-white">
 
-            <div class="px-4 py-5">
-                <div class="flex flex-col text-white">
+                <div class="flex items-end justify-between mb-5">
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <label class="mb-1">Password Length</label>
 
-                    <div class="flex items-end justify-between mb-5">
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <label class="mb-1">Password Length</label>
-
-                            <input v-model="passwordLength"
-                                   type="number"
-                                   step="1"
-                                   min="1"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                        </div>
-
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <button @click="generate"
-                                    class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
-                                Generate
-                            </button>
-                        </div>
+                        <input v-model="passwordLength"
+                               type="number"
+                               step="1"
+                               min="1"
+                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
 
-
-                    <div class="flex items-end justify-between mb-5">
-                        <div class="flex flex-col px-2 justify-start">
-                            <label class="mb-1 flex justify-between">Include uppercase letters:
-
-                                <input v-model="hasUpperCase" type="checkbox"
-                                       class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                            </label>
-
-                            <label class="mb-1 flex justify-between">Include lowercase letters:
-
-                                <input v-model="hasLowerCase" type="checkbox"
-                                       class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                            </label>
-
-                            <label class="mb-1 flex justify-between">Include numbers:
-
-                                <input v-model="hasNumbers" type="checkbox"
-                                       class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                            </label>
-
-                            <label class="mb-1 flex justify-between">Include symbols:
-
-                                <input v-model="hasSymbols" type="checkbox"
-                                       class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                            </label>
-                        </div>
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <button @click="generate"
+                                class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
+                            Generate
+                        </button>
                     </div>
-
-                    <div v-show="password.length" class="w-full flex flex-col">
-                        <span>Password Strength</span>
-                        <progress id="strength" max="100" :value=strength> {{strength}}%</progress>
-                    </div>
-
-                    <div v-show="password.length"
-                         class="bg-blue-900 text-white rounded-sm px-4 py-3 font-bold flex flex-col">
-                        <div>{{password}}</div>
-                        <div class="py-2">
-                            <button @click="copy"
-                                    class="bg-slate-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-slate-700 transition duration-300">
-                                Copy to clipboard
-                            </button>
-                        </div>
-                    </div>
-
                 </div>
+
+
+                <div class="flex items-end justify-between mb-5">
+                    <div class="flex flex-col px-2 justify-start">
+                        <label class="mb-1 flex justify-between">Include uppercase letters:
+
+                            <input v-model="hasUpperCase" type="checkbox"
+                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        </label>
+
+                        <label class="mb-1 flex justify-between">Include lowercase letters:
+
+                            <input v-model="hasLowerCase" type="checkbox"
+                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        </label>
+
+                        <label class="mb-1 flex justify-between">Include numbers:
+
+                            <input v-model="hasNumbers" type="checkbox"
+                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        </label>
+
+                        <label class="mb-1 flex justify-between">Include symbols:
+
+                            <input v-model="hasSymbols" type="checkbox"
+                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        </label>
+                    </div>
+                </div>
+
+                <div v-show="password.length" class="w-full flex flex-col">
+                    <span>Password Strength</span>
+                    <progress id="strength" max="100" :value=strength> {{strength}}%</progress>
+                </div>
+
+                <div v-show="password.length"
+                     class="bg-blue-900 text-white rounded-sm px-4 py-3 font-bold flex flex-col">
+                    <div>{{password}}</div>
+                    <div class="py-2">
+                        <button @click="copy"
+                                class="bg-slate-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-slate-700 transition duration-300">
+                            Copy to clipboard
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+
 </template>
 
 <script setup>

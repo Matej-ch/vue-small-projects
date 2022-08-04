@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <PasswordGenerator/>
-    </div>
+    <PasswordGenerator/>
 </template>
 
 <script setup>

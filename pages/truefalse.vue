@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <TrueOrFalse/>
-    </div>
+    <TrueOrFalse/>
 </template>
 
 <script setup>

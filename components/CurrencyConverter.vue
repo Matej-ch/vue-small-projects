@@ -1,59 +1,58 @@
 <template>
-    <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3">
-        <div class="flex flex-col">
 
-            <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-                <div class="text-center uppercase text-2xl">Currency converter</div>
-            </div>
+    <div>
+        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
+            <div class="text-center uppercase text-2xl">Currency converter</div>
+        </div>
 
-            <div class="px-4 py-5">
-                <div class="flex flex-col text-white">
+        <div class="px-4 py-5">
+            <div class="flex flex-col text-white">
 
-                    <div class="flex items-end justify-between mb-5">
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <label class="mb-1">From</label>
+                <div class="flex items-end justify-between mb-5">
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <label class="mb-1">From</label>
 
-                            <input v-model="from"
-                                   type="text"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                        </div>
-
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <label class="mb-1">To</label>
-
-                            <input v-model="to"
-                                   type="text"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                        </div>
-
+                        <input v-model="from"
+                               type="text"
+                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
 
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <label class="mb-1">To</label>
 
-                    <div class="flex items-end justify-between mb-5">
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <label class="mb-1">Amount</label>
-
-                            <input v-model="amount"
-                                   type="text"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                        </div>
-
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <button @click="convert"
-                                    class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
-                                Convert
-                            </button>
-                        </div>
-                    </div>
-
-                    <div v-show="msg.length" class="bg-blue-900 text-white rounded-full px-4 font-bold">
-                        {{msg}}
+                        <input v-model="to"
+                               type="text"
+                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
 
                 </div>
+
+
+                <div class="flex items-end justify-between mb-5">
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <label class="mb-1">Amount</label>
+
+                        <input v-model="amount"
+                               type="text"
+                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                    </div>
+
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <button @click="convert"
+                                class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
+                            Convert
+                        </button>
+                    </div>
+                </div>
+
+                <div v-show="msg.length" class="bg-blue-900 text-white rounded-full px-4 font-bold">
+                    {{msg}}
+                </div>
+
             </div>
         </div>
     </div>
+
 </template>
 
 <script setup>

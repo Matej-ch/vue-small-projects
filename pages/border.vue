@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <BorderRadiusPreviewer />
-  </div>
+    <BorderRadiusPreviewer/>
 </template>
 
 <script setup>

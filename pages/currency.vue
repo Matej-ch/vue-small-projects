@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <CurrencyConverter/>
-    </div>
+    <CurrencyConverter/>
 </template>
 
 <script setup>

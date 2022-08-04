@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <RandomMeal/>
-    </div>
+    <RandomMeal/>
 </template>
 
 <script setup>

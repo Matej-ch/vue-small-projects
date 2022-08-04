@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <Bin2Dec />
-  </div>
+    <Bin2Dec/>
 </template>
 
 <script setup>

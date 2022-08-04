@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <MarkdownPreviewer/>
-    </div>
+    <MarkdownPreviewer/>
 </template>
 
 <script setup>

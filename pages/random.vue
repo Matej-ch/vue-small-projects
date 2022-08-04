@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <RandomNumber/>
-    </div>
+    <RandomNumber/>
 </template>
 
 <script setup>

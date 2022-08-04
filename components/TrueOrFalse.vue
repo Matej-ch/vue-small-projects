@@ -1,71 +1,66 @@
 <template>
+    <div>
+        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
+            <div class="text-center uppercase text-2xl">True or false</div>
+        </div>
 
-    <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3">
-        <div class="flex flex-col">
-            <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-                <div class="text-center uppercase text-2xl">True or false</div>
-            </div>
+        <div class="px-4 py-5">
+            <div class="flex flex-col text-white">
+                <div class="flex items-center justify-between mb-5">
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <label class="mb-1">First value</label>
 
-            <div class="px-4 py-5">
-                <div class="flex flex-col text-white">
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <label class="mb-1">First value</label>
-
-                            <input v-model="firstOperand" @change="compareValues"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                        </div>
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <label class="mb-1">Second value</label>
-
-                            <input v-model="secondOperand" @change="compareValues"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                        </div>
+                        <input v-model="firstOperand" @change="compareValues"
+                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <label class="mb-1">Second value</label>
 
-                    <div class="flex items-center justify-between mb-5 text-right">
-                        <div class="flex flex-col text-right w-3/6 px-2">
-                            <label for="decimals" class="mr-3">Comparison operator</label>
-                        </div>
-                        <div class="flex flex-col text-center px-2 w-3/6 ">
-
-                            <select v-model="comparator" @change="compareValues"
-                                    class="appearance-none border-none text-gray-600 py-3 pl-3 pr-8 rounded leading-tight">
-                                <option value=">">&gt;</option>
-                                <option value=">=">&gt;=</option>
-                                <option value="<">&lt;</option>
-                                <option value="<=">&lt;=</option>
-                                <option value="==">==</option>
-                                <option value="===">===</option>
-                                <option value="!=">!=</option>
-                                <option value="!==">!==</option>
-                            </select>
-                        </div>
+                        <input v-model="secondOperand" @change="compareValues"
+                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
+                </div>
 
-                    <div class="flex items-center justify-between mb-5">
-
-                        <label>
-                            Number
-                            <input v-model="forceType" type="radio" value="number">
-                        </label>
-                        <label>
-                            String
-                            <input v-model="forceType" type="radio" value="string">
-                        </label>
-                        <label>
-                            Boolean
-                            <input v-model="forceType" type="radio" value="bool">
-                        </label>
+                <div class="flex items-center justify-between mb-5 text-right">
+                    <div class="flex flex-col text-right w-3/6 px-2">
+                        <label for="decimals" class="mr-3">Comparison operator</label>
                     </div>
+                    <div class="flex flex-col text-center px-2 w-3/6 ">
 
-                    <div class="flex items-center justify-between mb-5">
-                        <div v-show="result" class="result" :class="result === 'True' ? 'bg-green-500' : 'bg-red-500' ">
-                            {{result}}
-                        </div>
+                        <select v-model="comparator" @change="compareValues"
+                                class="appearance-none border-none text-gray-600 py-3 pl-3 pr-8 rounded leading-tight">
+                            <option value=">">&gt;</option>
+                            <option value=">=">&gt;=</option>
+                            <option value="<">&lt;</option>
+                            <option value="<=">&lt;=</option>
+                            <option value="==">==</option>
+                            <option value="===">===</option>
+                            <option value="!=">!=</option>
+                            <option value="!==">!==</option>
+                        </select>
                     </div>
+                </div>
 
+                <div class="flex items-center justify-between mb-5">
 
+                    <label>
+                        Number
+                        <input v-model="forceType" type="radio" value="number">
+                    </label>
+                    <label>
+                        String
+                        <input v-model="forceType" type="radio" value="string">
+                    </label>
+                    <label>
+                        Boolean
+                        <input v-model="forceType" type="radio" value="bool">
+                    </label>
+                </div>
+
+                <div class="flex items-center justify-between mb-5">
+                    <div v-show="result" class="result" :class="result === 'True' ? 'bg-green-500' : 'bg-red-500' ">
+                        {{result}}
+                    </div>
                 </div>
             </div>
         </div>

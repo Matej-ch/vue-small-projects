@@ -1,61 +1,57 @@
 <template>
-    <div class="rounded-xl bg-gradient-to-b from-blue-600 to-blue-400 mr-3">
-        <div class="flex flex-col">
+    <div>
+        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
+            <div class="text-center uppercase text-2xl">Weather app</div>
+        </div>
 
-            <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-                <div class="text-center uppercase text-2xl">Weather app</div>
-            </div>
+        <div class="px-4 py-5">
+            <div class="flex flex-col text-white">
+                <div class="flex items-end justify-between mb-5">
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <label class="mb-1">City</label>
 
-            <div class="px-4 py-5">
-                <div class="flex flex-col text-white">
-                    <div class="flex items-end justify-between mb-5">
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <label class="mb-1">City</label>
-
-                            <input v-model="city"
-                                   type="text"
-                                   @keyup.enter="checkWeather"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
-                        </div>
-
-                        <div class="flex flex-col text-center w-3/6 px-2">
-                            <button @click="checkWeather"
-                                    class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
-                                Check weather
-                            </button>
-                        </div>
-
+                        <input v-model="city"
+                               type="text"
+                               @keyup.enter="checkWeather"
+                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
 
-                    <div v-show="dataIsLoaded === true"
-                         class="flex flex-col mb-5 font-bold justify-center text-center p-4  w-full">
-
-                        <div>
-                            Weather: {{weather.description}}
-                        </div>
-                        <div>
-                            Temperature: {{main.temp}}
-                        </div>
-                        <div>
-                            Humidity: {{main.humidity}}
-                        </div>
-                        <div>
-                            Pressure: {{main.pressure}}
-                        </div>
-                    </div>
-
-                    <div v-show="dataIsLoaded === true">
-                        <span v-if="isNight" class="text-4xl">
-                            &#127765;
-                        </span>
-                        <span v-else class="text-4xl">
-                            &#127774;
-                        </span>
+                    <div class="flex flex-col text-center w-3/6 px-2">
+                        <button @click="checkWeather"
+                                class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
+                            Check weather
+                        </button>
                     </div>
 
                 </div>
-            </div>
 
+                <div v-show="dataIsLoaded === true"
+                     class="flex flex-col mb-5 font-bold justify-center text-center p-4  w-full">
+
+                    <div>
+                        Weather: {{weather.description}}
+                    </div>
+                    <div>
+                        Temperature: {{main.temp}}
+                    </div>
+                    <div>
+                        Humidity: {{main.humidity}}
+                    </div>
+                    <div>
+                        Pressure: {{main.pressure}}
+                    </div>
+                </div>
+
+                <div v-show="dataIsLoaded === true">
+                    <span v-if="isNight" class="text-4xl">
+                        &#127765;
+                    </span>
+                    <span v-else class="text-4xl">
+                        &#127774;
+                    </span>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>

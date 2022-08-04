@@ -1,7 +1,5 @@
 <template>
-    <div class="container">
-        <VigenereCipher/>
-    </div>
+    <VigenereCipher/>
 </template>
 
 <script setup>
