@@ -23,7 +23,7 @@
                         <div class="flex flex-col text-center w-3/6 px-2">
                             <button @click="generate"
                                     class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
-                                Convert
+                                Generate
                             </button>
                         </div>
                     </div>
@@ -57,10 +57,15 @@
                         </div>
                     </div>
 
+                    <div v-show="password.length" class="w-full flex flex-col">
+                        <span>Password Strength</span>
+                        <progress id="strength" max="100" :value=strength> {{strength}}%</progress>
+                    </div>
+
                     <div v-show="password.length"
-                         class="bg-blue-900 text-white rounded-full px-4 font-bold flex flex-col">
+                         class="bg-blue-900 text-white rounded-sm px-4 py-3 font-bold flex flex-col">
                         <div>{{password}}</div>
-                        <div>
+                        <div class="py-2">
                             <button @click="copy"
                                     class="bg-slate-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-slate-700 transition duration-300">
                                 Copy to clipboard
@@ -84,6 +89,7 @@ const hasUpperCase = ref(true)
 const hasLowerCase = ref(false)
 const hasNumbers = ref(false)
 const hasSymbols = ref(false)
+const strength = ref(0)
 
 function generate() {
     if (!hasUpperCase.value && !hasLowerCase.value && !hasNumbers.value && !hasSymbols.value) {
@@ -95,10 +101,10 @@ function generate() {
     let typesArr = [];
     let generatedPassword = '';
     if (hasUpperCase.value) {
-        typesArr.push('lower');
+        typesArr.push('upper');
     }
     if (hasLowerCase.value) {
-        typesArr.push('upper');
+        typesArr.push('lower');
     }
     if (hasNumbers.value) {
         typesArr.push('numbers');
@@ -121,6 +127,7 @@ function generate() {
     }
 
     password.value = generatedPassword.slice(0, passwordLength.value);
+    checkStrength(password.value);
 }
 
 function copy() {
@@ -144,6 +151,37 @@ function getRandomNumber() {
 function getRandomSymbol() {
     const symbols = '!@#$%^&*(){}[]=<>/,.-\\;`~'
     return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+function checkStrength(password) {
+    let localStrength = 0;
+
+    //If password contains both lower and uppercase characters
+    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+        localStrength += 1;
+    }
+    //If it has numbers and characters
+    if (password.match(/([0-9])/)) {
+        localStrength += 1;
+    }
+    //If it has one special character
+    if (password.match(/([!@#$%^&*(){}\[\]=<>,.-;`~])/)) {
+        localStrength += 1;
+    }
+    //If password is greater than 7
+    if (password.length > 7) {
+        localStrength += 1;
+    }
+
+    // If value is less than 2
+    if (localStrength < 2) {
+        strength.value = 10;
+    } else if (localStrength === 3) {
+
+        strength.value = 60;
+    } else if (localStrength === 4) {
+        strength.value = 100;
+    }
 }
 </script>
 
