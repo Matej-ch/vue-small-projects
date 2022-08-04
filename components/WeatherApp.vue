@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <div v-show="dataIsLoaded === true">
+                <div v-show="dataIsLoaded === true" class="text-center">
                     <span v-if="isNight" class="text-4xl">
                         &#127765;
                     </span>
