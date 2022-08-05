@@ -129,7 +129,11 @@ function generate() {
 }
 
 function copy() {
-
+    navigator.clipboard.writeText(password.value).then(function () {
+        console.log('copied to clipboard')
+    }, function () {
+        console.log('cannot be copied to clipboard')
+    });
 }
 
 function getRandomLower() {
