@@ -1,8 +1,8 @@
 <template>
 
     <div>
-        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-            <div class="text-center uppercase text-2xl">Binary to deca convertor</div>
+        <div class="component-header">
+            <h2>Binary to deca convertor</h2>
         </div>
 
         <div class="px-4 py-5">
@@ -18,7 +18,7 @@
                     </div>
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <button v-show="!errorMessage" @click="convertBinary"
-                                class="bg-green-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-green-700 transition duration-300">
+                                class="btn btn-green">
                             Show Decimal
                         </button>
                     </div>

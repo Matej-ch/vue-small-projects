@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-            <div class="text-center uppercase text-2xl">Password generator</div>
+        <div class="component-header">
+            <h2>Password generator</h2>
         </div>
 
         <div class="px-4 py-5">
@@ -20,7 +20,7 @@
 
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <button @click="generate"
-                                class="bg-red-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-red-700 transition duration-300">
+                                class="btn btn-red">
                             Generate
                         </button>
                     </div>
@@ -65,7 +65,7 @@
                     <div>{{password}}</div>
                     <div class="py-2">
                         <button @click="copy"
-                                class="bg-slate-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-slate-700 transition duration-300">
+                                class="btn btn-slate">
                             Copy to clipboard
                         </button>
                     </div>

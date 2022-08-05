@@ -10,7 +10,7 @@
 
                     <div class="flex flex-col text-center px-2">
                         <button @click="getMeal"
-                                class="bg-orange-400 text-white px-4 py-2 rounded-md text-1xl font-bold hover:bg-orange-700 transition duration-300">
+                                class="btn btn-orange">
                             Get meal
                         </button>
                     </div>

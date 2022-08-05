@@ -3,7 +3,7 @@
     <div class="flex flex-col w-full">
         <div class="flex flex-col justify-center items-center w-full">
             <button @click="getStatus"
-                    class="bg-green-600 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-green-700 transition duration-300">
+                    class="btn btn-green">
                 Get status
             </button>
         </div>

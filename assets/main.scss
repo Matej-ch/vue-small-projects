@@ -198,6 +198,46 @@ html {
   color: #000;
 }
 
+.component-header {
+  @apply flex flex-col items-center justify-center text-white py-4 bg-blue-800;
+
+  h2 {
+    @apply text-center uppercase text-2xl;
+  }
+}
+
+.btn {
+  @apply text-white px-4 py-2 rounded-md text-xl font-medium transition duration-300;
+}
+
+.btn-green {
+  @apply bg-green-600 hover:bg-green-700;
+}
+
+.btn-red {
+  @apply bg-red-600 hover:bg-red-700;
+}
+
+.btn-orange {
+  @apply bg-orange-400 hover:bg-orange-700;
+}
+
+.btn-slate {
+  @apply bg-slate-600 hover:bg-slate-700;
+}
+
+.navbar {
+  @apply flex flex-col w-64 h-screen px-2 py-8 bg-white border-r dark:bg-slate-800 dark:border-slate-600;
+
+  h2 {
+    @apply text-3xl font-semibold text-slate-800 dark:text-white;
+  }
+
+  .item {
+    @apply flex my-2 items-center px-4 py-2 text-slate-700 bg-slate-200 hover:bg-slate-600 rounded-md dark:bg-slate-700 dark:text-slate-200;
+  }
+}
+
 @media screen and (max-width: 601px) {
   .resp-table tr:nth-child(2) {
     border-top: none;

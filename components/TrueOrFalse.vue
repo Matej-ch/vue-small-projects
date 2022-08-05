@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="flex flex-col items-center justify-center text-white py-4 bg-blue-800">
-            <div class="text-center uppercase text-2xl">True or false</div>
+        <div class="component-header">
+            <h2>True or false</h2>
         </div>
 
         <div class="px-4 py-5">
