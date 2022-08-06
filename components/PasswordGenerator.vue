@@ -64,10 +64,7 @@
                      class="bg-blue-900 text-white rounded-sm px-4 py-3 font-bold flex flex-col">
                     <div>{{password}}</div>
                     <div class="py-2">
-                        <button @click="copy"
-                                class="btn btn-slate">
-                            Copy to clipboard
-                        </button>
+                        <ClipboardBtn :text="password"></ClipboardBtn>
                     </div>
                 </div>
 
@@ -79,6 +76,7 @@
 
 <script setup>
 import {ref} from "vue";
+import ClipboardBtn from "./ClipboardBtn";
 
 const password = ref('')
 const passwordLength = ref(1)
@@ -126,14 +124,6 @@ function generate() {
 
     password.value = generatedPassword.slice(0, passwordLength.value);
     checkStrength(password.value);
-}
-
-function copy() {
-    navigator.clipboard.writeText(password.value).then(function () {
-        console.log('copied to clipboard')
-    }, function () {
-        console.log('cannot be copied to clipboard')
-    });
 }
 
 function getRandomLower() {

@@ -39,19 +39,19 @@
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(7)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         7
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(8)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         8
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(9)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         9
                     </button>
                 </div>
@@ -66,19 +66,19 @@
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(4)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         4
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(5)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         5
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(6)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         6
                     </button>
                 </div>
@@ -92,19 +92,19 @@
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(1)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         1
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(2)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         2
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button @click="appendNumber(3)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         3
                     </button>
                 </div>
@@ -119,19 +119,19 @@
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-indigo-400">
                     <button @click="appendNumber(0)"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         0
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-indigo-400">
                     <button @click="appendNumber('.')"
-                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light">
+                            class="calc-btn">
                         .
                     </button>
                 </div>
                 <div class="w-2/4 border-r border-indigo-400">
                     <button @click="compute"
-                            class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-30 hover:bg-opacity-40 text-white text-xl font-light">
+                            class="calc-equals">
                         =
                     </button>
                 </div>
@@ -201,5 +201,11 @@ function compute() {
 </script>
 
 <style scoped>
+.calc-btn {
+    @apply w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light;
+}
 
+.calc-equals {
+    @apply w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-30 hover:bg-opacity-40 text-white text-xl font-light
+}
 </style>
