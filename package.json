@@ -20,6 +20,7 @@
     "dompurify": "^2.3.10",
     "marked": "^4.0.18",
     "material-icons": "^1.11.7",
-    "pinia": "^2.0.17"
+    "pinia": "^2.0.17",
+    "vue-toastification": "^2.0.0-rc.5"
   }
 }

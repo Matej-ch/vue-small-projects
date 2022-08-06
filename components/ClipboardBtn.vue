@@ -36,6 +36,9 @@
 <script setup>
 
 import {ref} from "vue";
+import {useToast} from "vue-toastification";
+
+const toast = useToast();
 
 const props = defineProps(['text'])
 
@@ -44,8 +47,15 @@ const copyState = ref(0);
 function copy() {
     navigator.clipboard.writeText(props.text).then(function () {
         copyState.value = 1;
+
+        toast.success("Password copied to clipboard");
+
     }, function () {
         copyState.value = 2;
+
+        toast.error("Copy failed", {
+            timeout: 2000
+        });
     });
 }
 </script>
