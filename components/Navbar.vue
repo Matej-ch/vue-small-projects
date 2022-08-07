@@ -1,7 +1,8 @@
 <template>
     <nav class="navbar">
         <h2>Vuejs 3 components</h2>
-        <p class="text-white font-bold">Made by <a href="https://github.com/Matej-ch">matejch</a></p>
+        <p class="text-white font-bold">Made by <a href="https://github.com/Matej-ch" class="text-blue-300 underline">matejch</a>
+        </p>
 
         <div class="flex flex-col justify-between flex-1 mt-6 overflow-auto">
             <nav>
@@ -20,7 +21,7 @@
                 </nuxt-link>
             </nav>
         </div>
-        
+
         <Time/>
 
     </nav>
