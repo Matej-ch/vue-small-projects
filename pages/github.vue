@@ -1,5 +1,4 @@
 <template>
-
     <GithubStatus/>
 </template>
 
