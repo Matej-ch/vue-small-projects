@@ -227,10 +227,10 @@ html {
 }
 
 .navbar {
-  @apply flex flex-col w-64 h-screen px-2 py-8 bg-white border-r dark:bg-slate-800 dark:border-slate-600;
+  @apply flex flex-col w-64 h-screen px-2 py-4 bg-white border-r dark:bg-slate-800 dark:border-slate-600;
 
   h2 {
-    @apply text-3xl font-semibold text-slate-800 dark:text-white;
+    @apply text-2xl font-semibold text-slate-800 dark:text-white;
   }
 
   .item {

@@ -1,46 +1,68 @@
-# tier-one-projects
+# Vuejs 3 collection of components
 
-Collection of beginner projects from https://webdevscom.github.io/resources/5
+Collection of components based on https://webdevscom.github.io/resources/5
 
-# Nuxt 3 Minimal Starter
+### Build with Nuxt 3
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+### Current components (Finished/WIP)
 
-## Setup
+1. [ ] 
+   ColorCycle [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Color-Cycle-App.md)
 
-Make sure to install the dependencies:
+2. [ ] NASA Exoplanet
+   Query [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/NASA-Exoplanet-Query.md)
 
-```bash
-# yarn
-yarn install
+3. [ ] GitHub
+   Timeline [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/GitHub-Timeline-App.md)
 
-# npm
-npm install
+4. [x] Bin2Dec [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md)
 
-# pnpm
-pnpm install --shamefully-hoist
-```
+5. [x] Border Radius
+   Previewer [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Border-Radius-Previewer.md)
 
-## Development Server
+6. [ ] 
+   Calculator [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Calculator-App.md)
 
-Start the development server on http://localhost:3000
+7. [x] Random Meal
+   Generator [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Random-Meal-Generator.md)
 
-```bash
-npm run dev
-```
+8. [x] Random Number
+   Generator [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Random-Number-Generator.md)
 
-## Production
+9. [x] Roman to Decimal
+   Converter [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Roman-to-Decimal-Converter.md)
 
-Build the application for production:
+10. [ ] Stopwatch
+    App [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Stopwatch-App.md)
 
-```bash
-npm run build
-```
+11. [x] Vigenere
+    Cipher [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Vigenere-Cipher.md)
 
-Locally preview production build:
+12. [x] 
+    TrueOrFalse [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/True-or-False-App.md)
 
-```bash
-npm run preview
-```
+13. [x] Weather
+    App [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Weather-App.md)
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+14. [x] Word
+    Frequency [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Word-Frequency-App.md)
+
+15. [ ] Notes App [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md)
+
+16. [ ] Dollars To
+    Cents [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Dollars-To-Cents-App.md)
+
+17. [x] GitHub
+    Status [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/GitHub-Status-App.md)
+
+18. [x] Currency
+    Converter [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Currency-Converter.md)
+
+19. [ ] GitHub
+    Profiles [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md)
+
+20. [x] Markdown
+    Previewer [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Markdown-Previewer.md)
+
+21. [x] Password
+    Generator [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Password-Generator.md)

@@ -1,6 +1,7 @@
 <template>
     <nav class="navbar">
-        <h2>Tier 1 projects</h2>
+        <h2>Vuejs 3 components</h2>
+        <p class="text-white font-bold">Made by <a href="https://github.com/Matej-ch">matejch</a></p>
 
         <div class="flex flex-col justify-between flex-1 mt-6 overflow-auto">
             <nav>
@@ -19,12 +20,16 @@
                 </nuxt-link>
             </nav>
         </div>
+        
+        <Time/>
+
     </nav>
 
 </template>
 
 <script setup>
 import {useNavbarStore} from "../store/navbarStore";
+import Time from "./Time";
 
 const navbar = useNavbarStore();
 
