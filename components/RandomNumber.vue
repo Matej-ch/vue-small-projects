@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import {computed, ref} from 'vue';
+import {ref} from 'vue';
 
 const min = ref(1);
 const max = ref(5);

@@ -1,9 +1,8 @@
 <template>
-    <NotesApp/>
+
 </template>
 
 <script setup>
-
 </script>
 
 <style scoped>
