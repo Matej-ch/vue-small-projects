@@ -49,7 +49,7 @@ Collection of components based on https://webdevscom.github.io/resources/5
 
 15. [ ] Notes App [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md)
 
-16. [ ] Dollars To
+16. [x] Dollars To
     Cents [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Dollars-To-Cents-App.md)
 
 17. [x] GitHub
