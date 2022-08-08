@@ -47,7 +47,7 @@ Collection of components based on https://webdevscom.github.io/resources/5
 14. [x] Word
     Frequency [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Word-Frequency-App.md)
 
-15. [ ] Notes App [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md)
+15. [x] Notes App [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Notes-App.md)
 
 16. [x] Dollars To
     Cents [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Dollars-To-Cents-App.md)

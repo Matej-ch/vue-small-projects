@@ -17,6 +17,7 @@ import RoundTextFields from '~icons/ic/round-text-fields'
 import TwotonePolymer from '~icons/ic/twotone-polymer'
 import RoundFormatColorFill from '~icons/ic/round-format-color-fill'
 import RoundLocalAtm from '~icons/ic/round-local-atm'
+import BaselineSupervisedUserCircle from '~icons/ic/baseline-supervised-user-circle'
 
 import Planet from '~icons/ion/planet'
 import Time from '~icons/ion/time'
@@ -39,6 +40,8 @@ export const useNavbarStore = defineStore('navbar', {
                     label: 'Github status',
                     'icon': shallowRef(RoundSignalWifiStatusbarConnectedNoInternet4)
                 },
+                {url: 'timeline', label: 'GitHub Timeline', 'icon': shallowRef(Time)},
+                {url: 'profiles', label: 'GitHub Profiles', 'icon': shallowRef(BaselineSupervisedUserCircle)},
                 {url: 'calc', label: 'Calculator', 'icon': shallowRef(RoundCalculate)},
                 {url: 'random', label: 'Random number', 'icon': shallowRef(TwotoneGradient)},
                 {url: 'roman', label: 'Roman numerals', 'icon': shallowRef(RoundAccountBalance)},
@@ -50,7 +53,6 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'vigenere', label: 'Vigenere Cipher', 'icon': shallowRef(TwotonePolymer)},
                 {url: 'color', label: 'ColorCycle', 'icon': shallowRef(RoundFormatColorFill)},
                 {url: 'nasa', label: 'NASA Exoplanet Query', 'icon': shallowRef(Planet)},
-                {url: 'timeline', label: 'GitHub Timeline', 'icon': shallowRef(Time)},
                 {url: 'notes', label: 'Notes App', 'icon': shallowRef(Newspaper)},
                 {url: 'stopwatch', label: 'Stopwatch App', 'icon': shallowRef(StopwatchOutline)},
                 {url: 'dollars', label: 'Dollars To Cents', 'icon': shallowRef(RoundLocalAtm)},
