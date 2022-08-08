@@ -4,6 +4,10 @@ import Icons from 'unplugin-icons/vite'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     ssr: false,
+    target: "static",
+    router: {
+        base: '/vue-small-projects/'
+    },
     runtimeConfig: {
         public: {
             apiSecret: '', // overridden by NUXT_API_SECRET environment variable in .env file
