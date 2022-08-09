@@ -62,13 +62,13 @@
                 </div>
 
                 <div>
-                    <button @click="startColorCycle"
-                            class="btn btn-green">
-                        Translate
-                    </button>
-                    <button @click="stopColorCycle"
+                    <button v-if="isRunning" @click="stopColorCycle"
                             class="btn btn-red">
-                        Translate
+                        Stop
+                    </button>
+                    <button v-else @click="startColorCycle"
+                            class="btn btn-green">
+                        Start
                     </button>
                 </div>
 
@@ -84,31 +84,62 @@
 
 import {ref, computed} from "vue";
 
-const rr = ref('');
-const bb = ref('');
-const gg = ref('');
+const rr = ref('FF');
+const gg = ref('FF');
+const bb = ref('FF');
 
-const rrIncrement = ref('');
-const bbIncrement = ref('');
-const ggIncrement = ref('');
+const rrIncrement = ref(0x1);
+const ggIncrement = ref(0x1);
+const bbIncrement = ref(0x1);
 
-const fillColor = ref('FFFFFF');
+const isRunning = ref(false)
 
 const interval = ref(0.25);
 
+let intervalID = null;
 
 const backgroundObject = computed(() => {
     return {
-        backgroundColor: `#${fillColor.value}`,
+        backgroundColor: `#${rr.value}${gg.value}${bb.value}`,
     }
 })
 
 function startColorCycle() {
+    isRunning.value = !isRunning.value;
+
+    if (!intervalID) {
+        intervalID = setInterval(() => {
+
+            rr.value;
+            for (let i = 0x0; i <= 0xFF; rrIncrement.value++) {
+                i.toString(16);
+                //console.log("" + i.toString(16) + " = " + i)
+            }
+
+            for (let i = 0x0; i <= 0xFF; ggIncrement.value++) {
+                i.toString(16);
+                //console.log("" + i.toString(16) + " = " + i)
+            }
+
+
+            for (let i = 0x0; i <= 0xFF; bbIncrement.value++) {
+                i.toString(16);
+                //console.log("" + i.toString(16) + " = " + i)
+            }
+
+
+        }, interval.value * 1000)
+
+    }
+
 
 }
 
 function stopColorCycle() {
+    isRunning.value = !isRunning.value;
 
+    clearInterval(intervalID);
+    intervalID = null;
 }
 </script>
 
