@@ -18,11 +18,12 @@ import TwotonePolymer from '~icons/ic/twotone-polymer'
 import RoundFormatColorFill from '~icons/ic/round-format-color-fill'
 import RoundLocalAtm from '~icons/ic/round-local-atm'
 import BaselineSupervisedUserCircle from '~icons/ic/baseline-supervised-user-circle'
-
 import Planet from '~icons/ion/planet'
 import Time from '~icons/ion/time'
 import Newspaper from '~icons/ion/newspaper'
 import StopwatchOutline from '~icons/ion/stopwatch-outline'
+import BaselineFileCopy from '~icons/ic/baseline-file-copy'
+import OutlineFileCopy from '~icons/ic/outline-file-copy'
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -56,6 +57,8 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'notes', label: 'Notes App', 'icon': shallowRef(Newspaper)},
                 {url: 'stopwatch', label: 'Stopwatch App', 'icon': shallowRef(StopwatchOutline)},
                 {url: 'dollars', label: 'Dollars To Cents', 'icon': shallowRef(RoundLocalAtm)},
+                {url: 'csvtojson', label: 'CSV2JSON', 'icon': shallowRef(BaselineFileCopy)},
+                {url: 'jsontocsv', label: 'JSON2CSV', 'icon': shallowRef(OutlineFileCopy)},
             ]
         };
     }
