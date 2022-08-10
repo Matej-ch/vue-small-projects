@@ -24,6 +24,7 @@ import Newspaper from '~icons/ion/newspaper'
 import StopwatchOutline from '~icons/ion/stopwatch-outline'
 import BaselineFileCopy from '~icons/ic/baseline-file-copy'
 import OutlineFileCopy from '~icons/ic/outline-file-copy'
+import RoundAccountTree from '~icons/ic/round-account-tree'
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -59,6 +60,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'dollars', label: 'Dollars To Cents', 'icon': shallowRef(RoundLocalAtm)},
                 {url: 'csvtojson', label: 'CSV2JSON', 'icon': shallowRef(BaselineFileCopy)},
                 {url: 'jsontocsv', label: 'JSON2CSV', 'icon': shallowRef(OutlineFileCopy)},
+                {url: 'jsontree', label: 'Json tree', 'icon': shallowRef(RoundAccountTree)},
             ]
         };
     }
