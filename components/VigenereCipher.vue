@@ -8,7 +8,6 @@
             <div class="flex items-center justify-between mb-3 w-full flex-col">
                 <label class="mb-1">Text to encrypt</label>
                 <textarea v-model="textarea" cols="30" rows="10"
-                          class="block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Text to encrypt"></textarea>
             </div>
 
@@ -38,7 +37,6 @@
 
         <div class="px-4 flex gap-2 py-2" v-show="encryptedText.length">
             <textarea v-model="encryptedText" cols="30" rows="10"
-                      class="block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Encrypted text"></textarea>
         </div>
 
@@ -85,7 +83,7 @@ function generateKey() {
     if (textarea.value.length === 0) {
         return;
     }
-    
+
     if (textarea.value.length === tempKey.length) {
         key.value = tempKey.join("");
         //return tempKey.join("");

@@ -7,9 +7,8 @@
         <div class="px-4 py-5">
 
             <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <label class="mb-1">Text to analyze</label>
+                <label class="mb-1 font-bold text-white">Text to analyze</label>
                 <textarea v-model="textarea" cols="30" rows="10"
-                          class="block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                           placeholder="Text to analyze"></textarea>
             </div>
 

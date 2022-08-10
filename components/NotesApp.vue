@@ -10,9 +10,7 @@
                     <div class="flex flex-col px-2 w-full">
                         <label class="mb-1" for="weight-kilograms">Add Note (markdown available)</label>
 
-                        <textarea v-model="note" @keyup.enter="saveNote" type="text" cols="30" rows="10"
-                                  class="py-3 px-5 rounded focus:outline-none text-slate-600 focus:text-slate-600"
-                        ></textarea>
+                        <textarea v-model="note" @keyup.enter="saveNote" type="text" cols="30" rows="10"></textarea>
                     </div>
                 </div>
             </div>

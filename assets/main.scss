@@ -238,6 +238,12 @@ html {
   }
 }
 
+textarea {
+  @apply block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-blue-500
+  focus:border-blue-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500
+  dark:focus:border-blue-500;
+}
+
 @media screen and (max-width: 601px) {
   .resp-table tr:nth-child(2) {
     border-top: none;
