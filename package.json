@@ -21,6 +21,7 @@
     "@nuxtjs/composition-api": "^0.33.0",
     "@pinia/nuxt": "^0.3.1",
     "dompurify": "^2.3.10",
+    "lodash": "^4.17.21",
     "marked": "^4.0.18",
     "material-icons": "^1.11.7",
     "pinia": "^2.0.17",
