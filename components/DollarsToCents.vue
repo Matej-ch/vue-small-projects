@@ -6,7 +6,7 @@
 
         <div class="px-4 py-5">
             <div class="flex flex-col text-white">
-                <div class="flex items-end justify-between mb-5">
+                <div class="flex items-end mb-5">
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1" for="weight-kilograms">Dollars</label>
 
@@ -14,13 +14,23 @@
                                class="py-3 px-5 rounded focus:outline-none text-slate-600 focus:text-slate-600"
                         >
                     </div>
+
+                    <div class="">
+                        <button @click="convert"
+                                class="btn btn-orange">
+                            Convert
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <div class="flex flex-col text-right px-2 font-bold text-xl">
-                    You have {{pennies + nickel + dime + quarter}} coins: {{quarter}} quarters, {{dime}} dimes,
-                    {{nickel}} nickel and {{pennies}} pennies
+                <div class="flex flex-row flex text-right px-2 font-bold text-xl gap-0.5">
+                    You have {{pennies + nickel + dime + quarter}} coins:
+                    {{quarter}} <span class="decoration-slate-600 decoration-2 underline">quarters</span>,
+                    {{dime}} <span class="decoration-neutral-500 decoration-2 underline"> dimes</span>,
+                    {{nickel}} <span class="decoration-yellow-400 decoration-2 underline"> nickel</span> and
+                    {{pennies}} <span class="decoration-amber-600 decoration-2 underline"> pennies</span>
                 </div>
             </div>
 
