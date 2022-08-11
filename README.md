@@ -67,7 +67,7 @@ Collection of components based on https://webdevscom.github.io/resources/5
 21. [x] Password
     Generator [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Password-Generator.md)
 
-22. [ ] CSV2JSON [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/CSV2JSON-App.md)
+22. [x] CSV2JSON [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/CSV2JSON-App.md)
 
 23. [x] JSON2CSV [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/JSON2CSV-App.md)
 

@@ -3,11 +3,7 @@
 </template>
 
 <script setup>
-import {useHead} from "nuxt/app";
 
-useHead({
-    title: `Github profiles`
-})
 </script>
 
 <style scoped>
