@@ -1,14 +1,14 @@
 <template>
     <div>
         <div class="component-header">
-            <h2>Json to CSV converter</h2>
+            <h2>CSV to Json converter</h2>
         </div>
 
         <div class="px-4 py-5">
 
             <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <label class="mb-1 font-bold text-white">Json to convert</label>
-                <textarea v-model="json" cols="30" rows="10" placeholder="Json to convert"
+                <label class="mb-1 font-bold text-white">Csv to convert</label>
+                <textarea v-model="csv" cols="30" rows="10" placeholder="Csv to convert"
                           @keyup="checkValidity(true)"
                           @paste="checkValidity(true)">
                 </textarea>
@@ -26,8 +26,8 @@
             </div>
 
             <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <label class="mb-1 font-bold text-white">CSV result</label>
-                <textarea v-model="csv" cols="30" rows="10" placeholder="CSV" disabled
+                <label class="mb-1 font-bold text-white">Json result</label>
+                <textarea v-model="json" cols="30" rows="10" placeholder="Json" disabled
                           class="pointer-events-none"></textarea>
             </div>
 
@@ -43,7 +43,6 @@
 
 <script setup>
 import {ref} from "vue";
-import _ from 'lodash';
 
 const json = ref('');
 const csv = ref('')
@@ -52,47 +51,20 @@ const delimiter = ref(',');
 
 function convert() {
 
-    if (!isJson()) {
+    if (!csv.value.length) {
         return;
     }
+    const csvParts = csv.value.split("\n");
 
-    const tempJson = JSON.parse(json.value);
-    let header = Object.keys(tempJson);
-    let content = Object.values(tempJson);
+    let header = csvParts[0].split(delimiter.value);
+    let content = csvParts[1].split(delimiter.value);
 
-    csv.value = `${header.join(delimiter.value)}\n${content.join(delimiter.value)}`;
+    json.value = JSON.stringify(header.reduce((r, e, i) => (r[e] = content[i], r), {}));
 }
 
 function checkValidity(withDelay = false) {
-    if (withDelay) {
-        _.delay(function () {
 
-            if (!isJson()) {
-                message.value = 'Json string is invalid';
-            } else {
-                message.value = '';
-            }
-
-        }, 2000);
-    } else {
-        if (!isJson()) {
-            message.value = 'Json string is invalid';
-        } else {
-            message.value = '';
-        }
-    }
 }
-
-function isJson() {
-    try {
-        JSON.parse(json.value);
-    } catch (e) {
-        return false;
-    }
-
-    return true;
-}
-
 </script>
 
 <style scoped>
