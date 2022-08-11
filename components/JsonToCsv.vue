@@ -59,7 +59,7 @@ function convert() {
     let header = Object.keys(tempJson);
     let content = Object.values(tempJson);
 
-    csv.value = `${header}\n${content}`;
+    csv.value = `${header.join(';')}\n${content.join(';')}`;
 }
 
 function checkValidity(withDelay = false) {
