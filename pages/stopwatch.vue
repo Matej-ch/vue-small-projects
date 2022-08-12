@@ -1,5 +1,5 @@
 <template>
-
+    <Stopwatch/>
 </template>
 
 <script setup>
