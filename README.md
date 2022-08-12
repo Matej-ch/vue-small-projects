@@ -12,7 +12,7 @@ Collection of components based on https://webdevscom.github.io/resources/5
 2. [ ] NASA Exoplanet
    Query [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/NASA-Exoplanet-Query.md)
 
-3. [ ] GitHub
+3. [x] GitHub
    Timeline [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/GitHub-Timeline-App.md)
 
 4. [x] Bin2Dec [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md)
@@ -32,7 +32,7 @@ Collection of components based on https://webdevscom.github.io/resources/5
 9. [x] Roman to Decimal
    Converter [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Roman-to-Decimal-Converter.md)
 
-10. [ ] Stopwatch
+10. [x] Stopwatch
     App [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Stopwatch-App.md)
 
 11. [x] Vigenere
@@ -58,7 +58,7 @@ Collection of components based on https://webdevscom.github.io/resources/5
 18. [x] Currency
     Converter [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Currency-Converter.md)
 
-19. [ ] GitHub
+19. [x] GitHub
     Profiles [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md)
 
 20. [x] Markdown
