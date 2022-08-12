@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="component-header">
-            <h2>Github timeline</h2>
+            <h2>Github profile</h2>
         </div>
 
         <div class="px-4 py-5">
@@ -31,6 +31,14 @@
                 repositories
             </div>
 
+            <div v-show="topRepos.length">
+                <div v-for="repo in topRepos" class="flex justify-between">
+                    <span> {{repo.full_name}} </span>
+                    <span> {{repo.description}} </span>
+                    <span> <a :href=repo.url>{{repo.url}}</a> </span>
+                    <span class="font-bold"> {{repo.language}} </span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -47,6 +55,7 @@ const isFound = ref(false)
 const avatar = ref('');
 const followers = ref('0')
 const repoCount = ref('0')
+const topRepos = ref([]);
 
 function search() {
 
@@ -74,7 +83,20 @@ function search() {
             foundUserName.value = data.login;
             message.value = 'User found';
 
+            if (foundUserName.value.length) {
+                getRepos(data.repos_url);
+            }
+
+
         })
+}
+
+function getRepos(url) {
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            topRepos.value = data.slice(0, 4);
+        }).catch(err => console.error(err))
 }
 </script>
 
