@@ -125,6 +125,30 @@ function startColorCycle() {
     }*/
 }
 
+let dynamicStyles = null;
+
+function addAnimation(body) {
+    if (!dynamicStyles) {
+        dynamicStyles = document.createElement('style');
+        dynamicStyles.type = 'text/css';
+        document.head.appendChild(dynamicStyles);
+    }
+
+    dynamicStyles.sheet.insertRule(body, dynamicStyles.length);
+}
+
+addAnimation(`
+      @keyframes move-eye {
+         from {
+           margin-left: -20%;
+         }
+        to {
+          margin-left: 100%;
+        }
+      }
+    `);
+
+
 function stopColorCycle() {
     isRunning.value = !isRunning.value;
 }
