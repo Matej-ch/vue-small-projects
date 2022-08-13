@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="p-8 rounded-sm color-cycle"
-                     :style="{'animation-duration': animationDuration,'animation-delay':animationDelay }">
+                     :style="{'animation-duration': animationDuration,'animation-delay':animationDelay/*,'animation-name': animationName */}">
                     &nbsp;
                 </div>
             </div>
@@ -91,17 +91,13 @@ const bb = ref('FF');
 
 const animationDuration = ref('11s')
 const animationDelay = ref(0.25)
+const animationName = ref('colorchange');
 
 const rrIncrement = ref(0x1);
 const ggIncrement = ref(0x1);
 const bbIncrement = ref(0x1);
 
 const isRunning = ref(false)
-
-const interval = ref(0.25);
-
-let intervalID = null;
-
 const backgroundObject = computed(() => {
     return {
         backgroundColor: `#${rr.value}${gg.value}${bb.value}`,
@@ -111,39 +107,26 @@ const backgroundObject = computed(() => {
 function startColorCycle() {
     isRunning.value = !isRunning.value;
 
-    if (!intervalID) {
-        intervalID = setInterval(() => {
+    rr.value;
+    for (let i = 0x0; i <= 0xFF; rrIncrement.value++) {
+        i.toString(16);
+        //console.log("" + i.toString(16) + " = " + i)
+    }
 
-            rr.value;
-            for (let i = 0x0; i <= 0xFF; rrIncrement.value++) {
-                i.toString(16);
-                //console.log("" + i.toString(16) + " = " + i)
-            }
-
-            for (let i = 0x0; i <= 0xFF; ggIncrement.value++) {
-                i.toString(16);
-                //console.log("" + i.toString(16) + " = " + i)
-            }
-
-
-            for (let i = 0x0; i <= 0xFF; bbIncrement.value++) {
-                i.toString(16);
-                //console.log("" + i.toString(16) + " = " + i)
-            }
-
-
-        }, interval.value * 1000)
-
+    /*for (let i = 0x0; i <= 0xFF; ggIncrement.value++) {
+        i.toString(16);
+        //console.log("" + i.toString(16) + " = " + i)
     }
 
 
+    for (let i = 0x0; i <= 0xFF; bbIncrement.value++) {
+        i.toString(16);
+        //console.log("" + i.toString(16) + " = " + i)
+    }*/
 }
 
 function stopColorCycle() {
     isRunning.value = !isRunning.value;
-
-    clearInterval(intervalID);
-    intervalID = null;
 }
 </script>
 
