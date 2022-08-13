@@ -9,7 +9,7 @@ Collection of components based on https://webdevscom.github.io/resources/5
 1. [ ] 
    ColorCycle [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Color-Cycle-App.md)
 
-2. [ ] NASA Exoplanet
+2. [x] NASA Exoplanet
    Query [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/NASA-Exoplanet-Query.md)
 
 3. [x] GitHub
