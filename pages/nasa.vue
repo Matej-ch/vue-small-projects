@@ -1,8 +1,9 @@
 <template>
-
+    <Exoplanets/>
 </template>
 
 <script setup>
+import Exoplanets from '../components/Exoplanets'
 import {useHead} from "nuxt/app";
 
 useHead({
