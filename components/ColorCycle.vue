@@ -33,21 +33,21 @@
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Red increment</label>
 
-                        <input v-model="rrIncrement" type="text"
+                        <input v-model="rrIncrement" type="number" step="1"
                                class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
                         >
                     </div>
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Green increment</label>
 
-                        <input v-model="ggIncrement" type="text"
+                        <input v-model="ggIncrement" type="number" step="1"
                                class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
 
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Blue increment</label>
 
-                        <input v-model="bbIncrement" type="text"
+                        <input v-model="bbIncrement" type="number" step="1"
                                class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
                     </div>
                 </div>
@@ -72,8 +72,9 @@
                     </button>
                 </div>
 
-                <div class="p-8 rounded-sm color-cycle"
-                     :style="{'animation-duration': animationDuration,'animation-delay':animationDelay/*,'animation-name': animationName */}">
+                <div class="p-8 rounded-sm"
+                     style="transition-property: background-color;transition-timing-function: ease-in-out;"
+                     :style="{'transition-duration': `${animationDelay}s`,'background-color': bcColor}">
                     &nbsp;
                 </div>
             </div>
@@ -84,50 +85,71 @@
 <script setup>
 
 import {ref, computed} from "vue";
+import _ from 'lodash';
 
 const rr = ref('FF');
 const gg = ref('FF');
 const bb = ref('FF');
 
-const animationDuration = ref('11s')
+//const animationDuration = ref('11s')
 const animationDelay = ref(0.25)
-const animationName = ref('colorchange');
+//const animationName = ref('colorchange');
 
-const rrIncrement = ref(0x1);
-const ggIncrement = ref(0x1);
-const bbIncrement = ref(0x1);
+const bcColor = ref('');
+
+const rrIncrement = ref(2);
+const ggIncrement = ref(2);
+const bbIncrement = ref(2);
 
 const isRunning = ref(false)
-const backgroundObject = computed(() => {
-    return {
-        backgroundColor: `#${rr.value}${gg.value}${bb.value}`,
-    }
-})
+let intervalID = null;
+let colorArray = [];
 
 function startColorCycle() {
     isRunning.value = !isRunning.value;
 
-    rr.value;
-    for (let i = 0x0; i <= 0xFF; rrIncrement.value++) {
-        i.toString(16);
-        //console.log("" + i.toString(16) + " = " + i)
+    const colors = generateColorArray();
+
+    for (let i = 0; i < colors.length; i++) {
+        _.delay(function () {
+            bcColor.value = colors[i];
+        }, animationDelay.value * 1000);
     }
+    /*intervalID = setInterval(() => {
 
-    /*for (let i = 0x0; i <= 0xFF; ggIncrement.value++) {
-        i.toString(16);
-        //console.log("" + i.toString(16) + " = " + i)
-    }
+    }, animationDelay.value)*/
 
 
-    for (let i = 0x0; i <= 0xFF; bbIncrement.value++) {
-        i.toString(16);
-        //console.log("" + i.toString(16) + " = " + i)
-    }*/
 }
 
-let dynamicStyles = null;
+function generateColorArray() {
+    const rrIncrementHex = parseInt(rrIncrement.value.toString(16), 16);
+    let rrArray = [];
+    let bbArray = [];
+    let ggArray = [];
 
-function addAnimation(body) {
+    let zip = (a1, a2, a3) => a1.map((x, i) => `#${x}${a2[i]}${a3[i]}`);
+
+    for (let i = 0x0; i <= 0xFF; i += rrIncrementHex) {
+        rrArray.push(i.toString(16));
+    }
+
+    const ggIncrementHex = parseInt(ggIncrement.value.toString(16), 16);
+    for (let i = 0x0; i <= 0xFF; i += ggIncrementHex) {
+        ggArray.push(i.toString(16));
+    }
+
+    const bbIncrementHex = parseInt(bbIncrement.value.toString(16), 16);
+    for (let i = 0x0; i <= 0xFF; i += bbIncrementHex) {
+        bbArray.push(i.toString(16));
+    }
+
+    return zip(rrArray, ggArray, bbArray);
+}
+
+//let dynamicStyles = null;
+
+/*function addAnimation(body) {
     if (!dynamicStyles) {
         dynamicStyles = document.createElement('style');
         dynamicStyles.type = 'text/css';
@@ -135,8 +157,9 @@ function addAnimation(body) {
     }
 
     dynamicStyles.sheet.insertRule(body, dynamicStyles.length);
-}
+}*/
 
+/*
 addAnimation(`
       @keyframes move-eye {
          from {
@@ -147,15 +170,20 @@ addAnimation(`
         }
       }
     `);
+*/
 
 
 function stopColorCycle() {
     isRunning.value = !isRunning.value;
+
+    clearInterval(intervalID);
+    // release our intervalID from the variable
+    intervalID = null;
 }
 </script>
 
 <style scoped>
-.color-cycle {
+/*.color-cycle {
     background-color: rgb(255, 255, 255);
     animation-name: colorchange;
     animation-iteration-count: infinite;
@@ -195,5 +223,5 @@ function stopColorCycle() {
     100% {
         background-color: #bcef32;
     }
-}
+}*/
 </style>
