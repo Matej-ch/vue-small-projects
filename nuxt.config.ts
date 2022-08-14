@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     },
     modules: [
         ['@nuxtjs/tailwindcss'],
+        ['@nuxtjs/color-mode'],
         [
             '@pinia/nuxt',
             {
@@ -41,6 +42,15 @@ export default defineNuxtConfig({
             },
         ]
     ],
+    colorMode: {
+        preference: 'light', // default value of $colorMode.preference
+        fallback: 'system', // fallback value if not system preference found
+        globalName: '__NUXT_COLOR_MODE__',
+        componentName: 'ColorScheme',
+        classPrefix: '',
+        classSuffix: '-mode',
+        storageKey: 'nuxt-color-mode'
+    },
     vite: {
         plugins: [
             Icons({
