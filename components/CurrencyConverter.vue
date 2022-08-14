@@ -13,16 +13,14 @@
                         <label class="mb-1">From</label>
 
                         <input v-model="from"
-                               type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                               type="text">
                     </div>
 
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1">To</label>
 
                         <input v-model="to"
-                               type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                               type="text">
                     </div>
 
                 </div>
@@ -33,8 +31,7 @@
                         <label class="mb-1">Amount</label>
 
                         <input v-model="amount"
-                               type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                               type="text">
                     </div>
 
                     <div class="flex flex-col text-center w-3/6 px-2">

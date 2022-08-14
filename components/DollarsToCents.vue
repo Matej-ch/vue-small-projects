@@ -10,9 +10,7 @@
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1" for="weight-kilograms">Dollars</label>
 
-                        <input v-model="dollars" @keyup="convert" type="number" step="0.01" min="0"
-                               class="py-3 px-5 rounded focus:outline-none text-slate-600 focus:text-slate-600"
-                        >
+                        <input v-model="dollars" @keyup="convert" type="number" step="0.01" min="0">
                     </div>
 
                     <div class="">

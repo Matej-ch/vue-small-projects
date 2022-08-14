@@ -15,7 +15,7 @@
         </div>
 
         <div v-for="operation in githubOperations" class="py-2 flex flex-row justify-between w-full flex-wrap px-4"
-             :class="operation.status === 'operational' ? 'bg-emerald-300' : 'bg-orange-300'">
+             :class="operation.status === 'operational' ? 'bg-emerald-600' : 'bg-orange-600'">
             <div class="flex w-1/2 flex-col font-bold">
                 {{operation.name}}
                 <span class="text-[.65rem]">{{operation.description}}</span>

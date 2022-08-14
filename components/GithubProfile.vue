@@ -8,7 +8,7 @@
             <div class="flex justify-between mb-3 w-full flex-col">
                 <label class="mb-1 font-bold text-white">Github username</label>
                 <input v-model="username" placeholder="Github username" @keyup.enter="search"
-                       class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 w-full">
+                       class="w-full">
             </div>
 
             <div>

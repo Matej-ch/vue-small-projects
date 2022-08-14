@@ -1,8 +1,8 @@
 <template>
 
-    <div class="w-full mx-auto rounded-xl bg-gray-100 shadow-xl text-gray-800 relative overflow-hidden"
+    <div class="w-full mx-auto rounded-xl bg-slate-100 shadow-xl text-slate-800 relative overflow-hidden"
          style="max-width:300px">
-        <div class="w-full h-40 bg-gradient-to-b from-gray-800 to-gray-700 flex items-end text-right flex-col">
+        <div class="w-full h-40 bg-gradient-to-b from-slate-800 to-slate-700 flex items-end text-right flex-col">
             <div class="w-full pt-4 px-6 text-3xl text-white font-thin">{{operation}}</div>
             <div class="w-full py-5 px-6 text-6xl text-white font-thin mt-auto">{{result}}</div>
         </div>

@@ -12,8 +12,7 @@
 
                         <input v-model="city"
                                type="text"
-                               @keyup.enter="checkWeather"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                               @keyup.enter="checkWeather">
                     </div>
 
                     <div class="flex flex-col text-center w-3/6 px-2">

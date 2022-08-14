@@ -15,7 +15,7 @@
                 <label class="mb-1">Encryption keyword</label>
 
                 <input v-model="keyword" type="text" placeholder="Encryption key" @keyup="generateKey"
-                       class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 w-full">
+                       class="w-full">
 
             </div>
         </div>

@@ -6,10 +6,9 @@
 
         <div class="px-4 py-5">
 
-            <div class="flex items-center justify-between mb-3 w-full flex-col">
+            <div class="flex mb-3 w-full flex-col">
                 <label class="mb-1 font-bold text-white">Text to analyze</label>
-                <textarea v-model="textarea" cols="30" rows="10"
-                          placeholder="Text to analyze"></textarea>
+                <textarea v-model="textarea" cols="30" rows="10" placeholder="Input text to analyze"></textarea>
             </div>
 
             <div>

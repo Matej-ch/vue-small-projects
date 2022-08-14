@@ -14,8 +14,7 @@
                         <input v-model="passwordLength"
                                type="number"
                                step="1"
-                               min="1"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                               min="1">
                     </div>
 
                     <div class="flex flex-col text-center w-3/6 px-2">
@@ -31,26 +30,22 @@
                     <div class="flex flex-col px-2 justify-start">
                         <label class="mb-1 flex justify-between">Include uppercase letters:
 
-                            <input v-model="hasUpperCase" type="checkbox"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                            <input v-model="hasUpperCase" type="checkbox">
                         </label>
 
                         <label class="mb-1 flex justify-between">Include lowercase letters:
 
-                            <input v-model="hasLowerCase" type="checkbox"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                            <input v-model="hasLowerCase" type="checkbox">
                         </label>
 
                         <label class="mb-1 flex justify-between">Include numbers:
 
-                            <input v-model="hasNumbers" type="checkbox"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                            <input v-model="hasNumbers" type="checkbox">
                         </label>
 
                         <label class="mb-1 flex justify-between">Include symbols:
 
-                            <input v-model="hasSymbols" type="checkbox"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                            <input v-model="hasSymbols" type="checkbox">
                         </label>
                     </div>
                 </div>

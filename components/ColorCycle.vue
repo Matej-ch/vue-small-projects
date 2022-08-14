@@ -10,22 +10,18 @@
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Red (RR)</label>
 
-                        <input v-model="rr" type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
-                        >
+                        <input v-model="rr" type="text">
                     </div>
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Green (GG)</label>
 
-                        <input v-model="gg" type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        <input v-model="gg" type="text">
                     </div>
 
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Blue (BB)</label>
 
-                        <input v-model="bb" type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        <input v-model="bb" type="text">
                     </div>
                 </div>
 
@@ -33,31 +29,25 @@
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Red increment</label>
 
-                        <input v-model="rrIncrement" type="number" step="1"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
-                        >
+                        <input v-model="rrIncrement" type="number" step="1">
                     </div>
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Green increment</label>
 
-                        <input v-model="ggIncrement" type="number" step="1"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        <input v-model="ggIncrement" type="number" step="1">
                     </div>
 
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Blue increment</label>
 
-                        <input v-model="bbIncrement" type="number" step="1"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        <input v-model="bbIncrement" type="number" step="1">
                     </div>
                 </div>
 
                 <div class="flex items-center justify-between mb-5">
                     <div class="flex flex-col text-center w-2/6 px-2">
                         <label class="mb-1">Interval</label>
-                        <input v-model="animationDelay" type="number" step="0.01"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
-                        >
+                        <input v-model="animationDelay" type="number" step="0.01">
                     </div>
                 </div>
 

@@ -10,15 +10,12 @@
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1">Roman numeral</label>
 
-                        <input v-model="roman" type="text" @keyup="generateDecimal"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
-                        >
+                        <input v-model="roman" type="text" @keyup="generateDecimal">
                     </div>
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1">Decimal</label>
 
-                        <input v-model="decimal" type="text" @keyup="generateRoman"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        <input v-model="decimal" type="text" @keyup="generateRoman">
                     </div>
                 </div>
 

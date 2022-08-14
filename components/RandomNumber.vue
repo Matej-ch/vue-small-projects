@@ -10,15 +10,12 @@
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1">MIN</label>
 
-                        <input v-model="min" type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600"
-                        >
+                        <input v-model="min" type="text">
                     </div>
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1">MAX</label>
 
-                        <input v-model="max" type="text"
-                               class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                        <input v-model="max" type="text">
                     </div>
                 </div>
 
@@ -26,8 +23,7 @@
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1">Include decimal values:
 
-                            <input v-model="isDecimal" type="checkbox"
-                                   class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600">
+                            <input v-model="isDecimal" type="checkbox">
                         </label>
                     </div>
 

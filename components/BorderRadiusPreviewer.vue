@@ -7,14 +7,14 @@
         <div class="px-4 py-5">
             <div class="flex flex-col text-white">
                 <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Top left 1:</label>
 
                         <input v-model="topLeftOne" type="range" min="0" max="500"
                                class="py-3 px-5 rounded slider"
                                :step="unit!=='px' ? 0.1 : 1">
                     </div>
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Top left 2:</label>
 
                         <input v-model="topLeftTwo" type="range" min="0" max="500"
@@ -24,14 +24,14 @@
                 </div>
 
                 <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Top right 1:</label>
 
                         <input v-model="topRightOne" type="range" min="0" max="500"
                                class="py-3 px-5 rounded slider"
                                :step="unit!=='px' ? 0.1 : 1">
                     </div>
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Top right 2:</label>
 
                         <input v-model="topRightTwo" type="range" min="0" max="500"
@@ -41,14 +41,14 @@
                 </div>
 
                 <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Bottom right 1:</label>
 
                         <input v-model="bottomRightOne" type="range" min="0" max="500"
                                class="py-3 px-5 rounded slider"
                                :step="unit!=='px' ? 0.1 : 1">
                     </div>
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Bottom right 2:</label>
 
                         <input v-model="bottomRightTwo" type="range" min="0" max="500"
@@ -58,14 +58,14 @@
                 </div>
 
                 <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Bottom right 1:</label>
 
                         <input v-model="bottomLeftOne" type="range" min="0" max="500"
                                class="py-3 px-5 rounded slider"
                                :step="unit!=='px' ? 0.1 : 1">
                     </div>
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Bottom right 2:</label>
 
                         <input v-model="bottomLeftTwo" type="range" min="0" max="500"
@@ -74,18 +74,17 @@
                     </div>
                 </div>
 
-                <div class="flex items-center justify-between mb-5 text-right">
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                <div class="flex items-center justify-between mb-5">
+                    <div class="flex flex-col font-bold w-3/6 px-2">
                         <label class="mb-1">Border height</label>
                         <input v-model="borderWidth" type="range" min="1" max="500" :step="1"
                                class="py-3 px-5 rounded slider">
                     </div>
 
-                    <div class="flex flex-row items-center w-3/6 px-2">
-                        <label for="decimals" class="mr-3">Unit:</label>
+                    <div class="flex flex-col w-3/6 px-2">
+                        <label for="decimals" class="mr-3 font-bold">Units:</label>
 
-                        <select v-model="unit"
-                                class="appearance-none border-none text-gray-600 py-3 pl-3 pr-8 rounded leading-tight w-32">
+                        <select v-model="unit">
                             <option value="px">px</option>
                             <option value="em">em</option>
                         </select>

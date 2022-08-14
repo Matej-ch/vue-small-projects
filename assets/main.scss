@@ -375,3 +375,11 @@ body {
 a {
   color: var(--color-primary)
 }
+
+select {
+  @apply bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+}
+
+input {
+  @apply py-3 px-5 rounded focus:outline-none text-slate-600 focus:text-slate-600;
+}
