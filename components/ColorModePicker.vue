@@ -1,7 +1,7 @@
 <template>
     <div>
-        <ul>
-            <li :class="{
+        <div class="flex flex-row justify-center gap-2">
+            <label :class="{
           preferred: !$colorMode.unknown && 'light' === $colorMode.preference,
           selected: !$colorMode.unknown && 'light' === $colorMode.value
         }">
@@ -27,8 +27,9 @@
                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                 </svg>
-            </li>
-            <li :class="{
+                <input type="radio" class="hidden" v-model="$colorMode.preference" value="light">
+            </label>
+            <label :class="{
           preferred: !$colorMode.unknown && 'dark' === $colorMode.preference,
           selected: !$colorMode.unknown && 'dark' === $colorMode.value
         }">
@@ -46,8 +47,9 @@
                 >
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                 </svg>
-            </li>
-            <li :class="{
+                <input type="radio" class="hidden" v-model="$colorMode.preference" value="dark">
+            </label>
+            <label :class="{
           preferred: !$colorMode.unknown && 'system' === $colorMode.preference,
           selected: !$colorMode.unknown && 'system' === $colorMode.value
         }">
@@ -74,8 +76,9 @@
                     <line x1="8" y1="21" x2="16" y2="21"/>
                     <line x1="12" y1="17" x2="12" y2="21"/>
                 </svg>
-            </li>
-            <li :class="{
+                <input type="radio" class="hidden" v-model="$colorMode.preference" value="system">
+            </label>
+            <label :class="{
           preferred: !$colorMode.unknown && 'sepia' === $colorMode.preference,
           selected: !$colorMode.unknown && 'sepia' === $colorMode.value
         }">
@@ -97,8 +100,9 @@
                     <line x1="10" y1="1" x2="10" y2="4"/>
                     <line x1="14" y1="1" x2="14" y2="4"/>
                 </svg>
-            </li>
-        </ul>
+                <input type="radio" class="hidden" v-model="$colorMode.preference" value="sepia">
+            </label>
+        </div>
         <p>
             <ColorScheme placeholder="..." tag="span">
                 Color mode: <b>{{$colorMode.preference}}</b>
@@ -109,20 +113,10 @@
 </template>
 
 <script setup>
-
+const colorMode = useColorMode()
 </script>
 
 <style scoped>
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-ul li {
-    display: inline-block;
-    padding: 5px;
-}
 
 p {
     margin: 0;
@@ -137,6 +131,7 @@ p {
     padding: 7px;
     background-color: var(--bg-secondary);
     border: 2px solid var(--border-color);
+    color: var(--color);
     margin: 0;
     border-radius: 5px;
     transition: all 0.1s ease;
