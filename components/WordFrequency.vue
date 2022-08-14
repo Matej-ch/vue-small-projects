@@ -20,7 +20,7 @@
             </div>
 
 
-            <div v-show="message" class="bg-red-300 text-red-500 p-4">
+            <div v-show="message" class="bg-red-300 text-red-700 my-2 p-4 font-bold">
                 {{message}}
             </div>
 
@@ -42,7 +42,7 @@
                     </table>
                 </div>
 
-                <div class="word-map flex flex-wrap">
+                <div class="word-map flex flex-wrap bg-slate-100 mx-2 mt-4 rounded-sm">
 
                     <span v-for="(wordCount,word) in wordCounts" :key="word"
                           :style="'font-size:' + (parseInt(fontSize) + parseInt(wordCount)) + 'px'">
@@ -89,8 +89,6 @@ function translate() {
 }
 
 .word-map {
-    padding-top: 30px;
-
     span {
         padding-left: 10px;
         padding-right: 10px;
