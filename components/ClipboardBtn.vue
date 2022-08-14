@@ -1,6 +1,6 @@
 <template>
     <button @click="copy"
-            class="btn btn-slate">
+            class="btn" :class="props.btnClass">
         <svg v-show="copyState === 0" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard"
              width="28"
              height="28"
@@ -38,9 +38,13 @@
 import {ref} from "vue";
 import {useToast} from "vue-toastification";
 
+
 const toast = useToast();
 
-const props = defineProps(['text'])
+const props = defineProps({
+    text: String,
+    btnClass: {type: String, default: 'btn-slate'}
+})
 
 const copyState = ref(0);
 
