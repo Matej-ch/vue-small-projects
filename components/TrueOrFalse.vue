@@ -19,13 +19,30 @@
                     </div>
                 </div>
 
-                <div class="flex items-center justify-between mb-5 text-right">
-                    <div class="flex flex-col text-right w-3/6 px-2">
-                        <label for="decimals" class="mr-3 font-bold">Comparison operator</label>
-                    </div>
-                    <div class="flex flex-col px-2 w-3/6 ">
+                <div class="flex items-center justify-between mb-5">
 
-                        <select v-model="comparator" @change="compareValues">
+                    <div class="flex flex-col w-3/6 px-2 justify-between">
+                        <label class="mr-3 font-bold">Compare as</label>
+
+                        <div class="flex items-center gap-4 font-bold">
+                            <label>
+                                Number
+                                <input v-model="forceType" type="radio" value="number">
+                            </label>
+                            <label>
+                                String
+                                <input v-model="forceType" type="radio" value="string">
+                            </label>
+                            <label>
+                                Boolean
+                                <input v-model="forceType" type="radio" value="bool">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col px-2 w-3/6 ">
+                        <label for="decimals-comparison" class="mr-3 font-bold">Comparison operator</label>
+                        <select v-model="comparator" @change="compareValues" id="decimals-comparison">
                             <option value=">">&gt;</option>
                             <option value=">=">&gt;=</option>
                             <option value="<">&lt;</option>
@@ -38,20 +55,6 @@
                     </div>
                 </div>
 
-                <div class="flex items-center gap-4 mb-5 font-bold">
-                    <label>
-                        Number
-                        <input v-model="forceType" type="radio" value="number">
-                    </label>
-                    <label>
-                        String
-                        <input v-model="forceType" type="radio" value="string">
-                    </label>
-                    <label>
-                        Boolean
-                        <input v-model="forceType" type="radio" value="bool">
-                    </label>
-                </div>
 
                 <div class="flex items-center justify-between mb-5">
                     <div v-show="result" class="w-full text-xl p-4 font-bold rounded-sm"
