@@ -110,14 +110,11 @@ function startColorCycle() {
 
     const colors = generateColorArray();
 
-    for (let i = 0; i < colors.length; i++) {
-        _.delay(function () {
-            bcColor.value = colors[i];
-        }, animationDelay.value * 1000);
-    }
-    /*intervalID = setInterval(() => {
-
-    }, animationDelay.value)*/
+    _.each(colors, function (color, i) {
+        setTimeout(function () {
+            bcColor.value = color;
+        }, 1000 * i);
+    });
 
 
 }
