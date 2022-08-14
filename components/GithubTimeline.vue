@@ -29,12 +29,15 @@
                         <div class="flag-wrapper">
                             <span class="flag">{{repo.name}}</span>
                             <span class="time-wrapper" v-show="repo.stargazers_count > 0">
-                                <span class="time">{{repo.stargazers_count}}</span>
+                                <span class="time" title="Star count">{{repo.stargazers_count}}</span>
                             </span>
                         </div>
-                        <div class="desc" v-if="repo.description">{{repo.description}}</div>
+                        <div class="desc" v-if="repo.description">
+                            <a :href=repo.html_url target="_blank" rel="noreferrer"
+                               class="text-black">{{repo.description}}</a>
+                        </div>
                         <div class="desc" v-else>
-                            <a :href=repo.html_url>{{repo.full_name}}</a>
+                            <a class="text-black" :href=repo.html_url>{{repo.full_name}}</a>
                         </div>
                     </div>
                 </li>
@@ -153,7 +156,7 @@ function getRepos() {
 .direction-r .flag:before {
     position: absolute;
     top: 50%;
-    right: -40px;
+    right: -36px;
     content: ' ';
     display: block;
     width: 12px;
@@ -166,7 +169,7 @@ function getRepos() {
 }
 
 .direction-r .flag:before {
-    left: -40px;
+    left: -36px;
 }
 
 .direction-l .flag:after {
