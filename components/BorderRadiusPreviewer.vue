@@ -76,7 +76,7 @@
 
                 <div class="flex items-center justify-between mb-5 text-right">
                     <div class="flex flex-col text-center w-3/6 px-2">
-
+                        <label class="mb-1">Border height</label>
                         <input v-model="borderWidth" type="range" min="1" max="500" :step="1"
                                class="py-3 px-5 rounded slider">
                     </div>

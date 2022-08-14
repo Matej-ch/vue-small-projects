@@ -2,7 +2,7 @@
 
     <div>
         <div class="component-header">
-            <h2>Binary to deca convertor</h2>
+            <h2>Binary to decimal convertor</h2>
         </div>
 
         <div class="px-4 py-5">
@@ -12,7 +12,7 @@
                     <div class="flex flex-col text-center w-3/6 px-2">
                         <label class="mb-1" for="weight-kilograms">Binary number</label>
 
-                        <input v-model="binaryNumber" @keyup="checkBinary"
+                        <input v-model="binaryNumber" @input="checkBinary" @keyup="convertBinary"
                                class="py-3 px-5 rounded focus:outline-none text-slate-600 focus:text-slate-600"
                         >
                     </div>
@@ -30,8 +30,7 @@
                 <div class="flex flex-col text-right px-2 font-bold text-xl">
                     {{decimal}}
                 </div>
-                <div v-show="errorMessage" class="bg-red-500 flex flex-col text-center px-2 font-bold"
-                     style="margin-bottom: 15px;margin-top: 15px;">
+                <div v-show="errorMessage" class="bg-red-500 flex flex-col text-center px-2 font-bold my-4">
                     {{errorMessage}}
                 </div>
             </div>
@@ -46,7 +45,7 @@
 import {ref} from 'vue';
 
 const binaryNumber = ref('');
-const decimal = ref('');
+const decimal = ref(0);
 const errorMessage = ref('');
 
 function checkBinary() {
@@ -71,14 +70,4 @@ function convertBinary() {
 </script>
 
 <style scoped lang="scss">
-.btn-wrapper {
-    padding-bottom: 15px;
-    padding-top: 15px;
-    display: flex;
-    justify-content: center;
-}
-
-.output {
-    padding: 15px;
-}
 </style>
