@@ -11,11 +11,16 @@
 
         </div>
 
+        <div class="absolute top-2 right-2">
+            <ColorModePicker/>
+        </div>
+
     </div>
 </template>
 
 <script setup>
 
 import Navbar from '../components/Navbar'
+import ColorModePicker from "../components/ColorModePicker";
 
 </script>

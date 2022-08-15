@@ -7,8 +7,8 @@
         }">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
+                    width="34"
+                    height="34"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -35,8 +35,8 @@
         }">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
+                    width="34"
+                    height="34"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -55,8 +55,8 @@
         }">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
+                    width="34"
+                    height="34"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -84,8 +84,8 @@
         }">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
+                    width="34"
+                    height="34"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -103,17 +103,11 @@
                 <input type="radio" class="hidden" v-model="$colorMode.preference" value="sepia">
             </label>
         </div>
-        <p>
-            <ColorScheme placeholder="..." tag="span">
-                Color mode: <b>{{$colorMode.preference}}</b>
-                <span v-if="$colorMode.preference === 'system'">&nbsp;(<i>{{$colorMode.value}}</i> mode detected)</span>
-            </ColorScheme>
-        </p>
     </div>
 </template>
 
 <script setup>
-const colorMode = useColorMode()
+
 </script>
 
 <style scoped>
