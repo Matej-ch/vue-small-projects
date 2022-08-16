@@ -2,12 +2,12 @@
     <TreeJson/>
 </template>
 
-<script setup>
+<script>
 import {useHead} from "nuxt/app";
 import TreeJson from '../components/TreeJson'
 
 useHead({
-    title: `Json tree`
+    title: `Tree structure`
 })
 </script>
 
