@@ -1,12 +1,13 @@
 <template>
-
+    <TreeStructure/>
 </template>
 
-<script setup>
+<script>
+import TreeStructure from '../components/TreeStructure'
 import {useHead} from "nuxt/app";
 
 useHead({
-    title: `Json tree`
+    title: `Tree structure`
 })
 </script>
 
