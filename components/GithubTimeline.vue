@@ -123,21 +123,15 @@ function getRepos() {
 }
 
 .flag-wrapper {
-    position: relative;
-    display: inline-block;
-
-    text-align: center;
+    @apply text-center inline-block relative;
 }
 
 .flag {
-    position: relative;
-    display: inline;
     background: rgb(248, 248, 248);
     padding: 6px 10px;
     border-radius: 5px;
-
     font-weight: 600;
-    text-align: left;
+    @apply text-left inline text-slate-900 relative;
 }
 
 .direction-l .flag {

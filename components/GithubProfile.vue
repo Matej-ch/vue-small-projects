@@ -24,18 +24,27 @@
             </div>
 
             <div class="flex text-base font-bold gap-2 mb-3 w-full flex-row" v-show="isFound">
-                <img :src=avatar :alt=foundUserName class="object-contain h-24"> User {{foundUserName}} has
-                {{followers}}
-                followers
-                and {{repoCount}}
-                repositories
+                <img :src=avatar :alt=foundUserName class="object-contain h-24">
+                User {{foundUserName}} has {{followers}} followers and {{repoCount}} repositories
             </div>
 
             <div v-show="topRepos.length">
-                <div v-for="repo in topRepos" class="flex justify-between">
-                    <span> {{repo.full_name}} </span>
-                    <span> {{repo.description}} </span>
-                    <span> <a :href=repo.url>{{repo.url}}</a> </span>
+                <div v-for="repo in topRepos" class="flex justify-between pb-4">
+                    <div>
+                        <div class="font-bold flex gap-4"> {{repo.full_name}}
+                            <a :href=repo.html_url class="text-slate-900 flex flex-row gap-1 items-center"
+                               target="_blank"
+                               rel="noreferrer nofollow">
+                                <BaselineInsertLink/>
+                                Repository
+                            </a>
+                        </div>
+                        <div> {{repo.description}}</div>
+                    </div>
+
+                    <span>
+
+                    </span>
                     <span class="font-bold"> {{repo.language}} </span>
                 </div>
             </div>
@@ -44,7 +53,7 @@
 </template>
 
 <script setup>
-
+import BaselineInsertLink from '~icons/ic/baseline-insert-link'
 import {ref} from "vue";
 
 const username = ref('')
@@ -62,6 +71,8 @@ function search() {
     if (!username.value.length) {
         return;
     }
+
+    topRepos.value = [];
 
     fetch(`https://api.github.com/users/${username.value}`)
         .then(response => {
@@ -95,7 +106,7 @@ function getRepos(url) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            topRepos.value = data.slice(0, 4);
+            topRepos.value = data.slice(0, 5);
         }).catch(err => console.error(err))
 }
 </script>
