@@ -36,7 +36,7 @@
 
                 </div>
 
-                <div class="flex mb-5 font-bold justify-center text-center">
+                <div class="flex mb-5 font-bold justify-center text-center text-xl">
                     {{randomNumber}}
                 </div>
 

@@ -9,32 +9,34 @@
             <div class="flex flex-col text-white">
 
                 <div class="flex items-end justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col w-3/6 px-2">
                         <label class="mb-1">From</label>
-
-                        <input v-model="from"
-                               type="text">
+                        <select v-model="from" name="currency-from">
+                            <option :value="name" v-for="(value, name, index) in currencyOptions">
+                                {{value}}
+                            </option>
+                        </select>
                     </div>
 
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col w-3/6 px-2">
                         <label class="mb-1">To</label>
-
-                        <input v-model="to"
-                               type="text">
+                        <select v-model="to" name="currency-to">
+                            <option :value="name" v-for="(value, name, index) in currencyOptions">
+                                {{value}}
+                            </option>
+                        </select>
                     </div>
-
                 </div>
 
-
                 <div class="flex items-end justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col w-3/6 px-2">
                         <label class="mb-1">Amount</label>
 
-                        <input v-model="amount"
-                               type="text">
+                        <input v-model="amount" step="0.01"
+                               type="number">
                     </div>
 
-                    <div class="flex flex-col text-center w-3/6 px-2">
+                    <div class="flex flex-col w-3/6 px-2">
                         <button @click="convert"
                                 class="btn btn-red">
                             Convert
@@ -42,7 +44,7 @@
                     </div>
                 </div>
 
-                <div v-show="msg.length" class="bg-blue-900 text-white rounded-full px-4 font-bold">
+                <div v-show="msg.length" class="bg-blue-900 text-white rounded p-4 font-bold">
                     {{msg}}
                 </div>
 
@@ -61,12 +63,17 @@ const msg = ref('')
 const from = ref('')
 const to = ref('')
 
+const currencyOptions = ref({});
+
 let apiKey = '';
 let apiBase = '';
 
 onMounted(() => {
     apiKey = config.currencyApiKey;
     apiBase = config.currencyApiBase;
+
+    getCountries();
+
 })
 
 function convert() {
@@ -89,7 +96,7 @@ function convert() {
         .then(response => response.json())
         .then(result => {
             if (result.success === true) {
-                msg.value = `${amount.value}${from.value} -> ${result.result}${to.value}`;
+                msg.value = `${amount.value} ${from.value} -> ${result.result} ${to.value}`;
             } else {
                 msg.value = `Cannot convert: ${result.message}`;
             }
@@ -109,8 +116,10 @@ function getCountries() {
     };
 
     fetch("https://api.apilayer.com/exchangerates_data/symbols", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(response => response.json())
+        .then(result => {
+            currencyOptions.value = result.symbols;
+        })
         .catch(error => console.log('error', error));
 }
 

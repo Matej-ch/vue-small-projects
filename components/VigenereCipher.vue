@@ -56,7 +56,6 @@ const decryptedText = ref('');
 function encrypt() {
     let result = '';
     for (let i = 0; i < textarea.value.length; i++) {
-        console.log(textarea.value);
         let x = (textarea.value[i].charCodeAt(0) + key.value[i].charCodeAt(0)) % 26;
 
         x += 'A'.charCodeAt(0);
@@ -86,7 +85,6 @@ function generateKey() {
 
     if (textarea.value.length === tempKey.length) {
         key.value = tempKey.join("");
-        //return tempKey.join("");
     } else {
         let temp = tempKey.length;
         for (let i = 0; i < (textarea.value.length - temp); i++) {
@@ -96,8 +94,6 @@ function generateKey() {
     }
 
     key.value = tempKey.join("");
-    console.log(key.value);
-    //return tempKey.join("");
 }
 </script>
 

@@ -269,6 +269,8 @@ textarea {
 }
 
 .js-markdown {
+  @apply text-slate-900;
+  
   h1 {
     @apply text-5xl;
   }

@@ -19,9 +19,9 @@
 
                 <div v-show="meals.length">
                     <div v-for="meal in meals">
-                        <div class="flex flex-row gap-2">
-                            <h2 class="font-bold">{{meal.strMeal}}</h2>
+                        <div class="flex flex-row gap-2 items-center mb-4">
                             <img :src=meal.strMealThumb :alt=meal.strMeal style="max-width: 100px;">
+                            <h2 class="font-bold">{{meal.strMeal}}</h2>
                         </div>
 
                         <div class="text-left">

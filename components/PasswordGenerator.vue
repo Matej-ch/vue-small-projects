@@ -56,9 +56,9 @@
                 </div>
 
                 <div v-show="password.length"
-                     class="bg-blue-900 text-white rounded-sm px-4 py-3 font-bold flex flex-col">
+                     class="bg-blue-900 text-white rounded-sm px-4 py-6 font-bold flex flex-col relative">
                     <div>{{password}}</div>
-                    <div class="py-2">
+                    <div class="absolute right-4 top-2">
                         <ClipboardBtn :text="password"></ClipboardBtn>
                     </div>
                 </div>
