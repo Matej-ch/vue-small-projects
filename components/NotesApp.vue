@@ -17,9 +17,10 @@
 
             <div class="flex mb-3 w-full flex-col">
                 <div v-for="note in notes" :key="note.id"
-                     class="flex flex-row px-2 font-bold text-xl border-b border-b-slate-500 bg-slate-50 py-2 rounded">
+                     class="flex flex-row px-2 font-bold text-xl border-b border-b-slate-500 bg-slate-50 py-2 mb-2 rounded">
                     <div class="flex flex-col">
-                        <div class="flex flex-row">{{note.id}}.
+                        <div class="flex flex-row gap-2">
+                            <span class=" text-slate-700">{{note.id}}</span>
                             <span v-show="note.isEditing === false" class="cursor-pointer js-markdown"
                                   @dblclick="note.isEditing = true"
                                   v-html="marked.parse(note.text)"></span>
@@ -27,7 +28,7 @@
                                    @keyup.enter="editNote(note)"
                                    class="border-sky-200 border px-1 rounded">
                         </div>
-                        <span class="font-bold text-sm text-slate-700">Created at {{new Date(note.date)}}</span>
+                        <span class="font-bold text-[0.75rem] text-slate-700">Created at {{new Date(note.date)}}</span>
                     </div>
                     <div class="ml-auto">
                         <button class="" @click="deleteNote(note)">&#10060;</button>
