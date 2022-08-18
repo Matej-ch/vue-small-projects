@@ -23,12 +23,21 @@
             </div>
 
             <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <div class="flex flex-row flex text-right px-2 font-bold text-xl gap-0.5">
-                    You have {{pennies + nickel + dime + quarter}} coins:
-                    {{quarter}} <span class="decoration-slate-600 decoration-2 underline">quarters</span>,
-                    {{dime}} <span class="decoration-neutral-500 decoration-2 underline"> dimes</span>,
-                    {{nickel}} <span class="decoration-yellow-400 decoration-2 underline"> nickel</span> and
-                    {{pennies}} <span class="decoration-amber-600 decoration-2 underline"> pennies</span>
+                <div class="flex flex-row flex text-right px-2 font-bold text-xl gap-2">
+                    <span>You have {{pennies + nickel + dime + quarter}} coins:</span>
+                    <span>{{quarter}}<span
+                        class="decoration-slate-600 decoration-2 underline">&nbsp;{{quarter === 1 ? 'quarter' : 'quarters'}}</span>,
+                    </span>
+                    <span>{{dime}}<span
+                        class="decoration-neutral-500 decoration-2 underline">&nbsp;{{dime === 1 ? 'dime' : 'dimes'}}</span>,
+                    </span>
+                    <span>{{nickel}}<span
+                        class="decoration-yellow-400 decoration-2 underline">&nbsp;{{nickel === 1 ? 'nickel' : 'nickels'}}</span>
+                    </span>
+                    <span class="text-slate-800">and</span>
+                    <span>{{pennies}}<span
+                        class="decoration-amber-600 decoration-2 underline">&nbsp;{{pennies === 1 ? 'penny' : 'pennies'}} </span>
+                    </span>
                 </div>
             </div>
 

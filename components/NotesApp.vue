@@ -44,7 +44,6 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {marked} from 'marked';
-import DOMPurify from 'dompurify';
 
 const note = ref('');
 const notes = ref([]);
