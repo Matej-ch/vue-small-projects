@@ -2,7 +2,8 @@
     <TreeStructure/>
 </template>
 
-<script setup>
+<script>
+import TreeStructure from '../components/TreeStructure'
 import {useHead} from "nuxt/app";
 import TreeStructure from "../components/TreeStructure";
 
