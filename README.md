@@ -8,14 +8,14 @@ Collection of components based on https://webdevscom.github.io/resources/5
 
 1. [x] 
    ColorCycle [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Color-Cycle-App.md)
-2. [] NASA Exoplanet
+2. [ ] NASA Exoplanet
    Query [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/NASA-Exoplanet-Query.md)
 3. [x] GitHub
    Timeline [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/GitHub-Timeline-App.md)
 4. [x] Bin2Dec [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md)
 5. [x] Border Radius
    Previewer [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Border-Radius-Previewer.md)
-6. [ ] 
+6. [x] 
    Calculator [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Calculator-App.md)
 7. [x] Random Meal
    Generator [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Random-Meal-Generator.md)
