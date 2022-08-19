@@ -1,10 +1,10 @@
 <template>
-    <TreeJson/>
+    <TreeStructure/>
 </template>
 
-<script>
+<script setup>
 import {useHead} from "nuxt/app";
-import TreeJson from '../components/TreeJson'
+import TreeStructure from "../components/TreeStructure";
 
 useHead({
     title: `Tree structure`
