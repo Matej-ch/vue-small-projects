@@ -4,32 +4,32 @@
          style="max-width:300px">
         <div class="w-full h-40 bg-gradient-to-b from-slate-800 to-slate-700 flex items-end text-right flex-col">
             <div class="w-full pt-4 px-6 text-3xl text-white font-thin">{{operation}}</div>
-            <div class="w-full py-5 px-6 text-6xl text-white font-thin mt-auto">{{result}}</div>
+            <div class="w-full py-5 px-6 text-6xl text-white font-thin mt-auto">{{currentOperand || 0}}</div>
         </div>
 
         <div class="w-full bg-gradient-to-b from-indigo-400 to-indigo-500">
 
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="clear"
+                    <button @click="action('C')"
                             class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
                         C
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button
-                        class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
+                    <button @click="action('+-')"
+                            class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
                         +/-
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendOperation('%')"
+                    <button @click="action('%')"
                             class="w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-opacity-50 text-xl font-light">
                         %
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendOperation('/')"
+                    <button @click="action('/')"
                             class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-2xl font-light">
                         ÷
                     </button>
@@ -38,25 +38,25 @@
 
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(7)"
+                    <button @click="action(7)"
                             class="calc-btn">
                         7
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(8)"
+                    <button @click="action(8)"
                             class="calc-btn">
                         8
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(9)"
+                    <button @click="action(9)"
                             class="calc-btn">
                         9
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendOperation('*')"
+                    <button @click="action('*')"
                             class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
                         ⨉
                     </button>
@@ -65,25 +65,25 @@
 
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(4)"
+                    <button @click="action(4)"
                             class="calc-btn">
                         4
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(5)"
+                    <button @click="action(5)"
                             class="calc-btn">
                         5
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(6)"
+                    <button @click="action(6)"
                             class="calc-btn">
                         6
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendOperation('-')"
+                    <button @click="action('-')"
                             class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
                         -
                     </button>
@@ -91,26 +91,26 @@
             </div>
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(1)"
+                    <button @click="action(1)"
                             class="calc-btn">
                         1
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(2)"
+                    <button @click="action(2)"
                             class="calc-btn">
                         2
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
-                    <button @click="appendNumber(3)"
+                    <button @click="action(3)"
                             class="calc-btn">
                         3
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-b border-indigo-400">
                     <button
-                        @click="appendOperation('+')"
+                        @click="action('+')"
                         class="w-full h-16 outline-none focus:outline-none bg-indigo-700 bg-opacity-10 hover:bg-opacity-20 text-white text-xl font-light">
                         +
                     </button>
@@ -118,19 +118,19 @@
             </div>
             <div class="flex w-full">
                 <div class="w-1/4 border-r border-indigo-400">
-                    <button @click="appendNumber(0)"
+                    <button @click="action(0)"
                             class="calc-btn">
                         0
                     </button>
                 </div>
                 <div class="w-1/4 border-r border-indigo-400">
-                    <button @click="appendNumber('.')"
+                    <button @click="action('.')"
                             class="calc-btn">
                         .
                     </button>
                 </div>
                 <div class="w-2/4 border-r border-indigo-400">
-                    <button @click="compute"
+                    <button @click="action('=')"
                             class="calc-equals">
                         =
                     </button>
@@ -149,52 +149,47 @@ const currentOperand = ref('')
 const operation = ref('')
 const result = ref(0)
 
-function clear() {
-    previousOperand.value = '';
-    currentOperand.value = '';
-    operation.value = '';
-}
-
-/*
-const result = computed(() => {
-    return currentOperand.value
-})
-*/
-
-function appendNumber(number) {
-    if (number === '.' && currentOperand.value.includes('.')) return
-    currentOperand.value = currentOperand.value.toString() + number.toString()
-    result.value = currentOperand.value;
-}
-
-function appendOperation(op) {
-    operation.value = op;
-    previousOperand.value = currentOperand.value;
-    currentOperand.value = '';
-}
-
-function compute() {
-
-    if (!previousOperand.value.length || !currentOperand.value.length) {
-        return;
+function action(n) {
+    if (!isNaN(n) || n === '.') {
+        currentOperand.value += n + '';
     }
 
-    switch (operation.value) {
-        case '+':
-            result.value = parseFloat(previousOperand.value) + parseFloat(currentOperand.value);
-            break;
-        case '-':
-            result.value = previousOperand.value - currentOperand.value;
-            break;
-        case '*':
-            result.value = previousOperand.value * currentOperand.value;
-            break;
-        case '/':
-            result.value = previousOperand.value / currentOperand.value;
-            break;
-        case '%':
-            result.value = previousOperand.value % currentOperand.value;
-            break;
+    if (n === 'C') {
+        currentOperand.value = '';
+    }
+
+    if (n === '+-') {
+        currentOperand.value = `${currentOperand.value * -1}`
+    }
+
+    if (['/', '*', '-', '+', '%'].includes(n)) {
+        operation.value = n;
+        previousOperand.value = currentOperand.value;
+        currentOperand.value = '';
+    }
+
+    if (n === '=') {
+
+        switch (operation.value) {
+            case '+':
+                currentOperand.value = `${parseFloat(previousOperand.value) + parseFloat(currentOperand.value)}`;
+                break;
+            case '-':
+                currentOperand.value = `${previousOperand.value - currentOperand.value}`;
+                break;
+            case '*':
+                currentOperand.value = `${previousOperand.value * currentOperand.value}`;
+                break;
+            case '/':
+                currentOperand.value = `${previousOperand.value / currentOperand.value}`;
+                break;
+            case '%':
+                currentOperand.value = `${previousOperand.value % currentOperand.value}`;
+                break;
+        }
+
+        previousOperand.value = '';
+        operation.value = null;
     }
 }
 
