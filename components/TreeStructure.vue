@@ -1,54 +1,76 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Tree structure from json</h2>
-        </div>
-
-        <div class="px-4 py-2">
-            <div class="flex items-center justify-between mb-3 w-full flex-col">
-
-                <div class="flex items-center justify-between mb-3 w-full flex-col">
-                    <label class="mb-1 font-bold text-white">Json to convert</label>
-                    <textarea v-model="jsonData" cols="30" rows="10" placeholder="Json to convert"></textarea>
+    <div class="json-tree">
+        <div v-if="theData.constructor === Array">
+            <span v-if="root"> [ </span>
+            <div class="root_elem" v-for="(value, index) in theData" :key="index">
+                <div v-if="value == null || false">
+                    <span>null</span>
+                    <span v-if="fullMarkup && index !== last">,</span>
                 </div>
+                <div v-else-if="typeof value === 'object'">
+                    <span v-if="value.constructor === Array"> [ </span>
+                    <span v-else> { </span>
 
-                <div>
-                    <button @click="convert"
-                            class="btn btn-green">
-                        Show tree
-                    </button>
+                    <span
+                        v-if="showObj[index]"
+                        @click="toggle(index)"
+                        class="cursor-pointer"
+                    >
+                        <slot name="hide">-</slot>
+                    </span>
+
+                    <span v-else @click="toggle(index)" style="cursor:pointer">
+                        <slot name="expand">+</slot>
+                    </span>
+
                 </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script setup>
 import {computed, ref} from "vue";
 
-const jsonData = ref('')
-const root = ref(true)
-const filterKey = ref("")
-const fullMarkup = ref(false)
-const comma = ref(false)
+const props = defineProps({
+    jsonData: [Object, Array],
+    root: {
+        type: Boolean,
+        default: true
+    },
+    filterKey: {
+        type: String,
+        default: ""
+    },
+    fullMarkup: {
+        type: Boolean,
+        default: false
+    },
+    comma: {
+        type: Boolean,
+        default: false
+    }
+})
+
 const showObj = ref([]);
 
 const theData = computed(() => {
-    const filter = filterKey.value && filterKey.value.toLowerCase();
+    const filter = props.filterKey && props.filterKey.toLowerCase();
     if (filter) {
         let filteredData = {};
-        const keys = Object.keys(jsonData.value);
+        const keys = Object.keys(props.jsonData);
         keys.forEach(key => {
             if (
                 key.toLowerCase().includes(filter) ||
-                JSON.stringify(jsonData.value[key]).includes(filter)
+                JSON.stringify(props.jsonData[key]).includes(filter)
             ) {
-                filteredData[key] = jsonData.value[key];
+                filteredData[key] = props.jsonData[key];
             }
         });
         return filteredData;
     } else {
-        return jsonData.value;
+        return props.jsonData;
     }
 })
 
@@ -63,11 +85,7 @@ function toggle(index) {
 
 function convert() {
 
-    //console.log(JSON.parse(jsonData.value))
-
-    showObj.value = Array.from({length: Object.keys(JSON.parse(jsonData.value)).length}, (_) => true);
-
-    //console.log(showObj.value);
+    showObj.value = Array.from({length: Object.keys(JSON.parse(props.jsonData)).length}, (_) => true);
 }
 </script>
 
