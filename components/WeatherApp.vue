@@ -63,7 +63,7 @@ const city = ref('');
 const weather = ref({});
 const main = ref({});
 const sys = ref({});
-const isNight = ref(false);
+const isNight = ref(true);
 const dataIsLoaded = ref(false)
 
 let apiKey = '';
@@ -90,9 +90,8 @@ function checkWeather() {
             sys.value = data.sys;
 
             const now = Date.now();
-
-            if (now > sys.value.sunrise && now < sys.value.sunset) {
-                isNight.value = true;
+            if (now > (sys.value.sunrise * 1000) && now < (sys.value.sunset * 1000)) {
+                isNight.value = false;
             }
             dataIsLoaded.value = true;
             localStorage.setItem('city', city.value)
