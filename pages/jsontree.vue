@@ -21,7 +21,7 @@
 
             </div>
         </div>
-        <TreeStructure :jsonData="jsonData"/>
+        <TreeStructure :jsonData="JSON.parse(jsonData)"/>
     </div>
 
 </template>
