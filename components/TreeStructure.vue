@@ -8,19 +8,26 @@
                     <span v-if="fullMarkup && index !== last">,</span>
                 </div>
                 <div v-else-if="typeof value === 'object'">
-                    <span v-if="value.constructor === Array"> [ </span>
-                    <span v-else> { </span>
+                    <span class="flex items-end">
+                        <span
+                            v-if="showObj[index]"
+                            @click="toggle(index)"
+                            class="cursor-pointer"
+                        >
+                            <slot name="hide">
+                                <BaselineArrowDropDown/>
+                            </slot>
+                        </span>
 
-                    <span
-                        v-if="showObj[index]"
-                        @click="toggle(index)"
-                        class="cursor-pointer"
-                    >
-                        <slot name="hide">-</slot>
-                    </span>
+                        <span v-else @click="toggle(index)" class="cursor-pointer">
+                            <slot name="expand">
+                                <BaselineArrowRight/>
+                            </slot>
+                        </span>
 
-                    <span v-else @click="toggle(index)" style="cursor:pointer">
-                        <slot name="expand">+</slot>
+                        <span v-if="value.constructor === Array"> [ </span>
+                        <span v-else> { </span>
+
                     </span>
 
                     <TreeStructure
@@ -81,10 +88,14 @@
                         @click="toggle(index)"
                         style="cursor:pointer"
                     >
-                        <slot name="hide">-</slot>
+                        <slot name="hide">
+                            <BaselineArrowRight/>
+                        </slot>
                     </span>
                     <span v-else @click="toggle(index)" style="cursor:pointer">
-                        <slot name="expand">+</slot>
+                        <slot name="expand">
+                            <BaselineArrowDropDown/>
+                        </slot>
                     </span>
                     <TreeStructure
                         v-if="showObj[index]"
@@ -125,6 +136,8 @@
 
 <script setup>
 import {computed, ref} from "vue";
+import BaselineArrowDropDown from '~icons/ic/baseline-arrow-drop-down'
+import BaselineArrowRight from '~icons/ic/baseline-arrow-right'
 
 const props = defineProps({
     jsonData: [Object, Array],

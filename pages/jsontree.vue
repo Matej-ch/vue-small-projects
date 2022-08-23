@@ -21,7 +21,10 @@
 
             </div>
         </div>
-        <TreeStructure :jsonData="JSON.parse(jsonData)"/>
+        <div class="px-4 bg-blue-400 py-2">
+            <TreeStructure :jsonData="JSON.parse(jsonData)"/>
+        </div>
+
     </div>
 
 </template>
