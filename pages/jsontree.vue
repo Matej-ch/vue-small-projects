@@ -11,14 +11,6 @@
                     <label class="mb-1 font-bold text-white">Json to convert</label>
                     <textarea v-model="jsonData" cols="30" rows="10" placeholder="Json to convert"></textarea>
                 </div>
-
-                <div>
-                    <button
-                        class="btn btn-green">
-                        Show tree
-                    </button>
-                </div>
-
             </div>
         </div>
         <div class="px-4 bg-blue-400 py-2">

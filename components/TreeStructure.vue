@@ -7,21 +7,21 @@
                     <span>null</span>
                     <span v-if="fullMarkup && index !== last">,</span>
                 </div>
-                <div v-else-if="typeof value === 'object'">
-                    <span class="flex items-end">
+                <div v-else-if="typeof value === 'object'" class="relative">
+                    <span class="flex items-center">
                         <span
                             v-if="showObj[index]"
                             @click="toggle(index)"
                             class="cursor-pointer"
                         >
                             <slot name="hide">
-                                <BaselineArrowDropDown/>
+                                <BaselineArrowDropDown style="font-size: 2em"/>
                             </slot>
                         </span>
 
                         <span v-else @click="toggle(index)" class="cursor-pointer">
                             <slot name="expand">
-                                <BaselineArrowRight/>
+                                <BaselineArrowRight style="font-size: 2em"/>
                             </slot>
                         </span>
 
@@ -50,7 +50,7 @@
 
                     </TreeStructure>
 
-                    <slot name="more" v-else>...</slot>
+                    <slot name="more" v-else><span class="absolute left-16 top-0.5">...</span></slot>
                 </div>
 
                 <div v-else>
@@ -75,28 +75,30 @@
                     <span>: null</span>
                     <span v-if="fullMarkup && index !== last">,</span>
                 </div>
-                <div v-else-if="typeof value === 'object'">
+                <div v-else-if="typeof value === 'object'" class="relative">
                     <span v-if="fullMarkup">"</span>
                     <span class="json-tree-key">{{key}}</span>
-                    <span v-if="fullMarkup">"</span>
-                    :
-                    <span v-if="value.constructor === Array"> [ </span>
-                    <span v-else> { </span>
 
                     <span
                         v-if="showObj[index]"
                         @click="toggle(index)"
-                        style="cursor:pointer"
+                        class="cursor-pointer inline-block align-middle"
                     >
                         <slot name="hide">
-                            <BaselineArrowRight/>
+                            <BaselineArrowDropDown style="font-size: 2em"/>
                         </slot>
                     </span>
-                    <span v-else @click="toggle(index)" style="cursor:pointer">
+
+                    <span v-else @click="toggle(index)" class="cursor-pointer inline-block align-middle">
                         <slot name="expand">
-                            <BaselineArrowDropDown/>
+                            <BaselineArrowRight style="font-size: 2em"/>
                         </slot>
                     </span>
+
+                    <span v-if="fullMarkup">"</span>
+                    <span v-if="value.constructor === Array"> [ </span>
+                    <span v-else> { </span>
+
                     <TreeStructure
                         v-if="showObj[index]"
                         :jsonData="value"
@@ -114,12 +116,12 @@
                             <slot name="more"/>
                         </template>
                     </TreeStructure>
-                    <slot name="more" v-else>...</slot>
+                    <slot name="more" v-else><span class="absolute left-24 top-0.5">...</span></slot>
                 </div>
                 <div v-else>
                     <span v-if="fullMarkup">"</span>
                     <span class="json-tree-key">{{key}}</span>
-                    <span v-if="fullMarkup">"</span> :
+                    <span v-if="fullMarkup">"</span>
                     <span v-if="fullMarkup && typeof value === 'string'">
                         "{{value}}"
                     </span>
