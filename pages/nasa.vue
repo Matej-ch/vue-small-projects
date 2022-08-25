@@ -7,7 +7,7 @@ import Exoplanets from '../components/Exoplanets'
 import {useHead} from "nuxt/app";
 
 useHead({
-    title: `Nasa platen query`
+    title: `Nasa planet query`
 })
 </script>
 
