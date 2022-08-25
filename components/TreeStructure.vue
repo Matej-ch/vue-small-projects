@@ -5,7 +5,6 @@
             <div class="root_elem" v-for="(value, index) in theData" :key="index">
                 <div v-if="value == null || false">
                     <span>null</span>
-                    <span v-if="fullMarkup && index !== last">,</span>
                 </div>
                 <div v-else-if="typeof value === 'object'" class="relative">
                     <span class="flex items-center">
@@ -34,8 +33,6 @@
                         v-if="showObj[index]"
                         :jsonData="value"
                         :root="false"
-                        :fullMarkup="fullMarkup"
-                        :comma="index !== last"
                     >
 
                         <template v-slot:expand>
@@ -54,29 +51,26 @@
                 </div>
 
                 <div v-else>
-                    <span v-if="fullMarkup && typeof value === 'string'">
+                    <span v-if="typeof value === 'string'">
                         "{{value}}"
                     </span>
                     <span v-else>{{value}}</span>
-                    <span v-if="fullMarkup && index !== last">,</span>
                 </div>
             </div>
 
-            ] <span v-if="fullMarkup && comma">,</span>
+            ]
         </div>
 
         <div v-else>
             <span v-if="root"> { </span>
             <div class="root_elem" v-for="(value, key, index) in theData" :key="key">
                 <div v-if="value == null || value == undefined">
-                    <span v-if="fullMarkup">"</span>
+
                     <span class="json-tree-key">{{key}}</span>
-                    <span v-if="fullMarkup">"</span>
                     <span>: null</span>
-                    <span v-if="fullMarkup && index !== last">,</span>
+                    <span v-if="index !== last">,</span>
                 </div>
                 <div v-else-if="typeof value === 'object'" class="relative">
-                    <span v-if="fullMarkup">"</span>
                     <span class="json-tree-key">{{key}}</span>
 
                     <span
@@ -95,7 +89,6 @@
                         </slot>
                     </span>
 
-                    <span v-if="fullMarkup">"</span>
                     <span v-if="value.constructor === Array"> [ </span>
                     <span v-else> { </span>
 
@@ -103,8 +96,6 @@
                         v-if="showObj[index]"
                         :jsonData="value"
                         :root="false"
-                        :fullMarkup="fullMarkup"
-                        :comma="index !== last"
                     >
                         <template v-slot:expand>
                             <slot name="expand"/>
@@ -116,20 +107,18 @@
                             <slot name="more"/>
                         </template>
                     </TreeStructure>
+
                     <slot name="more" v-else><span class="absolute left-24 top-0.5">...</span></slot>
                 </div>
                 <div v-else>
-                    <span v-if="fullMarkup">"</span>
                     <span class="json-tree-key">{{key}}</span>
-                    <span v-if="fullMarkup">"</span>
-                    <span v-if="fullMarkup && typeof value === 'string'">
+                    <span v-if="typeof value === 'string'">
                         "{{value}}"
                     </span>
                     <span v-else>{{value}}</span>
-                    <span v-if="fullMarkup && index !== last">,</span>
                 </div>
             </div>
-            }<span v-if="fullMarkup && comma">,</span>
+            }
         </div>
 
     </div>
@@ -150,14 +139,6 @@ const props = defineProps({
     filterKey: {
         type: String,
         default: ""
-    },
-    fullMarkup: {
-        type: Boolean,
-        default: false
-    },
-    comma: {
-        type: Boolean,
-        default: false
     }
 })
 
