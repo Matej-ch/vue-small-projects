@@ -1,10 +1,10 @@
 # Vuejs 3 collection of components
 
-Collection of components based on https://webdevscom.github.io/resources/5
+Collection of components based on https://webdevscom.github.io/resources/5 and others
 
 ### Build with Nuxt 3
 
-### Current components (Finished/WIP)
+### Current components
 
 1. [x] 
    ColorCycle [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Color-Cycle-App.md)
