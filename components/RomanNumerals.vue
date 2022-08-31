@@ -53,17 +53,22 @@ const decimal = ref(0);
 const msg = ref('')
 
 function generateDecimal() {
-
-    let result = 0;
-    let tempRomanValue = roman.value;
-    for (const [romanNum, number] of Object.entries(numerals)) {
-        while (tempRomanValue.includes(romanNum)) {
-            result += number;
-            tempRomanValue = tempRomanValue.substring(romanNum.length);
+    let sum = 0;
+    for (let i = 0; i < roman.value.length; i++) {
+        const current = numerals[roman.value[i]];
+        const next = numerals[roman.value[i + 1]];
+        if (next === undefined) {
+            sum += current;
+            continue;
         }
+        if (current >= next) {
+            sum += current;
+            continue;
+        }
+        sum -= current;
     }
 
-    decimal.value = result;
+    decimal.value = sum;
 }
 
 function generateRoman() {
