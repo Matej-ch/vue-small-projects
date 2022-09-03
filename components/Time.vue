@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row font-bold text-base justify-center items-center text-slate-300">
+    <div class="flex flex-row font-bold text-xs md:text-base justify-center items-center text-slate-300">
         <div class="hour">{{hours}}</div>
         <div class="dots">:</div>
         <div class="min">{{minutes}}</div>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="flex flex-row justify-center gap-2">
+        <div class="flex flex-col md:flex-row justify-center gap-2">
             <label :class="{
           preferred: !$colorMode.unknown && 'light' === $colorMode.preference,
           selected: !$colorMode.unknown && 'light' === $colorMode.value
@@ -49,7 +49,7 @@
                 </svg>
                 <input type="radio" class="hidden" v-model="$colorMode.preference" value="dark">
             </label>
-            <label :class="{
+            <label class="hidden md:inline-block" :class="{
           preferred: !$colorMode.unknown && 'system' === $colorMode.preference,
           selected: !$colorMode.unknown && 'system' === $colorMode.value
         }">
@@ -78,7 +78,7 @@
                 </svg>
                 <input type="radio" class="hidden" v-model="$colorMode.preference" value="system">
             </label>
-            <label :class="{
+            <label class="hidden md:inline-block" :class="{
           preferred: !$colorMode.unknown && 'sepia' === $colorMode.preference,
           selected: !$colorMode.unknown && 'sepia' === $colorMode.value
         }">

@@ -219,14 +219,14 @@ html {
 }
 
 .navbar {
-  @apply flex flex-col w-64 h-screen px-2 py-4 bg-white border-r dark:bg-slate-800 dark:border-slate-600;
+  @apply flex flex-col md:w-64 h-screen px-2 py-4 bg-white border-r dark:bg-slate-800 dark:border-slate-600;
 
   h2 {
-    @apply text-2xl font-semibold text-slate-800 dark:text-white;
+    @apply hidden md:block text-sm md:text-2xl font-semibold text-slate-800 dark:text-white;
   }
 
   .item {
-    @apply flex my-2 items-center px-2 py-2 text-slate-700 bg-slate-200 hover:bg-slate-600 rounded-md dark:bg-slate-700 dark:text-slate-200;
+    @apply justify-center md:justify-start flex my-2 items-center px-2 py-2 text-slate-700 bg-slate-200 hover:bg-slate-600 rounded-md dark:bg-slate-700 dark:text-slate-200;
   }
 }
 
@@ -270,7 +270,7 @@ textarea {
 
 .js-markdown {
   @apply text-slate-900;
-  
+
   h1 {
     @apply text-5xl;
   }
