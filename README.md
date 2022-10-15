@@ -51,4 +51,3 @@ Collection of components based on https://webdevscom.github.io/resources/5 and o
 24. [x] Json tree
 25. [x] Qr code generator
 26. [x] Color mode picker
-27. [ ] Multi tag input

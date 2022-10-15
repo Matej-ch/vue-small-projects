@@ -62,7 +62,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'csvtojson', label: 'CSV2JSON', 'icon': shallowRef(BaselineFileCopy)},
                 {url: 'jsontocsv', label: 'JSON2CSV', 'icon': shallowRef(OutlineFileCopy)},
                 {url: 'jsontree', label: 'Json tree', 'icon': shallowRef(RoundAccountTree)},
-                {url: 'qrcode', label: 'Qr code', 'icon': shallowRef(BaselineQrCode2)},
+                {url: 'qrcode', label: 'Qr code', 'icon': shallowRef(BaselineQrCode2)}
             ]
         };
     }
