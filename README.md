@@ -8,7 +8,7 @@ Collection of components based on https://webdevscom.github.io/resources/5 and o
 
 1. [x] 
    ColorCycle [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Color-Cycle-App.md)
-2. [ ] NASA Exoplanet
+2. [x] NASA Exoplanet
    Query [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/NASA-Exoplanet-Query.md)
 3. [x] GitHub
    Timeline [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/GitHub-Timeline-App.md)
@@ -51,3 +51,4 @@ Collection of components based on https://webdevscom.github.io/resources/5 and o
 24. [x] Json tree
 25. [x] Qr code generator
 26. [x] Color mode picker
+27. [ ] Multi tag input
