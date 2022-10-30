@@ -6,6 +6,8 @@ Collection of components based on https://webdevscom.github.io/resources/5 and o
 
 ### Current components
 
+Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
+
 1. [x] 
    ColorCycle [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Color-Cycle-App.md)
 2. [x] NASA Exoplanet
