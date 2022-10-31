@@ -20,7 +20,7 @@
 
 <script setup>
 
-import Navbar from '../components/Navbar'
-import ColorModePicker from "../components/ColorModePicker";
+import Navbar from '../components/Navbar.vue'
+import ColorModePicker from "../components/ColorModePicker.vue";
 
 </script>

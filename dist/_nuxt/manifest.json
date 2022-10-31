@@ -1,0 +1,302 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-2c87ec4d.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "pages/bindec.vue",
+      "pages/border.vue",
+      "pages/calc.vue",
+      "pages/color.vue",
+      "pages/csvtojson.vue",
+      "pages/currency.vue",
+      "pages/dollars.vue",
+      "pages/freq.vue",
+      "pages/github.vue",
+      "pages/index.vue",
+      "pages/jsontocsv.vue",
+      "pages/jsontree.vue",
+      "pages/markdown.vue",
+      "pages/meal.vue",
+      "pages/nasa.vue",
+      "pages/notes.vue",
+      "pages/password.vue",
+      "pages/profiles.vue",
+      "pages/qrcode.vue",
+      "pages/random.vue",
+      "pages/roman.vue",
+      "pages/stopwatch.vue",
+      "pages/timeline.vue",
+      "pages/truefalse.vue",
+      "pages/vigenere.vue",
+      "pages/weather.vue",
+      "virtual:nuxt:C:/wamp64/www/tier-1-vue-projects/.nuxt/error-component.mjs",
+      "layouts/default.vue"
+    ],
+    "css": [
+      "entry.56dce3f4.css"
+    ]
+  },
+  "virtual:nuxt:C:/wamp64/www/tier-1-vue-projects/.nuxt/error-component.mjs": {
+    "file": "error-component-ab3d5f25.mjs",
+    "src": "virtual:nuxt:C:/wamp64/www/tier-1-vue-projects/.nuxt/error-component.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "dynamicImports": [
+      "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
+      "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
+    ]
+  },
+  "pages/bindec.vue": {
+    "file": "bindec-7f5af0bb.mjs",
+    "src": "pages/bindec.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/border.vue": {
+    "file": "border-93dd46e0.mjs",
+    "src": "pages/border.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs",
+      "_ClipboardBtn-6ac51a53.mjs"
+    ]
+  },
+  "_ClipboardBtn-6ac51a53.mjs": {
+    "file": "ClipboardBtn-6ac51a53.mjs",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/calc.vue": {
+    "file": "calc-c3f13322.mjs",
+    "src": "pages/calc.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/color.vue": {
+    "file": "color-dad0c1be.mjs",
+    "src": "pages/color.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/csvtojson.vue": {
+    "file": "csvtojson-b561e7f6.mjs",
+    "src": "pages/csvtojson.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/currency.vue": {
+    "file": "currency-6af67285.mjs",
+    "src": "pages/currency.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/dollars.vue": {
+    "file": "dollars-126521cf.mjs",
+    "src": "pages/dollars.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/freq.vue": {
+    "file": "freq-1b6fb967.mjs",
+    "src": "pages/freq.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/github.vue": {
+    "file": "github-e48cb504.mjs",
+    "src": "pages/github.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "index-a0106331.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/jsontocsv.vue": {
+    "file": "jsontocsv-af47f1e1.mjs",
+    "src": "pages/jsontocsv.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/jsontree.vue": {
+    "file": "jsontree-5b3984e1.mjs",
+    "src": "pages/jsontree.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/markdown.vue": {
+    "file": "markdown-b127810e.mjs",
+    "src": "pages/markdown.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs",
+      "_ClipboardBtn-6ac51a53.mjs"
+    ]
+  },
+  "pages/meal.vue": {
+    "file": "meal-c1292ea3.mjs",
+    "src": "pages/meal.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/nasa.vue": {
+    "file": "nasa-995246b5.mjs",
+    "src": "pages/nasa.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/notes.vue": {
+    "file": "notes-8dc90dc1.mjs",
+    "src": "pages/notes.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/password.vue": {
+    "file": "password-b803e850.mjs",
+    "src": "pages/password.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs",
+      "_ClipboardBtn-6ac51a53.mjs"
+    ]
+  },
+  "pages/profiles.vue": {
+    "file": "profiles-562d3646.mjs",
+    "src": "pages/profiles.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/qrcode.vue": {
+    "file": "qrcode-e7cc55eb.mjs",
+    "src": "pages/qrcode.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/random.vue": {
+    "file": "random-4a731e3a.mjs",
+    "src": "pages/random.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/roman.vue": {
+    "file": "roman-5780f6df.mjs",
+    "src": "pages/roman.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/stopwatch.vue": {
+    "file": "stopwatch-53fd557f.mjs",
+    "src": "pages/stopwatch.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/timeline.vue": {
+    "file": "timeline-62045613.mjs",
+    "src": "pages/timeline.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/truefalse.vue": {
+    "file": "truefalse-29e48597.mjs",
+    "src": "pages/truefalse.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/vigenere.vue": {
+    "file": "vigenere-49cebf1e.mjs",
+    "src": "pages/vigenere.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/weather.vue": {
+    "file": "weather-eb9d9552.mjs",
+    "src": "pages/weather.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "layouts/default.vue": {
+    "file": "default-3257dbec.mjs",
+    "src": "layouts/default.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "default.c08be517.css"
+    ]
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
+    "file": "error-404-121cfcfd.mjs",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "error-404.314f7075.css"
+    ]
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
+    "file": "error-500-a6ccc1bf.mjs",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "error-500.4e3461e5.css"
+    ]
+  }
+}
