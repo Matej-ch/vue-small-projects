@@ -53,3 +53,4 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 24. [x] Json tree
 25. [x] Qr code generator
 26. [x] Color mode picker
+27. [x] Tic-tac-toe game
