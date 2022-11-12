@@ -26,6 +26,7 @@ import BaselineFileCopy from '~icons/ic/baseline-file-copy'
 import OutlineFileCopy from '~icons/ic/outline-file-copy'
 import RoundAccountTree from '~icons/ic/round-account-tree'
 import BaselineQrCode2 from '~icons/ic/baseline-qr-code-2'
+import OutlineInsertEmoticon from '~icons/ic/outline-insert-emoticon'
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -62,7 +63,8 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'csvtojson', label: 'CSV2JSON', 'icon': shallowRef(BaselineFileCopy)},
                 {url: 'jsontocsv', label: 'JSON2CSV', 'icon': shallowRef(OutlineFileCopy)},
                 {url: 'jsontree', label: 'Json tree', 'icon': shallowRef(RoundAccountTree)},
-                {url: 'qrcode', label: 'Qr code', 'icon': shallowRef(BaselineQrCode2)}
+                {url: 'qrcode', label: 'Qr code', 'icon': shallowRef(BaselineQrCode2)},
+                {url: 'tictactoe', label: 'Tic tac toe', 'icon': shallowRef(OutlineInsertEmoticon)}
             ]
         };
     }
