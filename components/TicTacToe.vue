@@ -6,7 +6,7 @@
 
         <div class="px-4 py-5">
 
-            <div class="board grid grid-cols-3 gap-0 mx-auto mb-4" style="max-width: 12rem">
+            <div class="board grid grid-cols-3 gap-0 mx-auto mb-4">
                 <div class="h-16 w-16 border flex justify-center items-center font-bold cursor-pointer"
                      @click="setShape(index)"
                      v-for="(cell,index) in board">
@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-import {computed, ref} from "vue";
+import {ref} from "vue";
 
 const currentPlayer = ref(null);
 
@@ -55,18 +55,22 @@ function restartGame() {
     currentPlayer.value = null;
 }
 
-function checkState() {
-    if (checkWin(currentPlayer.value)) {
-        currentPlayer.value = null;
-        winner.value = currentPlayer.value;
+function checkState(currentPlayer) {
+    if (checkWin(currentPlayer)) {
+        winner.value = currentPlayer;
+        currentPlayer = null;
     } else if (isDraw()) {
         winner.value = 3;
-        currentPlayer.value = null;
+        currentPlayer = null;
     }
 }
 
 function setShape(index) {
     if (board.value[index] !== 0) {
+        return;
+    }
+
+    if (winner.value) {
         return;
     }
 
@@ -76,13 +80,13 @@ function setShape(index) {
 
     if (currentPlayer.value === 1) {
         board.value[index] = 1;
+        checkState(currentPlayer.value);
         currentPlayer.value = 2;
     } else {
         board.value[index] = 2;
+        checkState(currentPlayer.value);
         currentPlayer.value = 1;
     }
-
-    checkState();
 }
 
 function isDraw() {
@@ -94,7 +98,7 @@ function isDraw() {
 function checkWin(currentPlayer) {
     return winningCombinations.some(combination => {
         return combination.every(index => {
-            return board.value[index] === currentPlayer.value;
+            return board.value[index] === currentPlayer;
         })
     })
 }
@@ -103,6 +107,7 @@ function checkWin(currentPlayer) {
 
 <style scoped>
 .board {
-
+    max-width: 12rem;
+    background-color: rgba(163, 165, 168, 0.5);
 }
 </style>
