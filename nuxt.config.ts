@@ -1,13 +1,7 @@
-import {defineNuxtConfig} from 'nuxt'
 import Icons from 'unplugin-icons/vite'
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     ssr: false,
-    target: "static",
-    router: {
-        base: '/vue-small-projects/'
-    },
     runtimeConfig: {
         public: {
             apiSecret: '', // overridden by NUXT_API_SECRET environment variable in .env file
@@ -30,16 +24,15 @@ export default defineNuxtConfig({
     modules: [
         ['@nuxtjs/tailwindcss'],
         ['@nuxtjs/color-mode'],
-        [
-            '@pinia/nuxt',
-            {
+        ['@pinia/nuxt',
+            /*{
                 autoImports: [
                     // automatically imports `usePinia()`
                     'defineStore',
                     // automatically imports `usePinia()` as `usePiniaStore()`
                     ['defineStore', 'definePiniaStore'],
                 ],
-            },
+            },*/
         ]
     ],
     colorMode: {
