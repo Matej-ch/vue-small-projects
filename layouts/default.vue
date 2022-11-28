@@ -8,13 +8,11 @@
                     <slot/>
                 </div>
             </div>
-
         </div>
 
         <div class="absolute top-2 right-2">
             <ColorModePicker/>
         </div>
-
     </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
     <nav class="navbar">
         <h2>Vuejs 3 components</h2>
-        <p class="hidden md:block text-xs md:text-sm text-white font-bold">Made by <a href="https://github.com/Matej-ch"
-                                                                                      class="text-blue-300 underline">matejch</a>
+        <p class="hidden md:block text-xs md:text-sm text-white font-bold">Made by
+            <a href="https://github.com/Matej-ch" class="text-blue-300 underline">matejch</a>
         </p>
 
         <div class="flex flex-col justify-between flex-1 md:mt-6 overflow-auto">
