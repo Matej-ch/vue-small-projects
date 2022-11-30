@@ -13,7 +13,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-12 gap-6 px-36">
+        <div class="grid gap-6 px-36" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
             <nuxt-link v-for="item in navbar.items" :to="{name: item.url}"
                        class="flex flex-row px-4 py-2 items-center rounded-sm text-slate-700 bg-slate-200 hover:bg-slate-600 rounded-md dark:bg-slate-700 dark:text-slate-200">
                 <component :is="item.icon" markRaw></component>
