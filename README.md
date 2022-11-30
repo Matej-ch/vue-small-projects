@@ -55,7 +55,7 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 26. [x] Color mode picker
 27. [x] Tic-tac-toe game
 28. [x] Counter with step
-29. [ ] Guess the number
+29. [x] Guess the number
 30. [ ] Telephone formatter
 31. [ ] Toast Popup
 32. [ ] CSS Shapes
