@@ -54,3 +54,27 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 25. [x] Qr code generator
 26. [x] Color mode picker
 27. [x] Tic-tac-toe game
+28. [x] Counter with step
+29. [ ] Guess the number
+30. [ ] Telephone formatter
+31. [ ] Toast Popup
+32. [ ] CSS Shapes
+33. [ ] Star Rating
+34. [ ] Pixel Art
+35. [ ] Color Spotter
+36. [ ] Todo List
+37. [ ] Transfer List
+38. [ ] Chess Board
+39. [ ] Chips Input
+40. [ ] Analog Clock
+41. [ ] Typing Speed Test
+42. [ ] OTP Input
+43. [ ] Area Selector
+44. [ ] Carousel
+45. [ ] Calendar
+46. [ ] Paginator
+47. [ ] Connect Four
+48. [ ] Comment box
+49. [ ] JSON Creator
+50. [ ] Array methods
+51. [ ] Progress Bar
