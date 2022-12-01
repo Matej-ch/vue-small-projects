@@ -1,1 +1,0 @@
-import{_ as e}from"./ComponentContainer.f579fdde.js";import{c as a,w as o,o as n,f as r}from"./entry.fe5dfb17.js";import{u as _}from"./composables.4ec0e794.js";const f={__name:"paginator",setup(c){return _({title:"Paginator"}),(s,p)=>{const t=e;return n(),a(t,null,{header:o(()=>[r("Paginator")]),body:o(()=>[]),_:1})}}};export{f as default};

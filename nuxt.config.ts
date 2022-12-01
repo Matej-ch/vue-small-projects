@@ -7,7 +7,14 @@ export default defineNuxtConfig({
             name: 'layout', mode: 'out-in'
         },
         pageTransition: {
-            name: 'page', mode: 'out-in'
+            name: 'slide-right', mode: 'out-in'
+        },
+        head: {
+            meta: [
+                {name: 'description', content: 'Collection of vue components'},
+                {name: 'author', content: 'Matej ch.'},
+                {name: 'keywords', content: 'Vuejs 3, Nuxt 3, Pinia, Javascript'}
+            ],
         }
     },
     runtimeConfig: {

@@ -1,0 +1,1 @@
+import{_ as o}from"./ComponentContainer.3f7120f2.js";import{c as r,w as e,o as n,f as a}from"./entry.9438c006.js";import{u as s}from"./composables.5c8c8af8.js";const u={__name:"transfers",setup(_){return s({title:"Transfer List"}),(c,m)=>{const t=o;return n(),r(t,null,{header:e(()=>[a("Transfer List")]),body:e(()=>[]),_:1})}}};export{u as default};
