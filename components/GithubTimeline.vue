@@ -41,18 +41,17 @@
 <script setup>
 
 import {ref} from "vue";
+import {useFetch} from "nuxt/app";
 
 const username = ref('')
 const message = ref('')
 const isFound = ref(false)
 const topRepos = ref([]);
 
-function getRepos() {
-    fetch(`https://api.github.com/users/${username.value}/repos`)
-        .then(res => res.json())
-        .then(data => {
-            topRepos.value = data;
-        }).catch(err => console.error(err))
+async function getRepos() {
+
+    const {data} = await useFetch(`https://api.github.com/users/${username.value}/repos`)
+    topRepos.value = data.value;
 }
 
 </script>

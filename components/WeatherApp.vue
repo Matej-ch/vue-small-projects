@@ -49,6 +49,7 @@
 
 <script setup>
 import {onMounted, ref} from "vue";
+import {useFetch, useRuntimeConfig} from "nuxt/app";
 
 const config = useRuntimeConfig();
 const city = ref('');

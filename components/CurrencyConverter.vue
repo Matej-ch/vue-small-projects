@@ -42,6 +42,7 @@
 
 <script setup>
 import {onMounted, ref} from "vue";
+import {useFetch, useRuntimeConfig} from "nuxt/app";
 
 const config = useRuntimeConfig();
 const amount = ref(0)
@@ -91,22 +92,15 @@ function convert() {
         .catch(error => console.log('error', error));
 }
 
-function getCountries() {
-    const myHeaders = new Headers();
-    myHeaders.append("apikey", apiKey);
+async function getCountries() {
+    const {data} = await useFetch(() => "https://api.apilayer.com/exchangerates_data/symbols", {
+        onRequest({request, options}) {
+            options.headers = options.headers || {}
+            options.headers.apikey = apiKey
+        }
+    })
 
-    const requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        headers: myHeaders
-    };
-
-    fetch("https://api.apilayer.com/exchangerates_data/symbols", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-            currencyOptions.value = result.symbols;
-        })
-        .catch(error => console.log('error', error));
+    currencyOptions.value = data.value.symbols;
 }
 
 </script>

@@ -52,20 +52,16 @@
 <script setup>
 
 import {ref} from "vue";
+import {useFetch, useRuntimeConfig} from "nuxt/app";
 
 const meals = ref([])
 const config = useRuntimeConfig();
 
 const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
 
-function getMeal() {
-    //const randomNumber = Math.floor(Math.random() * 52772);
-    fetch(`${config.mealApiBase}${52772}`)
-        .then(res => res.json())
-        .then(data => {
-            meals.value = data.meals;
-
-        }).catch(err => console.error(err))
+async function getMeal() {
+    const {data} = await useFetch(`${config.mealApiBase}${52772}`)
+    meals.value = data.value.meals;
 }
 
 function getVideoUrl(url) {

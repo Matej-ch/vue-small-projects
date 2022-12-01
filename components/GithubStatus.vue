@@ -31,17 +31,15 @@ import {useFetch} from "nuxt/app";
 const currentStatus = ref('');
 const githubOperations = ref([]);
 
-onMounted(() => {
-    fetch('https://www.githubstatus.com/api/v2/summary.json')
-        .then(res => res.json())
-        .then(data => {
-            githubOperations.value = data.components;
-        })
+onMounted(async () => {
+
+    const {data} = await useFetch('https://www.githubstatus.com/api/v2/summary.json')
+    githubOperations.value = data.value.components;
 })
 
 async function getStatus() {
-    const response = await useFetch('https://www.githubstatus.com/api/v2/status.json')
 
+    const response = await useFetch('https://www.githubstatus.com/api/v2/status.json')
     currentStatus.value = response.data.value.status.description
 }
 

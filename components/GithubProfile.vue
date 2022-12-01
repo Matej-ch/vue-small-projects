@@ -47,6 +47,7 @@
 <script setup>
 import BaselineInsertLink from '~icons/ic/baseline-insert-link'
 import {ref} from "vue";
+import {useFetch} from "nuxt/app";
 
 const username = ref('')
 const foundUserName = ref('')
@@ -94,12 +95,9 @@ function search() {
         })
 }
 
-function getRepos(url) {
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            topRepos.value = data.slice(0, 5);
-        }).catch(err => console.error(err))
+async function getRepos(url) {
+    const {data} = await useFetch(url)
+    topRepos.value = data.value.slice(0, 5);
 }
 </script>
 

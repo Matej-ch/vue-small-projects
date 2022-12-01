@@ -2,6 +2,14 @@ import Icons from 'unplugin-icons/vite'
 
 export default defineNuxtConfig({
     ssr: false,
+    app: {
+        layoutTransition: {
+            name: 'layout', mode: 'out-in'
+        },
+        pageTransition: {
+            name: 'page', mode: 'out-in'
+        }
+    },
     runtimeConfig: {
         public: {
             apiSecret: '', // overridden by NUXT_API_SECRET environment variable in .env file
