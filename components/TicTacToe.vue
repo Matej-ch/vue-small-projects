@@ -1,31 +1,22 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Tic-tac-toe</h2>
+    <div class="board grid grid-cols-3 gap-0 mx-auto mb-4">
+        <div class="h-16 w-16 border flex justify-center items-center font-bold cursor-pointer"
+             @click="setShape(index)"
+             v-for="(cell,index) in board">
+            {{cell === 1 ? '❌' : (cell === 2 ? '⭕' : '')}}
         </div>
+    </div>
 
-        <div class="px-4 py-5">
+    <div class="text-center" v-show="currentPlayer && !winner">
+        {{currentPlayer === 1 ? 'It\'s ❌\'s turn' : 'It\'s ⭕\'s turn'}}
+    </div>
 
-            <div class="board grid grid-cols-3 gap-0 mx-auto mb-4">
-                <div class="h-16 w-16 border flex justify-center items-center font-bold cursor-pointer"
-                     @click="setShape(index)"
-                     v-for="(cell,index) in board">
-                    {{cell === 1 ? '❌' : (cell === 2 ? '⭕' : '')}}
-                </div>
-            </div>
+    <div class="text-center" v-show="winner">
+        {{winner === 1 ? '❌ has won' : (winner === 2 ? '⭕ has won' : 'It\'s draw')}}
+    </div>
 
-            <div class="text-center" v-show="currentPlayer && !winner">
-                {{currentPlayer === 1 ? 'It\'s ❌\'s turn' : 'It\'s ⭕\'s turn'}}
-            </div>
-
-            <div class="text-center" v-show="winner">
-                {{winner === 1 ? '❌ has won' : (winner === 2 ? '⭕ has won' : 'It\'s draw')}}
-            </div>
-
-            <div class="text-center mt-4" v-show="winner">
-                <button @click="restartGame" class="btn btn-green">Play again</button>
-            </div>
-        </div>
+    <div class="text-center mt-4" v-show="winner">
+        <button @click="restartGame" class="btn btn-green">Play again</button>
     </div>
 </template>
 

@@ -1,4 +1,11 @@
 <template>
+    <ComponentContainer>
+        <template v-slot:header>Comments</template>
+
+        <template v-slot:body>
+        </template>
+
+    </ComponentContainer>
 
 </template>
 

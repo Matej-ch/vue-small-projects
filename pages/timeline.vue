@@ -1,5 +1,12 @@
 <template>
-    <GithubTimeline/>
+    <ComponentContainer>
+        <template v-slot:header>Github timeline</template>
+
+        <template v-slot:body>
+            <GithubTimeline/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

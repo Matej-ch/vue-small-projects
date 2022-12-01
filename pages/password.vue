@@ -1,5 +1,14 @@
 <template>
-    <PasswordGenerator/>
+    <ComponentContainer>
+        <template v-slot:header>
+            Password generator
+        </template>
+
+        <template v-slot:body>
+            <PasswordGenerator/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

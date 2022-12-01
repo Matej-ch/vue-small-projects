@@ -1,29 +1,23 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Markdown preview</h2>
+    <div class="px-4 py-2">
+        <div class="flex items-center justify-between mb-3 w-full flex-col">
+            <label class="mb-1">Text with markdown</label>
+            <textarea v-model="textarea" cols="30" rows="10"
+                      placeholder="Text with markdown"></textarea>
         </div>
+    </div>
+    <div class="px-4 flex">
+        <button @click="preview"
+                class="btn btn-green">
+            Preview
+        </button>
 
-        <div class="px-4 py-2">
-            <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <label class="mb-1">Text with markdown</label>
-                <textarea v-model="textarea" cols="30" rows="10"
-                          placeholder="Text with markdown"></textarea>
-            </div>
-        </div>
-        <div class="px-4 flex">
-            <button @click="preview"
-                    class="btn btn-green">
-                Preview
-            </button>
+        <ClipboardBtn :text="markdown" v-show="markdown.length"></ClipboardBtn>
 
-            <ClipboardBtn :text="markdown" v-show="markdown.length"></ClipboardBtn>
+    </div>
 
-        </div>
-
-        <div class="px-4 py-5">
-            <div class="mb-3 w-full bg-white js-markdown" v-show="markdown.length" v-html="markdown">
-            </div>
+    <div class="px-4 py-5">
+        <div class="mb-3 w-full bg-white js-markdown" v-show="markdown.length" v-html="markdown">
         </div>
     </div>
 </template>

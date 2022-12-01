@@ -1,5 +1,12 @@
 <template>
-    <VigenereCipher/>
+    <ComponentContainer>
+        <template v-slot:header>Vigenere Cipher</template>
+
+        <template v-slot:body>
+            <VigenereCipher/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

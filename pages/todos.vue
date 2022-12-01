@@ -1,4 +1,11 @@
 <template>
+    <ComponentContainer>
+        <template v-slot:header>Todo List</template>
+
+        <template v-slot:body>
+        </template>
+
+    </ComponentContainer>
 
 </template>
 

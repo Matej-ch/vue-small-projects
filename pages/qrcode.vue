@@ -1,5 +1,15 @@
 <template>
-    <QrCode/>
+    <ComponentContainer>
+        <template v-slot:header>
+            QR code generator
+        </template>
+
+        <template v-slot:body>
+            <QrCode/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

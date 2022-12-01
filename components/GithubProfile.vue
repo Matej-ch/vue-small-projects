@@ -1,53 +1,45 @@
 <template>
+    <div class="flex justify-between mb-3 w-full flex-col">
+        <label class="mb-1 font-bold text-white">Github username</label>
+        <input v-model="username" placeholder="Github username" @keyup.enter="search"
+               class="w-full">
+    </div>
+
     <div>
-        <div class="component-header">
-            <h2>Github profile</h2>
-        </div>
+        <button @click="search"
+                class="btn btn-green">
+            Search
+        </button>
+    </div>
 
-        <div class="px-4 py-5">
-            <div class="flex justify-between mb-3 w-full flex-col">
-                <label class="mb-1 font-bold text-white">Github username</label>
-                <input v-model="username" placeholder="Github username" @keyup.enter="search"
-                       class="w-full">
-            </div>
+    <div v-show="message.length" class="p-4 text-white font-bold my-2"
+         :class="isFound ? 'bg-green-500' : 'bg-red-500'">
+        {{message}}
+    </div>
 
+    <div class="flex text-base font-bold gap-2 mb-3 w-full flex-row" v-show="isFound">
+        <img :src=avatar :alt=foundUserName class="object-contain h-24">
+        User {{foundUserName}} has {{followers}} followers and {{repoCount}} repositories
+    </div>
+
+    <div v-show="topRepos.length">
+        <div v-for="repo in topRepos" class="flex justify-between pb-4">
             <div>
-                <button @click="search"
-                        class="btn btn-green">
-                    Search
-                </button>
-            </div>
-
-            <div v-show="message.length" class="p-4 text-white font-bold my-2"
-                 :class="isFound ? 'bg-green-500' : 'bg-red-500'">
-                {{message}}
-            </div>
-
-            <div class="flex text-base font-bold gap-2 mb-3 w-full flex-row" v-show="isFound">
-                <img :src=avatar :alt=foundUserName class="object-contain h-24">
-                User {{foundUserName}} has {{followers}} followers and {{repoCount}} repositories
-            </div>
-
-            <div v-show="topRepos.length">
-                <div v-for="repo in topRepos" class="flex justify-between pb-4">
-                    <div>
-                        <div class="font-bold flex gap-4"> {{repo.full_name}}
-                            <a :href=repo.html_url class="text-slate-900 flex flex-row gap-1 items-center"
-                               target="_blank"
-                               rel="noreferrer nofollow">
-                                <BaselineInsertLink/>
-                                Repository
-                            </a>
-                        </div>
-                        <div> {{repo.description}}</div>
-                    </div>
-
-                    <span>
-
-                    </span>
-                    <span class="font-bold"> {{repo.language}} </span>
+                <div class="font-bold flex gap-4"> {{repo.full_name}}
+                    <a :href=repo.html_url class="text-slate-900 flex flex-row gap-1 items-center"
+                       target="_blank"
+                       rel="noreferrer nofollow">
+                        <BaselineInsertLink/>
+                        Repository
+                    </a>
                 </div>
+                <div> {{repo.description}}</div>
             </div>
+
+            <span>
+
+            </span>
+            <span class="font-bold"> {{repo.language}} </span>
         </div>
     </div>
 </template>

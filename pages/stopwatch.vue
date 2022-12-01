@@ -1,5 +1,12 @@
 <template>
-    <Stopwatch/>
+    <ComponentContainer>
+        <template v-slot:header>Stopwatch</template>
+
+        <template v-slot:body>
+            <Stopwatch/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

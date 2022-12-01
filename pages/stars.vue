@@ -1,4 +1,11 @@
 <template>
+    <ComponentContainer>
+        <template v-slot:header></template>
+
+        <template v-slot:body>
+        </template>
+
+    </ComponentContainer>
 
 </template>
 

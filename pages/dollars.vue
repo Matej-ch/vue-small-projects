@@ -1,5 +1,13 @@
 <template>
-    <DollarsToCents/>
+    <ComponentContainer>
+        <template v-slot:header>Dollars to cents</template>
+
+        <template v-slot:body>
+            <DollarsToCents/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

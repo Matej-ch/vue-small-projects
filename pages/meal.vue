@@ -1,5 +1,12 @@
 <template>
-    <RandomMeal/>
+    <ComponentContainer>
+        <template v-slot:header>Random meal</template>
+
+        <template v-slot:body>
+            <RandomMeal/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

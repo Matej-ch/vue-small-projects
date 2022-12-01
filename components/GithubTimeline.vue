@@ -1,50 +1,41 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Github timeline</h2>
-        </div>
-
-        <div class="px-4 py-5">
-            <div class="flex justify-between mb-3 w-full flex-col">
-                <label class="mb-1 font-bold text-white">Github username</label>
-                <input v-model="username" placeholder="Github username" @keyup.enter="getRepos"
-                       class="w-full">
-            </div>
-
-            <div>
-                <button @click="getRepos"
-                        class="btn btn-green">
-                    Generate
-                </button>
-            </div>
-
-            <div v-show="message.length" class="p-4 text-white font-bold my-2"
-                 :class="isFound ? 'bg-green-500' : 'bg-red-500'">
-                {{message}}
-            </div>
-
-            <ul v-show="topRepos.length" class="timeline">
-                <li v-for="(repo,index) in topRepos">
-                    <div :class="index%2 === 0 ? 'direction-l' : 'direction-r'">
-                        <div class="flag-wrapper">
-                            <span class="flag">{{repo.name}}</span>
-                            <span class="time-wrapper" v-show="repo.stargazers_count > 0">
-                                <span class="time" title="Star count">{{repo.stargazers_count}}</span>
-                            </span>
-                        </div>
-                        <div class="desc" v-if="repo.description">
-                            <a :href=repo.html_url target="_blank" rel="noreferrer"
-                               class="text-black">{{repo.description}}</a>
-                        </div>
-                        <div class="desc" v-else>
-                            <a class="text-black" :href=repo.html_url>{{repo.full_name}}</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
+    <div class="flex justify-between mb-3 w-full flex-col">
+        <label class="mb-1 font-bold text-white">Github username</label>
+        <input v-model="username" placeholder="Github username" @keyup.enter="getRepos"
+               class="w-full">
     </div>
+
+    <div>
+        <button @click="getRepos"
+                class="btn btn-green">
+            Generate
+        </button>
+    </div>
+
+    <div v-show="message.length" class="p-4 text-white font-bold my-2"
+         :class="isFound ? 'bg-green-500' : 'bg-red-500'">
+        {{message}}
+    </div>
+
+    <ul v-show="topRepos.length" class="timeline">
+        <li v-for="(repo,index) in topRepos">
+            <div :class="index%2 === 0 ? 'direction-l' : 'direction-r'">
+                <div class="flag-wrapper">
+                    <span class="flag">{{repo.name}}</span>
+                    <span class="time-wrapper" v-show="repo.stargazers_count > 0">
+                        <span class="time" title="Star count">{{repo.stargazers_count}}</span>
+                    </span>
+                </div>
+                <div class="desc" v-if="repo.description">
+                    <a :href=repo.html_url target="_blank" rel="noreferrer"
+                       class="text-black">{{repo.description}}</a>
+                </div>
+                <div class="desc" v-else>
+                    <a class="text-black" :href=repo.html_url>{{repo.full_name}}</a>
+                </div>
+            </div>
+        </li>
+    </ul>
 </template>
 
 <script setup>

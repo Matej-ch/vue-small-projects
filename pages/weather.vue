@@ -1,5 +1,12 @@
 <template>
-    <WeatherApp/>
+    <ComponentContainer>
+        <template v-slot:header>Weather app</template>
+
+        <template v-slot:body>
+            <WeatherApp/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

@@ -1,57 +1,43 @@
 <template>
-
-    <div>
-        <div class="component-header">
-            <h2>Currency converter</h2>
+    <div class="flex items-end justify-between mb-5">
+        <div class="flex flex-col w-3/6 px-2">
+            <label class="mb-1">From</label>
+            <select v-model="from" name="currency-from">
+                <option :value="name" v-for="(value, name, index) in currencyOptions">
+                    {{value}}
+                </option>
+            </select>
         </div>
 
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-
-                <div class="flex items-end justify-between mb-5">
-                    <div class="flex flex-col w-3/6 px-2">
-                        <label class="mb-1">From</label>
-                        <select v-model="from" name="currency-from">
-                            <option :value="name" v-for="(value, name, index) in currencyOptions">
-                                {{value}}
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="flex flex-col w-3/6 px-2">
-                        <label class="mb-1">To</label>
-                        <select v-model="to" name="currency-to">
-                            <option :value="name" v-for="(value, name, index) in currencyOptions">
-                                {{value}}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="flex items-end justify-between mb-5">
-                    <div class="flex flex-col w-3/6 px-2">
-                        <label class="mb-1">Amount</label>
-
-                        <input v-model="amount" step="0.01"
-                               type="number">
-                    </div>
-
-                    <div class="flex flex-col w-3/6 px-2">
-                        <button @click="convert"
-                                class="btn btn-red">
-                            Convert
-                        </button>
-                    </div>
-                </div>
-
-                <div v-show="msg.length" class="bg-blue-900 text-white rounded p-4 font-bold">
-                    {{msg}}
-                </div>
-
-            </div>
+        <div class="flex flex-col w-3/6 px-2">
+            <label class="mb-1">To</label>
+            <select v-model="to" name="currency-to">
+                <option :value="name" v-for="(value, name, index) in currencyOptions">
+                    {{value}}
+                </option>
+            </select>
         </div>
     </div>
 
+    <div class="flex items-end justify-between mb-5">
+        <div class="flex flex-col w-3/6 px-2">
+            <label class="mb-1">Amount</label>
+
+            <input v-model="amount" step="0.01"
+                   type="number">
+        </div>
+
+        <div class="flex flex-col w-3/6 px-2">
+            <button @click="convert"
+                    class="btn btn-red">
+                Convert
+            </button>
+        </div>
+    </div>
+
+    <div v-show="msg.length" class="bg-blue-900 text-white rounded p-4 font-bold">
+        {{msg}}
+    </div>
 </template>
 
 <script setup>

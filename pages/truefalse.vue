@@ -1,5 +1,14 @@
 <template>
-    <TrueOrFalse/>
+    <ComponentContainer>
+        <template v-slot:header>True or false</template>
+
+        <template v-slot:body>
+            <TrueOrFalse/>
+        </template>
+
+    </ComponentContainer>
+
+
 </template>
 
 <script setup>

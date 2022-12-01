@@ -1,5 +1,12 @@
 <template>
-    <CurrencyConverter/>
+    <ComponentContainer>
+        <template v-slot:header>Currency converter</template>
+
+        <template v-slot:body>
+            <CurrencyConverter/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

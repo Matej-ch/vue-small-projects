@@ -1,5 +1,13 @@
 <template>
-    <Exoplanets/>
+    <ComponentContainer>
+        <template v-slot:header>NASA Exoplanet Query</template>
+
+        <template v-slot:body>
+            <Exoplanets/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

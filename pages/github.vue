@@ -1,5 +1,16 @@
 <template>
-    <GithubStatus/>
+    <ComponentContainer>
+        <template v-slot:header>
+            Get status
+        </template>
+
+        <template v-slot:body>
+            <GithubStatus/>
+        </template>
+
+    </ComponentContainer>
+
+
 </template>
 
 <script setup>

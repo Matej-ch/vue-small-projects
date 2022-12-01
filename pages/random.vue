@@ -1,5 +1,12 @@
 <template>
-    <RandomNumber/>
+    <ComponentContainer>
+        <template v-slot:header>Random number generator</template>
+
+        <template v-slot:body>
+            <RandomNumber/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

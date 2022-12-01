@@ -1,4 +1,11 @@
 <template>
+    <ComponentContainer>
+        <template v-slot:header>CSS Shapes</template>
+
+        <template v-slot:body>
+        </template>
+
+    </ComponentContainer>
 
 </template>
 

@@ -1,5 +1,13 @@
 <template>
-    <ColorCycle/>
+    <ComponentContainer>
+        <template v-slot:header>Color cycle</template>
+
+        <template v-slot:body>
+            <ColorCycle/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

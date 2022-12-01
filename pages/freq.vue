@@ -1,5 +1,14 @@
 <template>
-    <WordFrequency/>
+    <ComponentContainer>
+        <template v-slot:header>Word frequency</template>
+
+        <template v-slot:body>
+
+            <WordFrequency/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

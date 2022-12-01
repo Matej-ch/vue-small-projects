@@ -1,43 +1,33 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Json to CSV converter</h2>
-        </div>
-
-        <div class="px-4 py-5">
-
-            <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <label class="mb-1 font-bold text-white">Json to convert</label>
-                <textarea v-model="json" cols="30" rows="10" placeholder="Json to convert"
-                          @keyup="checkValidity(true)"
-                          @paste="checkValidity(true)">
+    <div class="flex items-center justify-between mb-3 w-full flex-col">
+        <label class="mb-1 font-bold text-white">Json to convert</label>
+        <textarea v-model="json" cols="30" rows="10" placeholder="Json to convert"
+                  @keyup="checkValidity(true)"
+                  @paste="checkValidity(true)">
                 </textarea>
-            </div>
+    </div>
 
-            <div>
-                <button @click="convert"
-                        class="btn btn-green">
-                    Convert
-                </button>
-            </div>
+    <div>
+        <button @click="convert"
+                class="btn btn-green">
+            Convert
+        </button>
+    </div>
 
-            <div v-show="message.length" class="bg-red-300 text-red-500 p-4">
-                {{message}}
-            </div>
+    <div v-show="message.length" class="bg-red-300 text-red-500 p-4">
+        {{message}}
+    </div>
 
-            <div class="flex items-center justify-between mb-3 w-full flex-col">
-                <label class="mb-1 font-bold text-white">CSV result</label>
-                <textarea v-model="csv" cols="30" rows="10" placeholder="CSV" disabled
-                          class="pointer-events-none"></textarea>
-            </div>
+    <div class="flex items-center justify-between mb-3 w-full flex-col">
+        <label class="mb-1 font-bold text-white">CSV result</label>
+        <textarea v-model="csv" cols="30" rows="10" placeholder="CSV" disabled
+                  class="pointer-events-none"></textarea>
+    </div>
 
-            <div class="p-4 flex gap-2">
-                <button class="btn btn-slate" @click="json = ''">Clear Json</button>
-                <button class="btn btn-orange" @click="csv = ''">Clear Csv</button>
-                <button class="btn btn-red" @click="json = ''; csv = ''">Clear Both</button>
-            </div>
-        </div>
-
+    <div class="p-4 flex gap-2">
+        <button class="btn btn-slate" @click="json = ''">Clear Json</button>
+        <button class="btn btn-orange" @click="csv = ''">Clear Csv</button>
+        <button class="btn btn-red" @click="json = ''; csv = ''">Clear Both</button>
     </div>
 </template>
 

@@ -1,47 +1,36 @@
 <template>
-    <div>
-
-        <div class="component-header">
-            <h2>Stopwatch</h2>
+    <div class="flex flex-col mb-5">
+        <div class="flex flex-row font-bold text-2xl justify-center items-center text-slate-300">
+            <div class="hour">{{hours}}</div>
+            <div class="dots">:</div>
+            <div class="min">{{minutes}}</div>
+            <div class="dots">:</div>
+            <div class="secs">{{seconds}}</div>
         </div>
 
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-                <div class="flex flex-col mb-5">
-                    <div class="flex flex-row font-bold text-2xl justify-center items-center text-slate-300">
-                        <div class="hour">{{hours}}</div>
-                        <div class="dots">:</div>
-                        <div class="min">{{minutes}}</div>
-                        <div class="dots">:</div>
-                        <div class="secs">{{seconds}}</div>
-                    </div>
+        <div class="flex gap-2 justify-center mt-8">
+            <button @click="startStop" v-if="stopTimer"
+                    class="btn btn-green">
+                Start
+            </button>
+            <button @click="startStop" v-else class="btn btn-orange">
+                Stop
+            </button>
 
-                    <div class="flex gap-2 justify-center mt-8">
-                        <button @click="startStop" v-if="stopTimer"
-                                class="btn btn-green">
-                            Start
-                        </button>
-                        <button @click="startStop" v-else class="btn btn-orange">
-                            Stop
-                        </button>
+            <button @click="restart" class="btn btn-red">
+                Restart
+            </button>
 
-                        <button @click="restart" class="btn btn-red">
-                            Restart
-                        </button>
+            <button class="btn btn-slate" @click="addLap">
+                Lap
+            </button>
+        </div>
 
-                        <button class="btn btn-slate" @click="addLap">
-                            Lap
-                        </button>
-                    </div>
-
-                    <div class="flex flex-col gap-2" v-show="laps.length">
-                        <div v-for="lap in reversedLaps" class="flex flex-row gap-4">
-                            <span class="text-xl">{{lap.id}}</span>
-                            <span class="text-xl">{{lap.time}}</span>
-                            <span class="text-base text-slate-500">{{lap.duration}}</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="flex flex-col gap-2" v-show="laps.length">
+            <div v-for="lap in reversedLaps" class="flex flex-row gap-4">
+                <span class="text-xl">{{lap.id}}</span>
+                <span class="text-xl">{{lap.time}}</span>
+                <span class="text-base text-slate-500">{{lap.duration}}</span>
             </div>
         </div>
     </div>

@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div class="component-header">
-            <h2>Password generator</h2>
-        </div>
+
 
         <div class="px-4 py-5">
             <div class="flex flex-col text-white">

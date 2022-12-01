@@ -1,61 +1,50 @@
 <template>
-    <div>
-        <div class="flex flex-col items-center justify-center text-white py-4 px-4 bg-blue-800">
-            <div class="text-center uppercase text-2xl">Random meal</div>
+    <div class="flex items-end justify-center mb-5">
+
+        <div class="flex flex-col text-center px-2">
+            <button @click="getMeal"
+                    class="btn btn-orange">
+                Get meal
+            </button>
         </div>
 
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-                <div class="flex items-end justify-center mb-5">
+    </div>
 
-                    <div class="flex flex-col text-center px-2">
-                        <button @click="getMeal"
-                                class="btn btn-orange">
-                            Get meal
-                        </button>
-                    </div>
+    <div v-show="meals.length">
+        <div v-for="meal in meals">
+            <div class="flex flex-row gap-2 items-center mb-4">
+                <img :src=meal.strMealThumb :alt=meal.strMeal style="max-width: 100px;">
+                <h2 class="font-bold">{{meal.strMeal}}</h2>
+            </div>
 
-                </div>
+            <div class="text-left">
+                <p class="font-bold py-2">
+                    Ingredients
+                </p>
 
-                <div v-show="meals.length">
-                    <div v-for="meal in meals">
-                        <div class="flex flex-row gap-2 items-center mb-4">
-                            <img :src=meal.strMealThumb :alt=meal.strMeal style="max-width: 100px;">
-                            <h2 class="font-bold">{{meal.strMeal}}</h2>
-                        </div>
+                <ul>
+                    <li v-for="(attr, index) in meal">
+                        <span v-if="index.includes('strIngredient')">
+                            {{attr}} {{meal['strMeasure' + index.replace(/^\D+/g, '')]}}
+                        </span>
 
-                        <div class="text-left">
-                            <p class="font-bold py-2">
-                                Ingredients
-                            </p>
-
-                            <ul>
-                                <li v-for="(attr, index) in meal">
-                                    <span v-if="index.includes('strIngredient')">
-                                        {{attr}} {{meal['strMeasure' + index.replace(/^\D+/g, '')]}}
-                                    </span>
-
-                                </li>
-                            </ul>
-
-                        </div>
-
-                        <div class="text-left">
-                            <p class="font-bold py-2">Instructions</p>
-                            {{meal.strInstructions}}
-                        </div>
-
-                        <div class="text-left py-4" v-if="meal.strYoutube.length">
-                            <iframe width="560" height="315" :src=getVideoUrl(meal.strYoutube)
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                        </div>
-
-                    </div>
-                </div>
+                    </li>
+                </ul>
 
             </div>
+
+            <div class="text-left">
+                <p class="font-bold py-2">Instructions</p>
+                {{meal.strInstructions}}
+            </div>
+
+            <div class="text-left py-4" v-if="meal.strYoutube.length">
+                <iframe width="560" height="315" :src=getVideoUrl(meal.strYoutube)
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+
         </div>
     </div>
 </template>

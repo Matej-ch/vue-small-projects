@@ -1,5 +1,13 @@
 <template>
-    <NotesApp/>
+    <ComponentContainer>
+        <template v-slot:header>Personal notes</template>
+
+        <template v-slot:body>
+            <NotesApp/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

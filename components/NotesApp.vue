@@ -1,43 +1,33 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Notes app</h2>
-        </div>
+    <div class="flex flex-col text-white">
+        <div class="flex items-end justify-between mb-5">
+            <div class="flex flex-col px-2 w-full">
+                <label class="mb-1" for="weight-kilograms">Add Note (markdown available)</label>
 
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-                <div class="flex items-end justify-between mb-5">
-                    <div class="flex flex-col px-2 w-full">
-                        <label class="mb-1" for="weight-kilograms">Add Note (markdown available)</label>
-
-                        <textarea v-model="note" @keyup.enter="saveNote" type="text" cols="30" rows="10"></textarea>
-                    </div>
-                </div>
+                <textarea v-model="note" @keyup.enter="saveNote" type="text" cols="30" rows="10"></textarea>
             </div>
-
-            <div class="flex mb-3 w-full flex-col">
-                <div v-for="note in notes" :key="note.id"
-                     class="flex flex-row px-2 font-bold text-xl border-b border-b-slate-500 bg-slate-50 py-2 mb-2 rounded">
-                    <div class="flex flex-col">
-                        <div class="flex flex-row gap-2">
-                            <span class=" text-slate-700">{{note.id}}</span>
-                            <span v-show="note.isEditing === false" class="cursor-pointer js-markdown"
-                                  @dblclick="note.isEditing = true"
-                                  v-html="marked.parse(note.text)"></span>
-                            <input type="text" v-show="note.isEditing === true" v-model="note.text"
-                                   @keyup.enter="editNote(note)"
-                                   class="border-sky-200 border px-1 rounded">
-                        </div>
-                        <span class="font-bold text-[0.75rem] text-slate-700">Created at {{new Date(note.date)}}</span>
-                    </div>
-                    <div class="ml-auto">
-                        <button class="" @click="deleteNote(note)">&#10060;</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
+    </div>
 
+    <div class="flex mb-3 w-full flex-col">
+        <div v-for="note in notes" :key="note.id"
+             class="flex flex-row px-2 font-bold text-xl border-b border-b-slate-500 bg-slate-50 py-2 mb-2 rounded">
+            <div class="flex flex-col">
+                <div class="flex flex-row gap-2">
+                    <span class=" text-slate-700">{{note.id}}</span>
+                    <span v-show="note.isEditing === false" class="cursor-pointer js-markdown"
+                          @dblclick="note.isEditing = true"
+                          v-html="marked.parse(note.text)"></span>
+                    <input type="text" v-show="note.isEditing === true" v-model="note.text"
+                           @keyup.enter="editNote(note)"
+                           class="border-sky-200 border px-1 rounded">
+                </div>
+                <span class="font-bold text-[0.75rem] text-slate-700">Created at {{new Date(note.date)}}</span>
+            </div>
+            <div class="ml-auto">
+                <button class="" @click="deleteNote(note)">&#10060;</button>
+            </div>
+        </div>
     </div>
 </template>
 

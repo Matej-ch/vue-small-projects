@@ -1,5 +1,14 @@
 <template>
-    <RomanNumerals/>
+    <ComponentContainer>
+        <template v-slot:header>
+            Roman numerals
+        </template>
+
+        <template v-slot:body>
+            <RomanNumerals/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

@@ -1,4 +1,11 @@
 <template>
+    <ComponentContainer>
+        <template v-slot:header>Color Spotter</template>
+
+        <template v-slot:body>
+        </template>
+
+    </ComponentContainer>
 
 </template>
 

@@ -1,5 +1,13 @@
 <template>
-    <Bin2Dec/>
+    <ComponentContainer>
+        <template v-slot:header>Binary to decimal convertor</template>
+
+        <template v-slot:body>
+            <Bin2Dec/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

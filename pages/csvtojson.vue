@@ -1,5 +1,13 @@
 <template>
-    <CsvToJson/>
+    <ComponentContainer>
+        <template v-slot:header>CSV to Json converter</template>
+
+        <template v-slot:body>
+            <CsvToJson/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

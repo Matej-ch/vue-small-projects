@@ -1,5 +1,12 @@
 <template>
-    <GithubProfile/>
+    <ComponentContainer>
+        <template v-slot:header>Github profile</template>
+
+        <template v-slot:body>
+            <GithubProfile/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

@@ -1,5 +1,13 @@
 <template>
-    <MarkdownPreviewer/>
+    <ComponentContainer>
+        <template v-slot:header>Markdown preview</template>
+
+        <template v-slot:body>
+            <MarkdownPreviewer/>
+        </template>
+
+    </ComponentContainer>
+
 </template>
 
 <script setup>

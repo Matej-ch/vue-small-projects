@@ -1,58 +1,50 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Weather app</h2>
+
+    <div class="flex items-end justify-between mb-5">
+        <div class="flex flex-col text-center w-3/6 px-2">
+            <label class="mb-1">City</label>
+
+            <input v-model="city"
+                   type="text"
+                   @keyup.enter="checkWeather">
         </div>
 
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-                <div class="flex items-end justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
-                        <label class="mb-1">City</label>
+        <div class="flex flex-col text-center w-3/6 px-2">
+            <button @click="checkWeather"
+                    class="btn btn-red">
+                Check weather
+            </button>
+        </div>
 
-                        <input v-model="city"
-                               type="text"
-                               @keyup.enter="checkWeather">
-                    </div>
+    </div>
 
-                    <div class="flex flex-col text-center w-3/6 px-2">
-                        <button @click="checkWeather"
-                                class="btn btn-red">
-                            Check weather
-                        </button>
-                    </div>
+    <div v-show="dataIsLoaded === true"
+         class="flex flex-col mb-5 font-bold justify-center text-center p-4  w-full">
 
-                </div>
-
-                <div v-show="dataIsLoaded === true"
-                     class="flex flex-col mb-5 font-bold justify-center text-center p-4  w-full">
-
-                    <div>
-                        Weather: {{weather.description}}
-                    </div>
-                    <div>
-                        Temperature: {{main.temp}}
-                    </div>
-                    <div>
-                        Humidity: {{main.humidity}}
-                    </div>
-                    <div>
-                        Pressure: {{main.pressure}}
-                    </div>
-                </div>
-
-                <div v-show="dataIsLoaded === true" class="text-center">
-                    <span v-if="isNight" class="text-4xl">
-                        &#127765;
-                    </span>
-                    <span v-else class="text-4xl">
-                        &#127774;
-                    </span>
-                </div>
-
-            </div>
+        <div>
+            Weather: {{weather.description}}
+        </div>
+        <div>
+            Temperature: {{main.temp}}
+        </div>
+        <div>
+            Humidity: {{main.humidity}}
+        </div>
+        <div>
+            Pressure: {{main.pressure}}
         </div>
     </div>
+
+    <div v-show="dataIsLoaded === true" class="text-center">
+        <span v-if="isNight" class="text-4xl">
+            &#127765;
+        </span>
+        <span v-else class="text-4xl">
+            &#127774;
+        </span>
+    </div>
+
+
 </template>
 
 <script setup>

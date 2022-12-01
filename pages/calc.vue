@@ -1,5 +1,12 @@
 <template>
-    <Calculator/>
+    <ComponentContainer>
+        <template v-slot:header>Calculator</template>
+
+        <template v-slot:body>
+            <Calculator/>
+        </template>
+
+    </ComponentContainer>
 </template>
 
 <script setup>

@@ -1,38 +1,30 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>NASA Exoplanet Query</h2>
-        </div>
-
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-                Base url {{baseUrl}}
-            </div>
-
-            <div>
-                <label for="table-select">Table</label>
-                <select v-model="table" id="table-select">
-                    <option v-for="table in tables" :value=table.name>
-                        {{table.label}}
-                    </option>
-                </select>
-            </div>
-
-            <div class="flex flex-col my-2">
-                <button @click="loadNasaData"
-                        class="btn btn-green">
-                    Load data from nasa
-                </button>
-            </div>
-
-            <div class="flex flex-col my-2">
-                <div v-for="planet in planetData">
-                    {{planet}}
-                </div>
-            </div>
-        </div>
-
+    <div class="flex flex-col text-white">
+        Base url {{baseUrl}}
     </div>
+
+    <div>
+        <label for="table-select">Table</label>
+        <select v-model="table" id="table-select">
+            <option v-for="table in tables" :value=table.name>
+                {{table.label}}
+            </option>
+        </select>
+    </div>
+
+    <div class="flex flex-col my-2">
+        <button @click="loadNasaData"
+                class="btn btn-green">
+            Load data from nasa
+        </button>
+    </div>
+
+    <div class="flex flex-col my-2">
+        <div v-for="planet in planetData">
+            {{planet}}
+        </div>
+    </div>
+
 </template>
 
 <script setup>

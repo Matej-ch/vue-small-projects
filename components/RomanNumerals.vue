@@ -1,32 +1,22 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Roman numerals</h2>
+
+    <div class="flex items-center justify-between mb-5">
+        <div class="flex flex-col text-center w-3/6 px-2">
+            <label class="mb-1">Roman numeral</label>
+
+            <input v-model="roman" type="text" @keyup="generateDecimal">
         </div>
+        <div class="flex flex-col text-center w-3/6 px-2">
+            <label class="mb-1">Decimal</label>
 
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-                <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-3/6 px-2">
-                        <label class="mb-1">Roman numeral</label>
-
-                        <input v-model="roman" type="text" @keyup="generateDecimal">
-                    </div>
-                    <div class="flex flex-col text-center w-3/6 px-2">
-                        <label class="mb-1">Decimal</label>
-
-                        <input v-model="decimal" type="text" @keyup="generateRoman">
-                    </div>
-                </div>
-
-                <div v-show="msg.length"
-                     class="flex mb-5 font-bold justify-center text-center p-4 bg-red-300 text-red-600">
-                    {{msg}}
-                </div>
-            </div>
+            <input v-model="decimal" type="text" @keyup="generateRoman">
         </div>
     </div>
 
+    <div v-show="msg.length"
+         class="flex mb-5 font-bold justify-center text-center p-4 bg-red-300 text-red-600">
+        {{msg}}
+    </div>
 </template>
 
 <script setup>

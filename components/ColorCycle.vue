@@ -1,74 +1,65 @@
 <template>
+
+    <div class="flex items-center justify-between mb-5">
+        <div class="flex flex-col text-center w-2/6 px-2">
+            <label class="mb-1">Red (RR)</label>
+
+            <input v-model="rr" type="text">
+        </div>
+        <div class="flex flex-col text-center w-2/6 px-2">
+            <label class="mb-1">Green (GG)</label>
+
+            <input v-model="gg" type="text">
+        </div>
+
+        <div class="flex flex-col text-center w-2/6 px-2">
+            <label class="mb-1">Blue (BB)</label>
+
+            <input v-model="bb" type="text">
+        </div>
+    </div>
+
+    <div class="flex items-center justify-between mb-5">
+        <div class="flex flex-col text-center w-2/6 px-2">
+            <label class="mb-1">Red increment</label>
+
+            <input v-model="rrIncrement" type="number" step="1">
+        </div>
+        <div class="flex flex-col text-center w-2/6 px-2">
+            <label class="mb-1">Green increment</label>
+
+            <input v-model="ggIncrement" type="number" step="1">
+        </div>
+
+        <div class="flex flex-col text-center w-2/6 px-2">
+            <label class="mb-1">Blue increment</label>
+
+            <input v-model="bbIncrement" type="number" step="1">
+        </div>
+    </div>
+
+    <div class="flex items-center justify-between mb-5">
+        <div class="flex flex-col text-center w-2/6 px-2">
+            <label class="mb-1">Interval</label>
+            <input v-model="animationDelay" type="number" step="0.01">
+        </div>
+    </div>
+
     <div>
-        <div class="component-header">
-            <h2>Color cycle</h2>
-        </div>
+        <button v-if="isRunning" @click="stopColorCycle"
+                class="btn btn-red">
+            Stop
+        </button>
+        <button v-else @click="startColorCycle"
+                class="btn btn-green">
+            Start
+        </button>
+    </div>
 
-        <div class="px-4 py-5">
-            <div class="flex flex-col text-white">
-                <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-2/6 px-2">
-                        <label class="mb-1">Red (RR)</label>
-
-                        <input v-model="rr" type="text">
-                    </div>
-                    <div class="flex flex-col text-center w-2/6 px-2">
-                        <label class="mb-1">Green (GG)</label>
-
-                        <input v-model="gg" type="text">
-                    </div>
-
-                    <div class="flex flex-col text-center w-2/6 px-2">
-                        <label class="mb-1">Blue (BB)</label>
-
-                        <input v-model="bb" type="text">
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-2/6 px-2">
-                        <label class="mb-1">Red increment</label>
-
-                        <input v-model="rrIncrement" type="number" step="1">
-                    </div>
-                    <div class="flex flex-col text-center w-2/6 px-2">
-                        <label class="mb-1">Green increment</label>
-
-                        <input v-model="ggIncrement" type="number" step="1">
-                    </div>
-
-                    <div class="flex flex-col text-center w-2/6 px-2">
-                        <label class="mb-1">Blue increment</label>
-
-                        <input v-model="bbIncrement" type="number" step="1">
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-between mb-5">
-                    <div class="flex flex-col text-center w-2/6 px-2">
-                        <label class="mb-1">Interval</label>
-                        <input v-model="animationDelay" type="number" step="0.01">
-                    </div>
-                </div>
-
-                <div>
-                    <button v-if="isRunning" @click="stopColorCycle"
-                            class="btn btn-red">
-                        Stop
-                    </button>
-                    <button v-else @click="startColorCycle"
-                            class="btn btn-green">
-                        Start
-                    </button>
-                </div>
-
-                <div class="p-8 rounded-sm"
-                     style="transition-property: background-color;transition-timing-function: ease-in-out;"
-                     :style="{'transition-duration': `${animationDelay}s`,'background-color': bcColor}">
-                    &nbsp;
-                </div>
-            </div>
-        </div>
+    <div class="p-8 rounded-sm"
+         style="transition-property: background-color;transition-timing-function: ease-in-out;"
+         :style="{'transition-duration': `${animationDelay}s`,'background-color': bcColor}">
+        &nbsp;
     </div>
 </template>
 

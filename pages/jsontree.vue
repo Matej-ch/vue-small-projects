@@ -1,23 +1,24 @@
 <template>
-    <div>
-        <div class="component-header">
-            <h2>Tree structure from json</h2>
-        </div>
+    <ComponentContainer>
+        <template v-slot:header>Tree structure from json</template>
 
-        <div class="px-4 py-2">
-            <div class="flex items-center justify-between mb-3 w-full flex-col">
-
+        <template v-slot:body>
+            <div class="px-4 py-2">
                 <div class="flex items-center justify-between mb-3 w-full flex-col">
-                    <label class="mb-1 font-bold text-white">Json to convert</label>
-                    <textarea v-model="jsonData" cols="30" rows="10" placeholder="Json to convert"></textarea>
+
+                    <div class="flex items-center justify-between mb-3 w-full flex-col">
+                        <label class="mb-1 font-bold text-white">Json to convert</label>
+                        <textarea v-model="jsonData" cols="30" rows="10" placeholder="Json to convert"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="px-4 bg-blue-400 py-2">
-            <TreeStructure :jsonData="JSON.parse(jsonData)"/>
-        </div>
+            <div class="px-4 bg-blue-400 py-2">
+                <TreeStructure :jsonData="JSON.parse(jsonData)"/>
+            </div>
+        </template>
 
-    </div>
+    </ComponentContainer>
+
 
 </template>
 
