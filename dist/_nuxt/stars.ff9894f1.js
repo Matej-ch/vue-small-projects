@@ -1,1 +1,0 @@
-import{_ as e}from"./ComponentContainer.3f7120f2.js";import{c as n,w as t,o as a}from"./entry.9438c006.js";import{u as r}from"./composables.5c8c8af8.js";const u={__name:"stars",setup(_){return r({title:"Star Rating"}),(s,c)=>{const o=e;return a(),n(o,null,{header:t(()=>[]),body:t(()=>[]),_:1})}}};export{u as default};
