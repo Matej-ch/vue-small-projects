@@ -52,6 +52,7 @@ import Comment from '~icons/material-symbols/comment';
 import CodeJson from '~icons/mdi/code-json';
 import DataArray from '~icons/material-symbols/data-array';
 import Progressbar from '~icons/vaadin/progressbar';
+import Gift from '~icons/mdi/gift'
 
 
 export const useNavbarStore = defineStore('navbar', {
@@ -113,6 +114,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'json', label: 'JSON Creator', 'icon': shallowRef(CodeJson)},
                 {url: 'array', label: 'Array methods', 'icon': shallowRef(DataArray)},
                 {url: 'progress', label: 'Progress Bar', 'icon': shallowRef(Progressbar)},
+                {url: 'gift', label: 'Gift search bar', 'icon': shallowRef(Gift)},
             ]
         };
     }

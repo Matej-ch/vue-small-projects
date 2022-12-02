@@ -78,3 +78,4 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 49. [ ] JSON Creator
 50. [ ] Array methods
 51. [ ] Progress Bar
+52. [x] Gift search bar with debounce [Assignment](https://github.com/Advent-Of-Vue/2022-gift-search-bar)
