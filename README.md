@@ -6,6 +6,7 @@ Collection of components based on https://webdevscom.github.io/resources/5 and o
 
 ### Current components
 
+Demo [here](https://v.matejchalachan.com/)
 Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 
 1. [x] 
