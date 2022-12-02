@@ -80,3 +80,5 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 50. [ ] Array methods
 51. [ ] Progress Bar
 52. [x] Gift search bar with debounce [Assignment](https://github.com/Advent-Of-Vue/2022-gift-search-bar)
+53. [x] Joke
+    generator [Assignment](https://github.com/Advent-Of-Vue/aov-joke-generator)
