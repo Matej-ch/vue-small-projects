@@ -53,7 +53,7 @@ import CodeJson from '~icons/mdi/code-json';
 import DataArray from '~icons/material-symbols/data-array';
 import Progressbar from '~icons/vaadin/progressbar';
 import Gift from '~icons/mdi/gift'
-
+import PartyPopper from '~icons/mdi/party-popper'
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -115,6 +115,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'array', label: 'Array methods', 'icon': shallowRef(DataArray)},
                 {url: 'progress', label: 'Progress Bar', 'icon': shallowRef(Progressbar)},
                 {url: 'gift', label: 'Gift search bar', 'icon': shallowRef(Gift)},
+                {url: 'joke', label: 'Joke generator', 'icon': shallowRef(PartyPopper)},
             ]
         };
     }
