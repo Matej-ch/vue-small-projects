@@ -1,6 +1,4 @@
 <template>
-
-
     <div class="flex flex-col text-white">
 
         <div class="flex items-end justify-between mb-5">
@@ -27,8 +25,6 @@
             {{errorMessage}}
         </div>
     </div>
-
-
 </template>
 
 <script setup>

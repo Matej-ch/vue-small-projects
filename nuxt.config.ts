@@ -39,8 +39,8 @@ export default defineNuxtConfig({
     modules: [
         ['@nuxtjs/tailwindcss'],
         ['@nuxtjs/color-mode'],
-        ['@pinia/nuxt',
-            /*{
+        ['@pinia/nuxt'/*,
+            {
                 autoImports: [
                     // automatically imports `usePinia()`
                     'defineStore',
@@ -63,8 +63,8 @@ export default defineNuxtConfig({
         plugins: [
             Icons({
                 autoInstall: true
-            })
-        ]
+            }),
+        ],
     }
 
 })

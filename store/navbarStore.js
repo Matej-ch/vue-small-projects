@@ -27,7 +27,6 @@ import OutlineFileCopy from '~icons/ic/outline-file-copy'
 import RoundAccountTree from '~icons/ic/round-account-tree'
 import BaselineQrCode2 from '~icons/ic/baseline-qr-code-2'
 import OutlineInsertEmoticon from '~icons/ic/outline-insert-emoticon'
-
 import Counter from '~icons/mdi/counter';
 import Number1BoxMultipleOutline from '~icons/mdi/number-1-box-multiple-outline';
 import Telephone from '~icons/mdi/telephone';

@@ -1,1 +1,0 @@
-import{_ as t}from"./ComponentContainer.85c1baab.js";import{c as n,w as o,o as m,f as a}from"./entry.f38bfd05.js";import{u as r}from"./composables.d453775f.js";const f={__name:"comments",setup(_){return r({title:"Comment box"}),(s,c)=>{const e=t;return m(),n(e,null,{header:o(()=>[a("Comments")]),body:o(()=>[]),_:1})}}};export{f as default};
