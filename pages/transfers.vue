@@ -3,6 +3,7 @@
         <template v-slot:header>Transfer List</template>
 
         <template v-slot:body>
+            <TransferList></TransferList>
         </template>
 
     </ComponentContainer>
