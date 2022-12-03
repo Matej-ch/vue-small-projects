@@ -16,13 +16,13 @@
 import {useNow} from '@vueuse/core'
 import {computed, ref} from 'vue';
 
-defineProps({
+const props = defineProps({
     year: Number,
 })
 
 const now = useNow();
 
-const christmas = new Date('12/25/2022 00:00:00');
+const christmas = new Date(`12/25/${props.year} 00:00:00`);
 
 const seconds = computed(() => {
     return 60 * (minutes.value - minutesRounded.value)
