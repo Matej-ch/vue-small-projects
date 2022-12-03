@@ -1,1 +1,0 @@
-import{_ as e}from"./ComponentContainer.ad68c991.js";import{c as n,w as t,o as a,f as r}from"./entry.cc585e17.js";import{u as _}from"./composables.c8ca72aa.js";const f={__name:"otp",setup(p){return _({title:"OTP Input"}),(c,s)=>{const o=e;return a(),n(o,null,{header:t(()=>[r("OTP Input")]),body:t(()=>[]),_:1})}}};export{f as default};

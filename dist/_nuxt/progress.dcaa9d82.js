@@ -1,0 +1,1 @@
+import{_ as r}from"./ComponentContainer.7b585e2f.js";import{c as t,w as e,o as s,f as a}from"./entry.88ccf0b3.js";import{u as n}from"./composables.3d54cfff.js";const f={__name:"progress",setup(_){return n({title:"Progress Bar"}),(c,p)=>{const o=r;return s(),t(o,null,{header:e(()=>[a("Progress Bar")]),body:e(()=>[]),_:1})}}};export{f as default};
