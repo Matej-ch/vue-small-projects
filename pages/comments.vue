@@ -1,8 +1,9 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Comments</template>
+        <template v-slot:header>Comment box</template>
 
         <template v-slot:body>
+            <CommentBox></CommentBox>
         </template>
 
     </ComponentContainer>
