@@ -1,0 +1,1 @@
+import{_ as e}from"./ComponentContainer.58cd3078.js";import{c as r,w as o,o as n,f as a}from"./entry.bfd3db2c.js";import{u as _}from"./composables.bee98668.js";const i={__name:"spotter",setup(p){return _({title:"Color Spotter"}),(s,c)=>{const t=e;return n(),r(t,null,{header:o(()=>[a("Color Spotter")]),body:o(()=>[]),_:1})}}};export{i as default};

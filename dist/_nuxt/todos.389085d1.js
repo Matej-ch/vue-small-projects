@@ -1,1 +1,0 @@
-import{_ as e}from"./ComponentContainer.7b585e2f.js";import{c as n,w as o,o as a,f as r}from"./entry.88ccf0b3.js";import{u as s}from"./composables.3d54cfff.js";const u={__name:"todos",setup(_){return s({title:"Todo List"}),(c,m)=>{const t=e;return a(),n(t,null,{header:o(()=>[r("Todo List")]),body:o(()=>[]),_:1})}}};export{u as default};
