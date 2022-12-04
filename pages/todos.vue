@@ -3,6 +3,7 @@
         <template v-slot:header>Todo List</template>
 
         <template v-slot:body>
+            <TodoList></TodoList>
         </template>
 
     </ComponentContainer>
