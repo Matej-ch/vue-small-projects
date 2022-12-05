@@ -54,7 +54,8 @@ import Progressbar from '~icons/vaadin/progressbar';
 import Gift from '~icons/mdi/gift'
 import PartyPopper from '~icons/mdi/party-popper'
 import CountdownTimer from '~icons/radix-icons/countdown-timer';
-import PineTree from '~icons/mdi/pine-tree'
+import PineTree from '~icons/mdi/pine-tree';
+import TwotoneLabel from '~icons/ic/twotone-label';
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -119,6 +120,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'joke', label: 'Joke generator', 'icon': shallowRef(PartyPopper)},
                 {url: 'countdown', label: 'Countdown to christmas', 'icon': shallowRef(CountdownTimer)},
                 {url: 'recursive', label: 'Recursive Xmas Tree', 'icon': shallowRef(PineTree)},
+                {url: 'label', label: 'Gift label', 'icon': shallowRef(TwotoneLabel)},
             ]
         };
     }
