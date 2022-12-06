@@ -1,0 +1,1 @@
+import{_ as o}from"./ComponentContainer.378c24ea.js";import{c as n,w as e,o as a,f as p}from"./entry.d8e2a26f.js";import{u as r}from"./composables.8a29af42.js";const d={__name:"typing",setup(_){return r({title:"Typing Speed Test"}),(s,c)=>{const t=o;return a(),n(t,null,{header:e(()=>[p("Typing Speed Test")]),body:e(()=>[]),_:1})}}};export{d as default};

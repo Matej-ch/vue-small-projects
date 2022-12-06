@@ -1,0 +1,1 @@
+import{_ as e}from"./ComponentContainer.378c24ea.js";import{c as n,w as o,o as r}from"./entry.d8e2a26f.js";import{u as _}from"./composables.8a29af42.js";const i={__name:"json",setup(a){return _({title:"JSON Creator"}),(s,c)=>{const t=e;return r(),n(t,null,{header:o(()=>[]),body:o(()=>[]),_:1})}}};export{i as default};

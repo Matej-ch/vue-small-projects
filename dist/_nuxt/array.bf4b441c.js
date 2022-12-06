@@ -1,0 +1,1 @@
+import{_ as e}from"./ComponentContainer.378c24ea.js";import{c as r,w as o,o as a}from"./entry.d8e2a26f.js";import{u as n}from"./composables.8a29af42.js";const i={__name:"array",setup(_){return n({title:"Array methods"}),(s,c)=>{const t=e;return a(),r(t,null,{header:o(()=>[]),body:o(()=>[]),_:1})}}};export{i as default};

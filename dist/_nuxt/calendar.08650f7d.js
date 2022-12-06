@@ -1,1 +1,0 @@
-import{_ as t}from"./ComponentContainer.58cd3078.js";import{c as n,w as o,o as a}from"./entry.bfd3db2c.js";import{u as r}from"./composables.bee98668.js";const u={__name:"calendar",setup(_){return r({title:"Calendar"}),(c,s)=>{const e=t;return a(),n(e,null,{header:o(()=>[]),body:o(()=>[]),_:1})}}};export{u as default};
