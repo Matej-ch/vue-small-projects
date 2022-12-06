@@ -56,6 +56,7 @@ import PartyPopper from '~icons/mdi/party-popper'
 import CountdownTimer from '~icons/radix-icons/countdown-timer';
 import PineTree from '~icons/mdi/pine-tree';
 import TwotoneLabel from '~icons/ic/twotone-label';
+import Compare from '~icons/mdi/compare'
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -121,6 +122,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'countdown', label: 'Countdown to christmas', 'icon': shallowRef(CountdownTimer)},
                 {url: 'recursive', label: 'Recursive Xmas Tree', 'icon': shallowRef(PineTree)},
                 {url: 'label', label: 'Gift label', 'icon': shallowRef(TwotoneLabel)},
+                {url: 'compare', label: 'Compare gifts', 'icon': shallowRef(Compare)},
             ]
         };
     }
