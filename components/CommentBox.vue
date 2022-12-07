@@ -1,5 +1,6 @@
 <template>
-    <Comment v-for="comment in comments" :comment="comment" :handle-remove="handleRemove"></Comment>
+    <Comment v-for="comment in comments" :comment="comment" :handle-remove="handleRemove"
+             :handle-post="handlePost"></Comment>
 </template>
 
 <script setup>
@@ -19,15 +20,18 @@ const comments = ref([
                 id: getID(),
                 name: 'Name of commenter 2.1.1',
                 text: 'Hello, world 2.1.1',
+                children: [],
             }, {
                 id: getID(),
                 name: 'Name of commenter 2.1.2',
                 text: 'Hello, world 2.1.2',
+                children: [],
             }]
         }, {
             id: getID(),
             name: 'Name of commenter 2.2',
             text: 'Hello, world 2.2',
+            children: [],
         }]
     }
 ])
@@ -35,6 +39,20 @@ const comments = ref([
 function handleRemove(comment) {
 
     removeRecursive(comments.value, comment.id);
+}
+
+function handlePost(post) {
+
+    if (!post.name.length || !post.reply.length) {
+        return;
+    }
+
+    post.comment.children.push({
+        id: getID(),
+        name: post.name,
+        text: post.reply,
+        children: [],
+    });
 }
 
 function removeRecursive(comments, commentID) {

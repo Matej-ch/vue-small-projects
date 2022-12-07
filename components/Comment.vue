@@ -5,7 +5,7 @@
 
         <div class="flex flex-row gap-2">
             <div>
-                <button @click="reply" class="btn btn-green">Reply</button>
+                <button @click="isReplying = true" class="btn btn-green">Reply</button>
             </div>
 
             <div v-if="canEdit">
@@ -24,9 +24,21 @@
                  v-for="child in comment.children"
                  :comment="child"
                  :can-edit="true"
-                 :can-delete="true" :handle-remove="handleRemove">
+                 :can-delete="true" :handle-remove="handleRemove" :handle-post="handlePost">
 
         </Comment>
+    </div>
+
+    <div v-if="isReplying" class="py-2">
+        <input v-model="name" type="text" placeholder="Your name">
+        <textarea v-model="reply" placeholder="comment"></textarea>
+        <div class="flex gap-2">
+            <button class="btn btn-orange"
+                    @click="() => { handlePost({comment:comment,name,reply});name = '';reply = '';isReplying = false; }">
+                Post
+            </button>
+            <button class="btn btn-orange" @click="isReplying=false">Cancel</button>
+        </div>
     </div>
 
 
@@ -37,26 +49,19 @@ const props = defineProps({
     comment: Object,
     canEdit: {type: Boolean, default: false},
     canDelete: {type: Boolean, default: false},
-    handleRemove: Function
+    handleRemove: Function,
+    handlePost: Function
 })
 
-const emit = defineEmits(['post', 'edit'/*, 'remove'*/])
-
-function reply() {
-
-}
-
-function post() {
-    emit('post', props.comment)
-}
+const emit = defineEmits(['post', 'edit'])
+const isReplying = ref(false);
+const name = ref('');
+const reply = ref('');
 
 function edit() {
     emit('edit', props.comment)
 }
 
-/*function remove() {
-    emit('remove', props.comment)
-}*/
 </script>
 
 <style scoped>
