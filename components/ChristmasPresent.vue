@@ -1,8 +1,11 @@
 <template>
-    <div>
-        <TallRedGift class="w-32" v-if="name === 'tall-red-gift'"/>
-        <SmallRedGift class="w-32" v-else-if="name === 'small-red-gift'"/>
-        <BlueGift class="w-32" v-else-if="name === 'blue-gift'"/>
+    <div draggable="true">
+        <TallRedGift class="w-32 hover:cursor-grab active:cursor-grabbing"
+                     v-if="name === 'tall-red-gift'"/>
+        <SmallRedGift class="w-32 hover:cursor-grab active:cursor-grabbing"
+                      v-else-if="name === 'small-red-gift'"/>
+        <BlueGift class="w-32 hover:cursor-grab active:cursor-grabbing"
+                  v-else-if="name === 'blue-gift'"/>
     </div>
 </template>
 
