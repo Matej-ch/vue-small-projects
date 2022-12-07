@@ -1,4 +1,5 @@
 import Icons from 'unplugin-icons/vite'
+import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
     ssr: false,
@@ -65,6 +66,7 @@ export default defineNuxtConfig({
             Icons({
                 autoInstall: true
             }),
+            svgLoader()
         ],
     }
 

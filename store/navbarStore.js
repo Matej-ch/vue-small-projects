@@ -123,6 +123,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'recursive', label: 'Recursive Xmas Tree', 'icon': shallowRef(PineTree)},
                 {url: 'label', label: 'Gift label', 'icon': shallowRef(TwotoneLabel)},
                 {url: 'compare', label: 'Compare gifts', 'icon': shallowRef(Compare)},
+                {url: 'dragPresents', label: 'Drag presents', 'icon': shallowRef(Gift)},
             ]
         };
     }
