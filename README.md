@@ -75,7 +75,7 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 45. [ ] Calendar
 46. [ ] Paginator
 47. [ ] Connect Four
-48. [ ] Comment box
+48. [x] Comment box
 49. [ ] JSON Creator
 50. [ ] Array methods
 51. [ ] Progress Bar
