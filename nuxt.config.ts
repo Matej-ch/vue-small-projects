@@ -77,6 +77,47 @@ export default defineNuxtConfig({
                     "christmasIsComing": "{date}はあと{time}",
                     "day": "{count}日"
                 }
+            },
+            datetimeFormats: {
+                en: {
+                    short: {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                    },
+                    long: {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        weekday: 'long',
+                    },
+                },
+                'ja-JP': {
+                    short: {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                    },
+                    long: {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        weekday: 'long',
+                    },
+                },
+                de: {
+                    short: {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                    },
+                    long: {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        weekday: 'long',
+                    },
+                },
             }
         }
     },
