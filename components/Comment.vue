@@ -5,7 +5,7 @@
 
         <div class="flex flex-row gap-2">
             <div>
-                <button @click="isReplying = true" class="btn btn-green">Reply</button>
+                <button @click="openReply" class="btn btn-green">Reply</button>
             </div>
 
             <div v-if="canEdit">
@@ -19,25 +19,28 @@
 
     </div>
 
-    <div class="pl-4">
-        <Comment v-if="comment.children !== undefined && comment.children.length > 1"
-                 v-for="child in comment.children"
-                 :comment="child"
-                 :can-edit="true"
-                 :can-delete="true" :handle-remove="handleRemove" :handle-post="handlePost">
+    <div class="pl-4" v-if="replies.length">
+        <Comment
+            v-for="(reply,index) in replies"
+            :key="index"
+            :comment="reply"
+            :replies="reply.replies"
+            :can-edit="true"
+            :can-delete="true"
+            :handle-remove="handleRemove"
+            :handle-post="handlePost">
 
         </Comment>
     </div>
 
     <div v-if="isReplying" class="py-2">
         <input v-model="name" type="text" placeholder="Your name">
-        <textarea v-model="reply" placeholder="comment"></textarea>
+        <textarea v-model="myResponse" placeholder="comment"></textarea>
         <div class="flex gap-2">
-            <button class="btn btn-orange"
-                    @click="() => { handlePost({comment:comment,name,reply});name = '';reply = '';isReplying = false; }">
+            <button class="btn btn-orange" @click="postReply">
                 Post
             </button>
-            <button class="btn btn-orange" @click="isReplying=false">Cancel</button>
+            <button class="btn btn-orange" @click="closeReply">Cancel</button>
         </div>
     </div>
 
@@ -47,21 +50,32 @@
 <script setup>
 const props = defineProps({
     comment: Object,
+    replies: Array,
     canEdit: {type: Boolean, default: false},
     canDelete: {type: Boolean, default: false},
     handleRemove: Function,
     handlePost: Function
 })
 
-const emit = defineEmits(['post', 'edit'])
 const isReplying = ref(false);
 const name = ref('');
-const reply = ref('');
+const myResponse = ref('');
 
-function edit() {
-    emit('edit', props.comment)
+
+function openReply() {
+    isReplying.value = true;
 }
 
+function closeReply() {
+    isReplying.value = false;
+}
+
+function postReply() {
+    props.handlePost({comment: comment, name, myResponse});
+    name.value = '';
+    myResponse.value = '';
+    isReplying.value = false;
+}
 </script>
 
 <style scoped>

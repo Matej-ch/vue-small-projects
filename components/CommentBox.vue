@@ -1,5 +1,9 @@
 <template>
-    <Comment v-for="comment in comments" :comment="comment" :handle-remove="handleRemove"
+    <Comment v-for="(comment,index) in comments"
+             :key="index"
+             :comment="comment"
+             :replies="comment.replies"
+             :handle-remove="handleRemove"
              :handle-post="handlePost"></Comment>
 </template>
 
@@ -10,35 +14,38 @@ import {ref} from "vue";
 const comments = ref([
     {
         id: getID(),
-        name: 'Name of commenter',
+        name: 'Josh',
         text: 'Hello, world',
-        children: [{
-            name: 'Name of commenter 2.1',
-            text: 'Hello, world 2.1',
+        replies: [{
+            name: 'Jeff',
+            text: 'This is bad',
             id: getID(),
-            children: [{
+            replies: [{
                 id: getID(),
-                name: 'Name of commenter 2.1.1',
-                text: 'Hello, world 2.1.1',
-                children: [],
+                name: 'Feff',
+                text: 'its pretty good',
+                replies: [],
             }, {
                 id: getID(),
-                name: 'Name of commenter 2.1.2',
-                text: 'Hello, world 2.1.2',
-                children: [],
+                name: 'Cleff',
+                text: 'Cloom',
+                replies: [],
             }]
         }, {
             id: getID(),
-            name: 'Name of commenter 2.2',
-            text: 'Hello, world 2.2',
-            children: [],
+            name: 'Clint',
+            text: 'Goodbye world',
+            replies: [],
         }]
-    }
+    },
 ])
 
 function handleRemove(comment) {
 
-    removeRecursive(comments.value, comment.id);
+    let test = removeRecursive(comments.value, comment.id);
+
+    comments.value = test;
+    console.log(test);
 }
 
 function handlePost(post) {
@@ -47,27 +54,47 @@ function handlePost(post) {
         return;
     }
 
-    post.comment.children.push({
-        id: getID(),
-        name: post.name,
-        text: post.reply,
-        children: [],
-    });
+    for (let c in comments.value) {
+        if (comments[c].id === post.comment.id) {
+            comments[c].replies.push({
+                id: getID(),
+                name: post.name,
+                text: post.reply,
+                replies: [],
+            })
+            return;
+        }
+        if (comments[c].replies !== undefined && comments[c].replies.length > 1) {
+            handlePost(post)
+        }
+    }
 }
 
 function removeRecursive(comments, commentID) {
 
-    for (let c in comments) {
-        if (comments[c].id === commentID) {
+    return comments.map(item => {
+        return {...item}
+    }).filter(item => {
+        if ('replies' in item) {
+            item.replies = removeRecursive(item.replies, commentID);
+        }
+        return item.id !== commentID;
+    });
 
+    /*for (let c in comments) {
+        if (comments[c].id === commentID) {
+            console.log(commentID);
+            //console.log(comments[c]);
+            //comments.splice(c, 1);
+            //delete comments[c];
+            //comments.value = comments.slice(c, 1);
             return;
         } else {
-            if (comments[c].children !== undefined && comments[c].children.length > 1) {
-                console.log('before recursion');
-                removeRecursive(comments[c].children, commentID)
+            if (comments[c].replies !== undefined && comments[c].replies.length > 1) {
+                removeRecursive(comments[c].replies, commentID)
             }
         }
-    }
+    }*/
 }
 
 function getID() {
