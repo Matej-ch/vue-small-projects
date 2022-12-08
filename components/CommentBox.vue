@@ -42,10 +42,11 @@ const comments = ref([
 
 function handleRemove(comment) {
 
-    let test = removeRecursive(comments.value, comment.id);
-
-    comments.value = test;
-    console.log(test);
+    //let test = removeRecursive(comments.value, comment.id);
+    comment.replies = [];
+    //console.log();
+    //comments.value = test;
+    //console.log(test);
 }
 
 function handlePost(post) {

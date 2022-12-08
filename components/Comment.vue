@@ -1,7 +1,12 @@
 <template>
     <div class="border bg-white text-slate-900 rounded p-4">
         <div class="font-bold text-xl">{{comment.name}}</div>
-        <div>{{comment.text}}</div>
+
+        <div v-if="isEditing">
+            <input type="text" v-model="newCommentText" class="border rounded border-slate-400"
+                   @keyup.enter="finishEdit">
+        </div>
+        <div v-else>{{newCommentText}}</div>
 
         <div class="flex flex-row gap-2">
             <div>
@@ -9,7 +14,8 @@
             </div>
 
             <div v-if="canEdit">
-                <button @click="edit" class="btn btn-green">Edit</button>
+                <button v-if="!isEditing" @click="edit" class="btn btn-green">Edit</button>
+                <button v-else @click="finishEdit" class="btn btn-orange">Save</button>
             </div>
 
             <div v-if="canDelete">
@@ -37,7 +43,8 @@
         <input v-model="name" type="text" placeholder="Your name">
         <textarea v-model="myResponse" placeholder="comment"></textarea>
         <div class="flex gap-2">
-            <button class="btn btn-orange" @click="postReply">
+            <button class="btn btn-orange"
+                    @click="postReply">
                 Post
             </button>
             <button class="btn btn-orange" @click="closeReply">Cancel</button>
@@ -60,7 +67,8 @@ const props = defineProps({
 const isReplying = ref(false);
 const name = ref('');
 const myResponse = ref('');
-
+const isEditing = ref('');
+const newCommentText = ref(props.comment.text);
 
 function openReply() {
     isReplying.value = true;
@@ -71,10 +79,18 @@ function closeReply() {
 }
 
 function postReply() {
-    props.handlePost({comment: comment, name, myResponse});
+    props.handlePost({comment: props.comment, name, myResponse});
     name.value = '';
     myResponse.value = '';
     isReplying.value = false;
+}
+
+function edit() {
+    isEditing.value = true;
+}
+
+function finishEdit() {
+    isEditing.value = false;
 }
 </script>
 
