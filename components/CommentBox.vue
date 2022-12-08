@@ -42,11 +42,8 @@ const comments = ref([
 
 function handleRemove(comment) {
 
-    //let test = removeRecursive(comments.value, comment.id);
-    comment.replies = [];
-    //console.log();
-    //comments.value = test;
-    //console.log(test);
+    //comment.replies = [];
+    removeRecursive(comments.value, comment.id);
 }
 
 function handlePost(comment, name, myResponse) {
@@ -63,31 +60,22 @@ function handlePost(comment, name, myResponse) {
     })
 }
 
-function removeRecursive(comments, commentID) {
+function removeRecursive(comments, commentID, parentComment = null) {
 
-    return comments.map(item => {
-        return {...item}
-    }).filter(item => {
-        if ('replies' in item) {
-            item.replies = removeRecursive(item.replies, commentID);
-        }
-        return item.id !== commentID;
-    });
-
-    /*for (let c in comments) {
+    for (let c in comments) {
         if (comments[c].id === commentID) {
-            console.log(commentID);
-            //console.log(comments[c]);
-            //comments.splice(c, 1);
-            //delete comments[c];
-            //comments.value = comments.slice(c, 1);
+            comments[c].replies = [];
+
+            if (parentComment !== null) {
+                parentComment.replies = [...parentComment.replies.filter(rep => {
+                    return rep.id !== commentID;
+                })]
+            }
             return;
         } else {
-            if (comments[c].replies !== undefined && comments[c].replies.length > 1) {
-                removeRecursive(comments[c].replies, commentID)
-            }
+            removeRecursive(comments[c].replies, commentID, comments[c])
         }
-    }*/
+    }
 }
 
 function getID() {
