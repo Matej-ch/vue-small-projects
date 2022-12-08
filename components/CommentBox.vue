@@ -49,26 +49,18 @@ function handleRemove(comment) {
     //console.log(test);
 }
 
-function handlePost(post) {
+function handlePost(comment, name, myResponse) {
 
-    if (!post.name.length || !post.reply.length) {
+    if (!name.length || !myResponse.length) {
         return;
     }
 
-    for (let c in comments.value) {
-        if (comments[c].id === post.comment.id) {
-            comments[c].replies.push({
-                id: getID(),
-                name: post.name,
-                text: post.reply,
-                replies: [],
-            })
-            return;
-        }
-        if (comments[c].replies !== undefined && comments[c].replies.length > 1) {
-            handlePost(post)
-        }
-    }
+    comment.replies.push({
+        id: getID(),
+        name: name,
+        text: myResponse,
+        replies: [],
+    })
 }
 
 function removeRecursive(comments, commentID) {

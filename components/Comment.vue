@@ -79,7 +79,7 @@ function closeReply() {
 }
 
 function postReply() {
-    props.handlePost({comment: props.comment, name, myResponse});
+    props.handlePost(props.comment, name.value, myResponse.value);
     name.value = '';
     myResponse.value = '';
     isReplying.value = false;
@@ -90,6 +90,7 @@ function edit() {
 }
 
 function finishEdit() {
+    props.comment.text = newCommentText;
     isEditing.value = false;
 }
 </script>
