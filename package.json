@@ -33,6 +33,7 @@
     "@iconify-json/teenyicons": "^1.1.4",
     "@iconify-json/vaadin": "^1.1.4",
     "@iconify-json/wpf": "^1.1.3",
+    "@nuxtjs/i18n": "^8.0.0-beta.7",
     "@nuxtjs/tailwindcss": "^6.1.0",
     "@vueuse/core": "^9.6.0",
     "autoprefixer": "^10.4.7",
