@@ -3,7 +3,7 @@
         <div class="front">
             <div class="card-data-row">
                 <div class="brand-name">WDS Bank</div>
-                <img :src="VisaUrl" class="logo">
+                <img :src="logUrl" class="logo">
             </div>
 
             <fieldset class="form-group">
@@ -13,19 +13,24 @@
                     <input type="tel" maxlength="4"
                            aria-label="Credit card first four digits" id="cc-1"
                            required
-                           pattern="[0-9]{4}">
+                           pattern="[0-9]{4}"
+                           ref="firstCardNumberInput"
+                           @keydown="handleCardNumber" @paste="handlePaste">
                     <input type="tel" maxlength="4"
                            aria-label="Credit card second four digits"
                            required
-                           pattern="[0-9]{4}">
+                           pattern="[0-9]{4}"
+                           @keydown="handleCardNumber" @paste="handlePaste">
                     <input type="tel" maxlength="4"
                            aria-label="Credit card third four digits"
                            required
-                           pattern="[0-9]{4}">
+                           pattern="[0-9]{4}"
+                           @keydown="handleCardNumber" @paste="handlePaste">
                     <input type="tel" maxlength="4"
                            aria-label="Credit card fourth four digits"
                            required
-                           pattern="[0-9]{4}">
+                           pattern="[0-9]{4}"
+                           @keydown="handleCardNumber" @paste="handlePaste">
                 </div>
             </fieldset>
             <div class="input-row">
@@ -51,9 +56,8 @@
                             <option>11</option>
                             <option>12</option>
                         </select>
-                        <select id="expiration-year" aria-label="Expiration Year" required>
-                            <option>2022</option>
-                            <option>2023</option>
+                        <select v-model="year" id="expiration-year" aria-label="Expiration Year" required>
+                            <option v-for="year in years">{{year}}</option>
 
                         </select>
                     </div>
@@ -73,6 +77,143 @@
 
 <script setup>
 import VisaUrl from '~/assets/img/visa.svg?url'
+import MasterCardUrl from '~/assets/img/mastercard.svg?url'
+
+import {ref, onMounted} from "vue";
+
+const year = ref('')
+const years = ref([])
+const logUrl = ref(VisaUrl);
+const firstCardNumberInput = ref(null)
+
+onMounted(() => {
+    const currentYear = new Date().getFullYear();
+
+    year.value = currentYear;
+    for (let i = currentYear; i < currentYear + 10; i++) {
+        years.value.push(i);
+    }
+})
+
+function handlePaste(event) {
+    const input = event.target;
+    const data = event.clipboardData.getData('text');
+    if (!data.match(/^[0-9]+$/)) {
+        return event.preventDefault();
+    }
+
+    event.preventDefault();
+    onInputChange(input, data);
+}
+
+function handleCardNumber(event) {
+    const input = event.target;
+    const key = event.key;
+
+    switch (key) {
+        case 'ArrowLeft': {
+            if (input.selectionStart === 0 && input.selectionEnd === 0) {
+                const prev = input.previousElementSibling;
+                prev.focus();
+                prev.selectionStart = prev.value.length - 1;
+                prev.selectionEnd = prev.value.length - 1;
+                event.preventDefault();
+            }
+            break;
+        }
+        case 'ArrowRight': {
+            if (input.selectionStart === input.value.length && input.selectionEnd === input.value.length) {
+                const next = input.nextElementSibling;
+                next.focus();
+                next.selectionStart = 1;
+                next.selectionEnd = 1;
+                event.preventDefault();
+            }
+            break;
+        }
+        case "Delete": {
+            if (input.selectionStart === input.value.length && input.selectionEnd === input.value.length) {
+                const next = input.nextElementSibling;
+                next.value = next.value.substring(1, next.value.length);
+                next.focus();
+                next.selectionStart = 1;
+                next.selectionEnd = 1;
+                event.preventDefault();
+            }
+            break;
+        }
+        case "Backspace": {
+            if (input.selectionStart === 0 && input.selectionEnd === 0) {
+                const prev = input.previousElementSibling;
+                prev.value = prev.value.substring(0, prev.value.length - 1)
+                prev.focus();
+                prev.selectionStart = prev.value.length - 1;
+                prev.selectionEnd = prev.value.length - 1;
+                event.preventDefault();
+            }
+            break;
+        }
+        default : {
+            if (event.ctrlKey || event.altKey) {
+                return;
+            }
+
+            if (key.length > 1) {
+                return;
+            }
+
+            if (key.match(/^[^0-9]$/)) {
+                return event.preventDefault();
+            }
+
+            event.preventDefault();
+            onInputChange(input, key)
+        }
+    }
+}
+
+function onInputChange(input, newValue) {
+    const start = input.selectionStart;
+    const end = input.selectionEnd;
+
+    if (firstCardNumberInput.value.value.startsWith('5')) {
+        logUrl.value = MasterCardUrl;
+    }
+    if (firstCardNumberInput.value.value.startsWith('4')) {
+        logUrl.value = VisaUrl;
+    }
+
+    updateInputValue(input, newValue, start, end);
+    focusInput(input, newValue.length + start);
+}
+
+function updateInputValue(input, extraValue, start = 0, end = 0) {
+    const newValue = `${input.value.substring(0, start)}${extraValue}${input.value.substring(end, 4)}`;
+    input.value = newValue.substring(0, 4)
+    if (newValue > 4) {
+        const next = input.nextElementSibling;
+        if (next == null) {
+            return;
+        }
+        updateInputValue(next, newValue.substring(4))
+    }
+}
+
+function focusInput(input, dataLength) {
+    let addedChars = dataLength;
+    let currentInput = input;
+    while (addedChars > 4 && currentInput.nextElementSibling != null) {
+        addedChars -= 4;
+        currentInput = currentInput.nextElementSibling;
+    }
+    if (addedChars > 4) {
+        addedChars = 4;
+    }
+    currentInput.focus();
+    currentInput.selectionStart = addedChars
+    currentInput.selectionEnd = addedChars;
+}
+
 </script>
 
 <style scoped>
@@ -219,5 +360,6 @@ import VisaUrl from '~/assets/img/visa.svg?url'
 .credit-card .cvc-input {
     width: 4ch;
     font-family: monospace;
+    padding: initial;
 }
 </style>
