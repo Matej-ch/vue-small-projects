@@ -3,7 +3,10 @@
         <template v-slot:header>Credit card</template>
 
         <template v-slot:body>
-            <CreditCard/>
+            <div class="py-8">
+                <CreditCard/>
+            </div>
+
         </template>
 
     </ComponentContainer>
