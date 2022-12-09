@@ -79,11 +79,13 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 49. [ ] JSON Creator
 50. [ ] Array methods
 51. [ ] Progress Bar
-52. [x] Gift search bar with debounce [Assignment](https://github.com/Advent-Of-Vue/2022-gift-search-bar)
-53. [x] Joke generator [Assignment](https://github.com/Advent-Of-Vue/aov-joke-generator)
-54. [x] Countdown to Christmas [Assignment](https://github.com/Advent-Of-Vue/xmas-countdown/)
-55. [x] Recursive Xmas Tree [Assignment](https://github.com/Advent-Of-Vue/2022-recursive-tree-problem)
-56. [x] Gift label [Assignment](https://github.com/Advent-Of-Vue/aov-gift-label)
-57. [x] Gift price comparison [Assignment](https://github.com/Advent-Of-Vue/2022-x-items-for-single-y)
-58. [x] Drag and drop presents [Assignment](https://github.com/Advent-Of-Vue/drag-and-drop-presents)
-59. [x] Localized happy holidays [Assignment](https://github.com/Advent-Of-Vue/2022-i18n-happy-holidays)
+52. [x] Credit card
+53. [x] Gift search bar with debounce [Assignment](https://github.com/Advent-Of-Vue/2022-gift-search-bar)
+54. [x] Joke generator [Assignment](https://github.com/Advent-Of-Vue/aov-joke-generator)
+55. [x] Countdown to Christmas [Assignment](https://github.com/Advent-Of-Vue/xmas-countdown/)
+56. [x] Recursive Xmas Tree [Assignment](https://github.com/Advent-Of-Vue/2022-recursive-tree-problem)
+57. [x] Gift label [Assignment](https://github.com/Advent-Of-Vue/aov-gift-label)
+58. [x] Gift price comparison [Assignment](https://github.com/Advent-Of-Vue/2022-x-items-for-single-y)
+59. [x] Drag and drop presents [Assignment](https://github.com/Advent-Of-Vue/drag-and-drop-presents)
+60. [x] Localized happy holidays [Assignment](https://github.com/Advent-Of-Vue/2022-i18n-happy-holidays)
+61. [x] Sort presents [Assignment](https://github.com/Advent-Of-Vue/aov-sort-presents)

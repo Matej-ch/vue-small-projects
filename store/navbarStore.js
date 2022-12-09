@@ -59,6 +59,7 @@ import TwotoneLabel from '~icons/ic/twotone-label';
 import Compare from '~icons/mdi/compare'
 import GoogleEarth from '~icons/mdi/google-earth'
 import CreditCardEdit from '~icons/mdi/credit-card-edit'
+import BaselineSort from '~icons/ic/baseline-sort'
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -128,6 +129,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'dragPresents', label: 'Drag presents', 'icon': shallowRef(Gift)},
                 {url: 'localGreeting', label: 'Localized greetings', 'icon': shallowRef(GoogleEarth)},
                 {url: 'credit', label: 'Credit card', 'icon': shallowRef(CreditCardEdit)},
+                {url: 'sortGifts', label: 'Present sort', 'icon': shallowRef(BaselineSort)},
             ]
         };
     }
