@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import {useNavbarStore} from "../store/navbarStore";
+import {useNavbarStore} from "~/store/navbarStore";
 import Time from "./Time";
 
 const navbar = useNavbarStore();
