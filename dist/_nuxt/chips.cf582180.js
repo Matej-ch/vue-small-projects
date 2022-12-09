@@ -1,1 +1,0 @@
-import{_ as e}from"./ComponentContainer.378c24ea.js";import{c as n,w as o,o as _}from"./entry.d8e2a26f.js";import{u as r}from"./composables.8a29af42.js";const u={__name:"chips",setup(a){return r({title:"Chips Input"}),(p,s)=>{const t=e;return _(),n(t,null,{header:o(()=>[]),body:o(()=>[]),_:1})}}};export{u as default};

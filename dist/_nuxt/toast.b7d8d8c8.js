@@ -1,0 +1,1 @@
+import{_ as e}from"./ComponentContainer.cda60fd2.js";import{c as a,w as o,o as n,f as r}from"./entry.6d7d4e22.js";import{u as s}from"./composables.9f38f497.js";const f={__name:"toast",setup(_){return s({title:"Toast Popup"}),(p,c)=>{const t=e;return n(),a(t,null,{header:o(()=>[r("Toast Popup")]),body:o(()=>[]),_:1})}}};export{f as default};

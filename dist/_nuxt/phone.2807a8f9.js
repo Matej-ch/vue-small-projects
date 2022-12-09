@@ -1,0 +1,1 @@
+import{_ as t}from"./ComponentContainer.cda60fd2.js";import{c as n,w as e,o as r,f as a}from"./entry.6d7d4e22.js";import{u as _}from"./composables.9f38f497.js";const u={__name:"phone",setup(p){return _({title:"Telephone formatter"}),(c,m)=>{const o=t;return r(),n(o,null,{header:e(()=>[a("Telephone formatter")]),body:e(()=>[]),_:1})}}};export{u as default};
