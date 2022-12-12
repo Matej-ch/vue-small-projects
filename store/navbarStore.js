@@ -131,6 +131,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'credit', label: 'Credit card', 'icon': shallowRef(CreditCardEdit)},
                 {url: 'sortGifts', label: 'Present sort', 'icon': shallowRef(BaselineSort)},
                 {url: 'secretSanta', label: 'Secret santa challenge', 'icon': shallowRef(Secret)},
+                {url: 'josephs', label: 'Josephs gift', 'icon': shallowRef(Gift)},
             ]
         };
     }

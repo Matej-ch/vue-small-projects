@@ -7,7 +7,6 @@ Collection of components based on https://webdevscom.github.io/resources/5 and o
 ### Current components
 
 Demo [here](https://v.matejchalachan.com/)
-Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 
 1. [x] 
    ColorCycle [Assignment](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Color-Cycle-App.md)
@@ -90,3 +89,4 @@ Demo [on netlify](https://delicate-youtiao-f3317b.netlify.app/)
 60. [x] Localized happy holidays [Assignment](https://github.com/Advent-Of-Vue/2022-i18n-happy-holidays)
 61. [x] Sort presents [Assignment](https://github.com/Advent-Of-Vue/aov-sort-presents)
 62. [x] Secret santa challenge [Assignment](https://github.com/Advent-Of-Vue/secret-santa-challenge)
+63. [x] Josephs gift [Assignment](https://github.com/Advent-Of-Vue/2022-find-josephs-gift)
