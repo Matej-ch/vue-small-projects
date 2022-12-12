@@ -56,8 +56,6 @@ export const usePresentStore = defineStore('present', {
     },
     getters: {
         sorted: (state) => {
-            //console.log(state.items);
-            //return 'kurwa';
             return state.items.sort((it1, it2) => ((it1.dimensions.width * it1.dimensions.height) > (it2.dimensions.width * it2.dimensions.height)) ? 1 : ((it1.dimensions.width * it1.dimensions.height) < (it2.dimensions.width * it2.dimensions.height)) ? -1 : 0);
         }
     }

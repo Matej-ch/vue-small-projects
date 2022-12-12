@@ -72,8 +72,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'freq', label: 'Word frequency', 'icon': shallowRef(RoundQueryStats)},
                 {url: 'truefalse', label: 'True or False', 'icon': shallowRef(SharpQuestionMark)},
                 {
-                    url: 'github',
-                    label: 'Github status',
+                    url: 'github', label: 'Github status',
                     'icon': shallowRef(RoundSignalWifiStatusbarConnectedNoInternet4)
                 },
                 {url: 'timeline', label: 'GitHub Timeline', 'icon': shallowRef(Time)},
