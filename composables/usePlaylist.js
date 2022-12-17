@@ -19,7 +19,7 @@ const songs = [
 const {state, next, prev} = useCycleList(songs)
 
 const current = computed(() => {
-    return `/audio/${state.value.slug}.mp3`
+    return `@/assets/audio/${state.value.slug}.mp3`
 })
 
 export function usePlaylist() {

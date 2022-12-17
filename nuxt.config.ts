@@ -4,6 +4,17 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
     ssr: false,
+    build: {
+        /*extend(config, ctx) {
+            config.module.rules.push({
+                test: /\.(ogg|mp3|wav|mpe?g)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]'
+                }
+            })
+        }*/
+    },
     app: {
         layoutTransition: {
             name: 'layout', mode: 'out-in'

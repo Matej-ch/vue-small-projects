@@ -2,7 +2,7 @@
 import IconPlay from '~/assets/img/radio/icon-play.svg'
 import IconPlaying from "~/components/IconPlaying.vue";
 
-defineProps({
+const props = defineProps({
     song: {
         type: Object,
         required: true,
@@ -16,6 +16,9 @@ defineProps({
         default: false,
     },
 })
+
+const img = await import(`~/assets/img/${props.song.slug}.jpg`);
+
 </script>
 <template>
     <li
@@ -37,7 +40,7 @@ defineProps({
                 <IconPlay v-else/>
             </div>
 
-            <img class="w-20" :src="`/img/${song.slug}.jpg`" :alt="song.title"/>
+            <img class="w-20" :src="img.default" :alt="song.title"/>
         </div>
         <div class="ml-5">
             <div>{{song.title}}</div>
