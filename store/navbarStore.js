@@ -135,6 +135,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'josephs', label: 'Josephs gift', 'icon': shallowRef(Gift)},
                 {url: 'giftExchange', label: 'Secret santa generator', 'icon': shallowRef(Exchange)},
                 {url: 'directive', label: 'Custom christmas directive', 'icon': shallowRef(Exchange)},
+                {url: 'renderless', label: 'Renderless component', 'icon': shallowRef(Exchange)},
             ]
         };
     }
