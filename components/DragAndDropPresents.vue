@@ -5,7 +5,7 @@
                        @drop="onDrop($event)"
                        @dragenter.prevent
                        @dragover.prevent/>
-        <div class="pt-32 mt-32 bg-gray-100 w-full justify-center flex-1">
+        <div class="pt-32 mt-32 bg-slate-100 w-full justify-center flex-1">
             <div class="flex items-end justify-center" ref="parent">
                 <ChristmasPresent v-for="(p, index) in presents" :key="p" :name="p"
                                   @dragstart="startDrag($event,index)"/>

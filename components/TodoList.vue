@@ -26,7 +26,6 @@ function edit(item) {
 }
 
 function remove(item) {
-    console.log(item);
     items.value = [...items.value.filter(it => {
         return it.id !== item.id;
     })]
