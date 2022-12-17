@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Random number generator</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <RandomNumber/>
@@ -13,8 +13,9 @@
 import RandomNumber from '../components/RandomNumber'
 import {useHead} from "nuxt/app";
 
+const title = 'Random number generator';
 useHead({
-    title: `Random number generator`
+    title: title
 })
 </script>
 

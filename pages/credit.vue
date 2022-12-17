@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Credit card</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <div class="py-8">
@@ -17,8 +17,9 @@
 import CreditCard from "../components/CreditCard";
 import {useHead} from "nuxt/app";
 
+const title = 'Credit card';
 useHead({
-    title: `Credit card`
+    title: title
 })
 </script>
 

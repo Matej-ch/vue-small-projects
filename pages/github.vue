@@ -1,7 +1,7 @@
 <template>
     <ComponentContainer>
         <template v-slot:header>
-            Get status
+            {{title}}
         </template>
 
         <template v-slot:body>
@@ -17,8 +17,9 @@
 import GithubStatus from '../components/GithubStatus'
 import {useHead} from "nuxt/app";
 
+const title = 'Github status';
 useHead({
-    title: `Github status`
+    title: title
 })
 </script>
 

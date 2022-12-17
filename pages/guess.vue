@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Guess the number</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <GuessNumber></GuessNumber>
@@ -12,8 +12,9 @@
 import {useHead} from "nuxt/app";
 import GuessNumber from "../components/GuessNumber";
 
+const title = 'Guess the number';
 useHead({
-    title: `Guess the number`
+    title: title
 })
 </script>
 

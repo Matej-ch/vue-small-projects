@@ -61,6 +61,7 @@ import GoogleEarth from '~icons/mdi/google-earth'
 import CreditCardEdit from '~icons/mdi/credit-card-edit'
 import BaselineSort from '~icons/ic/baseline-sort'
 import Secret from '~icons/eos-icons/secret'
+import Exchange from '~icons/mdi/exchange'
 
 export const useNavbarStore = defineStore('navbar', {
     state: () => {
@@ -132,6 +133,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'sortGifts', label: 'Present sort', 'icon': shallowRef(BaselineSort)},
                 {url: 'secretSanta', label: 'Secret santa challenge', 'icon': shallowRef(Secret)},
                 {url: 'josephs', label: 'Josephs gift', 'icon': shallowRef(Gift)},
+                {url: 'giftExchange', label: 'Secret santa generator', 'icon': shallowRef(Exchange)},
             ]
         };
     }

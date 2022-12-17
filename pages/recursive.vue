@@ -1,7 +1,7 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>
-            Recursive Xmas Tree
+        <template v-slot:header>{{title}}
+
         </template>
 
         <template v-slot:body>
@@ -28,10 +28,10 @@ import XmasTree from '../components/XmasTree'
 import {useHead} from "nuxt/app";
 import ChristmasOrnament from "~/components/ChristmasOrnament.vue";
 
+const title = 'Recursive Xmas Tree';
 useHead({
-    title: `Recursive Xmas Tree`
+    title: title
 })
-
 </script>
 
 <style scoped>

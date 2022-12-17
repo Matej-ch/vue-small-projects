@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Drag and drop presents</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <DragAndDropPresents/>
@@ -15,8 +15,9 @@
 import DragAndDropPresents from "../components/DragAndDropPresents";
 import {useHead} from "nuxt/app";
 
+const title = 'Drag and drop presents';
 useHead({
-    title: `Drag and drop presents`
+    title: title
 })
 </script>
 

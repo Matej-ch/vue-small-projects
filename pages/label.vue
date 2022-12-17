@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Gift label</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <GiftLabel/>
@@ -13,8 +13,9 @@
 import GiftLabel from '../components/GiftLabel'
 import {useHead} from "nuxt/app";
 
+const title = 'Gift label';
 useHead({
-    title: `Gift label`
+    title: title
 })
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Border radius settings!</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <BorderRadiusPreviewer/>
@@ -15,8 +15,9 @@
 import BorderRadiusPreviewer from '../components/BorderRadiusPreviewer'
 import {useHead} from "nuxt/app";
 
+const title = 'Border radius settings!';
 useHead({
-    title: `Border radius`
+    title: title
 })
 </script>
 

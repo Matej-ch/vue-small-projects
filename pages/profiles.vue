@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Github profile</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <GithubProfile/>
@@ -13,8 +13,9 @@
 import {useHead} from "nuxt/app";
 import GithubProfile from "../components/GithubProfile";
 
+const title = 'Github profile';
 useHead({
-    title: `Github profiles`
+    title: title
 })
 </script>
 

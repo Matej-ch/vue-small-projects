@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Word frequency</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
 
@@ -16,8 +16,9 @@
 import WordFrequency from '../components/WordFrequency'
 import {useHead} from "nuxt/app";
 
+const title = 'Word frequency';
 useHead({
-    title: `Word frequency`
+    title: title
 })
 </script>
 

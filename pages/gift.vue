@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Gift search bar</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
 
@@ -15,8 +15,9 @@
 import GiftSearchBar from '../components/GiftSearchBar'
 import {useHead} from "nuxt/app";
 
+const title = 'Gift search bar';
 useHead({
-    title: `Gift search bar`
+    title: title
 })
 </script>
 

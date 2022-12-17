@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Compare gifts</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <CompareGifts></CompareGifts>
@@ -13,8 +13,9 @@
 import {useHead} from "nuxt/app";
 import CompareGifts from "~/components/CompareGifts.vue";
 
+const title = 'Compare gifts';
 useHead({
-    title: `Compare gifts`
+    title: title
 })
 </script>
 

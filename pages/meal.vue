@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Random meal</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <RandomMeal/>
@@ -13,8 +13,9 @@
 import RandomMeal from '../components/RandomMeal'
 import {useHead} from "nuxt/app";
 
+const title = 'Random meal';
 useHead({
-    title: `Random meal`
+    title: title
 })
 </script>
 

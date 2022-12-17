@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Calculator</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <Calculator/>
@@ -13,8 +13,9 @@
 import Calculator from '../components/Calculator'
 import {useHead} from "nuxt/app";
 
+const title = 'Calculator';
 useHead({
-    title: `Calculator`
+    title: title
 })
 </script>
 

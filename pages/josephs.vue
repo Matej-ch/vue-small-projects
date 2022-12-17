@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Josephs gift</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
 
@@ -15,8 +15,9 @@
 import JosephsGift from '../components/JosephsGift'
 import {useHead} from "nuxt/app";
 
+const title = 'Josephs gift';
 useHead({
-    title: `Josephs gift`
+    title: title
 })
 </script>
 

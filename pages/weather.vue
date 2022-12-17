@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Weather app</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <WeatherApp/>
@@ -13,8 +13,10 @@
 import WeatherApp from '../components/WeatherApp'
 import {useHead} from "nuxt/app";
 
+const title = `Weather app`;
+
 useHead({
-    title: `Weather app`
+    title: title
 })
 </script>
 

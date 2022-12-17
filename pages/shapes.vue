@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>CSS Shapes</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
         </template>
@@ -12,8 +12,9 @@
 <script setup>
 import {useHead} from "nuxt/app";
 
+const title = 'CSS Shapes';
 useHead({
-    title: `CSS Shapes`
+    title: title
 })
 </script>
 

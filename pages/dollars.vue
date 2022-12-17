@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Dollars to cents</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <DollarsToCents/>
@@ -15,8 +15,9 @@
 import DollarsToCents from "../components/DollarsToCents";
 import {useHead} from "nuxt/app";
 
+const title = 'Dollars to cents';
 useHead({
-    title: `Dollars to cents`
+    title: title
 })
 </script>
 

@@ -28,7 +28,7 @@
 
 <script setup>
 import {useHead} from "nuxt/app";
-import {useNavbarStore} from "../store/navbarStore";
+import {useNavbarStore} from "~/store/navbarStore";
 
 useHead({
     title: `Welcome`
