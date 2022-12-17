@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Personal notes</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <NotesApp/>
@@ -15,8 +15,9 @@
 import NotesApp from "../components/NotesApp";
 import {useHead} from "nuxt/app";
 
+const title = 'Personal notes';
 useHead({
-    title: `Personal notes`
+    title: title
 })
 </script>
 

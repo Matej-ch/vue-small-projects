@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Markdown preview</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <MarkdownPreviewer/>
@@ -14,8 +14,9 @@
 import MarkdownPreviewer from '../components/MarkdownPreviewer'
 import {useHead} from "nuxt/app";
 
+const title = 'Markdown preview';
 useHead({
-    title: `Markdown`
+    title: title
 })
 </script>
 

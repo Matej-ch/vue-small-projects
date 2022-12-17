@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Counter with step</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <CounterWithStep></CounterWithStep>
@@ -11,8 +11,9 @@
 <script setup>
 import {useHead} from "nuxt/app";
 
+const title = 'Counter with step';
 useHead({
-    title: `Counter`
+    title: title
 })
 </script>
 

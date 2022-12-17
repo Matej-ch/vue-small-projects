@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Countdown to Christmas</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <CountdownToChristmas :year="2022"></CountdownToChristmas>
@@ -13,8 +13,9 @@
 <script setup>
 import {useHead} from "nuxt/app";
 
+const title = 'Countdown to Christmas';
 useHead({
-    title: `Countdown to Christmas`
+    title: title
 })
 </script>
 

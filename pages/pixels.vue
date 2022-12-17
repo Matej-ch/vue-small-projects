@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Pixel Art</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
         </template>
@@ -12,8 +12,9 @@
 <script setup>
 import {useHead} from "nuxt/app";
 
+const title = 'Pixel Art';
 useHead({
-    title: `Pixel Art`
+    title: title
 })
 </script>
 

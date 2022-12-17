@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Binary to decimal convertor</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <Bin2Dec/>
@@ -14,8 +14,9 @@
 import Bin2Dec from '../components/Bin2Dec'
 import {useHead} from "nuxt/app";
 
+const title = 'Binary to decimal convertor';
 useHead({
-    title: `Binary to decimal`
+    title: title
 })
 
 </script>

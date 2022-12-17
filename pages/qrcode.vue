@@ -1,7 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>
-            QR code generator
+        <template v-slot:header>{{title}}
         </template>
 
         <template v-slot:body>
@@ -16,8 +15,9 @@
 import QrCode from '../components/QrCode'
 import {useHead} from "nuxt/app";
 
+const title = 'QR code generator';
 useHead({
-    title: `QR code generator`,
+    title: title,
     script: [
         {
             src: 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js',

@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Stopwatch</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <Stopwatch/>
@@ -13,8 +13,9 @@
 import Stopwatch from '../components/Stopwatch'
 import {useHead} from "nuxt/app";
 
+const title = 'Stopwatch';
 useHead({
-    title: `Stopwatch`
+    title: title
 })
 
 </script>

@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Json to CSV converter</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <JsonToCsv/>
@@ -14,8 +14,9 @@
 import JsonToCsv from "../components/JsonToCsv";
 import {useHead} from "nuxt/app";
 
+const title = 'Json to CSV converter';
 useHead({
-    title: `JSON TO CSV`
+    title: title
 })
 </script>
 

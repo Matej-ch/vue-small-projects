@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Transfer List</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <TransferList></TransferList>
@@ -13,8 +13,9 @@
 <script setup>
 import {useHead} from "nuxt/app";
 
+const title = `Transfer List`;
 useHead({
-    title: `Transfer List`
+    title: title
 })
 </script>
 

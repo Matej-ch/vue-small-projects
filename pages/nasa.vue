@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>NASA Exoplanet Query</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <Exoplanets/>
@@ -14,8 +14,9 @@
 import Exoplanets from '../components/Exoplanets'
 import {useHead} from "nuxt/app";
 
+const title = 'NASA Exoplanet Query';
 useHead({
-    title: `Nasa platen query`
+    title: title
 })
 </script>
 

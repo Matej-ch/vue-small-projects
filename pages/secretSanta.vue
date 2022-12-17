@@ -1,7 +1,7 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>
-            Secret santa challenge
+        <template v-slot:header>{{title}}
+
         </template>
 
         <template v-slot:body>
@@ -15,8 +15,9 @@
 import SecretSantaChallenge from "../components/SecretSantaChallenge";
 import {useHead} from "nuxt/app";
 
+const title = 'Secret santa challenge';
 useHead({
-    title: `Secret santa challenge`
+    title: title
 })
 </script>
 

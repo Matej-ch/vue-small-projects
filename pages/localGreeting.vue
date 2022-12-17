@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Local holiday greetings</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <HolidayGreeting/>
@@ -14,8 +14,9 @@
 import HolidayGreeting from '../components/HolidayGreeting'
 import {useHead} from "nuxt/app";
 
+const title = 'Local holiday greetings';
 useHead({
-    title: `Local holiday greetings`
+    title: title
 })
 </script>
 

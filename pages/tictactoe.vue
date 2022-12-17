@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Tic-tac-toe</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <TicTacToe/>
@@ -14,8 +14,9 @@
 import TicTacToe from '../components/TicTacToe'
 import {useHead} from "nuxt/app";
 
+const title = 'Tic-tac-toe';
 useHead({
-    title: `Tic tac toe`
+    title: title
 })
 </script>
 

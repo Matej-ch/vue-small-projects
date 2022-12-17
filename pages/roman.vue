@@ -1,7 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>
-            Roman numerals
+        <template v-slot:header>{{title}}
         </template>
 
         <template v-slot:body>
@@ -15,8 +14,9 @@
 import RomanNumerals from '../components/RomanNumerals'
 import {useHead} from "nuxt/app";
 
+const title = 'Roman numerals';
 useHead({
-    title: `Roman numerals`
+    title: title
 })
 </script>
 

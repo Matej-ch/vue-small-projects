@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Todo List</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <TodoList></TodoList>
@@ -13,8 +13,9 @@
 <script setup>
 import {useHead} from "nuxt/app";
 
+const title = `Todo List`;
 useHead({
-    title: `Todo List`
+    title: title
 })
 </script>
 

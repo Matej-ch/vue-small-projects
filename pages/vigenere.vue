@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Vigenere Cipher</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <VigenereCipher/>
@@ -13,8 +13,9 @@
 import VigenereCipher from '../components/VigenereCipher'
 import {useHead} from "nuxt/app";
 
+const title = `Vigenere cipher`;
 useHead({
-    title: `Vigenere cipher`
+    title: title
 })
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Joke generator</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
 
@@ -15,8 +15,9 @@
 import JokeGenerator from '../components/JokeGenerator'
 import {useHead} from "nuxt/app";
 
+const title = 'Joke generator';
 useHead({
-    title: `Joke generator`
+    title: title
 })
 </script>
 

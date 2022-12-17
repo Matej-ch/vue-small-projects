@@ -1,6 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>Color cycle</template>
+        <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
             <ColorCycle/>
@@ -14,8 +14,9 @@
 import ColorCycle from '../components/ColorCycle'
 import {useHead} from "nuxt/app";
 
+const title = 'Color cycle';
 useHead({
-    title: `Color cycle`
+    title: title
 })
 </script>
 

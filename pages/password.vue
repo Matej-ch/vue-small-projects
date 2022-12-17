@@ -1,7 +1,6 @@
 <template>
     <ComponentContainer>
-        <template v-slot:header>
-            Password generator
+        <template v-slot:header>{{title}}
         </template>
 
         <template v-slot:body>
@@ -15,8 +14,9 @@
 import PasswordGenerator from '../components/PasswordGenerator'
 import {useHead} from "nuxt/app";
 
+const title = 'Password generator';
 useHead({
-    title: `Password generator`
+    title: title
 })
 </script>
 
