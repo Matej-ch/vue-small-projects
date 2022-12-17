@@ -10,6 +10,13 @@
                     <!-- Put two lights on each section of the tree -->
                     <ChristmasLights v-for="i in 2"/>
                 </template>
+
+                <template #even>
+                    <ChristmasOrnament color="green"/>
+                </template>
+                <template #odd>
+                    <ChristmasOrnament color="red"/>
+                </template>
             </XmasTree>
         </template>
 
@@ -19,6 +26,7 @@
 <script setup>
 import XmasTree from '../components/XmasTree'
 import {useHead} from "nuxt/app";
+import ChristmasOrnament from "~/components/ChristmasOrnament.vue";
 
 useHead({
     title: `Recursive Xmas Tree`
