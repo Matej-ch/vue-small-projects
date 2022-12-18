@@ -1,0 +1,1 @@
+import{_ as n}from"./ComponentContainer.7fd0c4dd.js";import{c as a,w as o,o as r,a as c,t as s}from"./entry.38e07db5.js";import{u as _}from"./composables.85f75fe7.js";const d={__name:"connect",setup(p){const t="Connect four";return _({title:t}),(m,i)=>{const e=n;return r(),a(e,null,{header:o(()=>[c(s(t))]),body:o(()=>[]),_:1})}}};export{d as default};

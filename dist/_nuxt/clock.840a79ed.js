@@ -1,0 +1,1 @@
+import{_ as a}from"./ComponentContainer.7fd0c4dd.js";import{c as n,w as o,o as c,a as r,t as s}from"./entry.38e07db5.js";import{u as _}from"./composables.85f75fe7.js";const f={__name:"clock",setup(p){const t="Analog Clock";return _({title:t}),(l,m)=>{const e=a;return c(),n(e,null,{header:o(()=>[r(s(t))]),body:o(()=>[]),_:1})}}};export{f as default};

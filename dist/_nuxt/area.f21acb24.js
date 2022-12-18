@@ -1,0 +1,1 @@
+import{_ as a}from"./ComponentContainer.7fd0c4dd.js";import{c as r,w as e,o as n,a as s,t as _}from"./entry.38e07db5.js";import{u as c}from"./composables.85f75fe7.js";const f={__name:"area",setup(p){const t="Area Selector";return c({title:t}),(m,i)=>{const o=a;return n(),r(o,null,{header:e(()=>[s(_(t))]),body:e(()=>[]),_:1})}}};export{f as default};

@@ -1,1 +1,0 @@
-import{_ as t}from"./ComponentContainer.cda60fd2.js";import{c as n,w as o,o as r}from"./entry.6d7d4e22.js";import{u as s}from"./composables.9f38f497.js";const i={__name:"chess",setup(_){return s({title:"Chess Board"}),(a,c)=>{const e=t;return r(),n(e,null,{header:o(()=>[]),body:o(()=>[]),_:1})}}};export{i as default};

@@ -1,0 +1,1 @@
+import{_ as s}from"./ComponentContainer.7fd0c4dd.js";import{c as a,w as e,o as n,a as r,t as _}from"./entry.38e07db5.js";import{u as c}from"./composables.85f75fe7.js";const f={__name:"chess",setup(p){const t="Chess";return c({title:t}),(m,i)=>{const o=s;return n(),a(o,null,{header:e(()=>[r(_(t))]),body:e(()=>[]),_:1})}}};export{f as default};

@@ -1,0 +1,1 @@
+import{C as s}from"./ColorModePicker.1fc1059f.js";import{e as t,f as e,r as a,l as r,o as l}from"./entry.38e07db5.js";const c={class:"flex flex-row"},d={class:"w-full m-auto"},_={class:"absolute top-2 right-2"},p={__name:"index",setup(i){return(o,n)=>(l(),t("div",c,[e("div",d,[a(o.$slots,"default")]),e("div",_,[r(s)])]))}};export{p as default};

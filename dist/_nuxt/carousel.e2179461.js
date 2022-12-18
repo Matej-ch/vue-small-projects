@@ -1,1 +1,0 @@
-import{_ as t}from"./ComponentContainer.cda60fd2.js";import{c as n,w as o,o as r}from"./entry.6d7d4e22.js";import{u as a}from"./composables.9f38f497.js";const l={__name:"carousel",setup(_){return a({title:"Carousel"}),(s,c)=>{const e=t;return r(),n(e,null,{header:o(()=>[]),body:o(()=>[]),_:1})}}};export{l as default};
