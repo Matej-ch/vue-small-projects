@@ -3,6 +3,7 @@
         <template v-slot:header>{{title}}</template>
 
         <template v-slot:body>
+            <PhoneNumberFormatter/>
         </template>
 
     </ComponentContainer>
