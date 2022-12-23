@@ -56,7 +56,7 @@ Demo [here](https://v.matejchalachan.com/)
 27. [x] Tic-tac-toe game
 28. [x] Counter with step
 29. [x] Guess the number
-30. [ ] Telephone formatter
+30. [x] Telephone formatter
 31. [ ] Toast Popup
 32. [ ] CSS Shapes
 33. [ ] Star Rating
