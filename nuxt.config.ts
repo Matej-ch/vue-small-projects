@@ -13,6 +13,8 @@ export default defineNuxtConfig({
         },
         head: {
             meta: [
+                {charset: 'utf-8'},
+                {name: 'viewport', content: 'width=device-width, initial-scale=1'},
                 {name: 'description', content: 'Collection of vue components'},
                 {name: 'author', content: 'Matej ch.'},
                 {name: 'keywords', content: 'Vuejs 3, Nuxt 3, Pinia, Javascript'}
