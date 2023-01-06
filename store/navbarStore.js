@@ -137,6 +137,7 @@ export const useNavbarStore = defineStore('navbar', {
                 {url: 'directive', label: 'Custom christmas directive', 'icon': shallowRef(Exchange)},
                 {url: 'renderless', label: 'Renderless component', 'icon': shallowRef(Exchange)},
                 {url: 'progress', label: 'Progress bar', 'icon': shallowRef(Exchange)},
+                {url: 'otp', label: 'OTP input', 'icon': shallowRef(Exchange)},
             ]
         };
     }

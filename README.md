@@ -68,7 +68,7 @@ Demo [here](https://v.matejchalachan.com/)
 39. [ ] Chips Input
 40. [ ] Analog Clock
 41. [ ] Typing Speed Test
-42. [ ] OTP Input
+42. [x] OTP Input
 43. [ ] Area Selector
 44. [ ] Carousel
 45. [ ] Calendar
