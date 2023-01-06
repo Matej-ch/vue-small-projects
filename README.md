@@ -77,7 +77,7 @@ Demo [here](https://v.matejchalachan.com/)
 48. [x] Comment box
 49. [ ] JSON Creator
 50. [ ] Array methods
-51. [ ] Progress Bar
+51. [x] Progress Bar
 52. [x] Credit card
 53. [x] Gift search bar with debounce [Assignment](https://github.com/Advent-Of-Vue/2022-gift-search-bar)
 54. [x] Joke generator [Assignment](https://github.com/Advent-Of-Vue/aov-joke-generator)
