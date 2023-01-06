@@ -65,7 +65,7 @@ Demo [here](https://v.matejchalachan.com/)
 36. [x] Todo List
 37. [x] Transfer List
 38. [ ] Chess Board
-39. [ ] Chips Input
+39. [x] Chips Input
 40. [ ] Analog Clock
 41. [ ] Typing Speed Test
 42. [x] OTP Input
