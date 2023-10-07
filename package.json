@@ -39,7 +39,7 @@
     "@vueuse/core": "^9.6.0",
     "autoprefixer": "^10.4.7",
     "nuxt": "3.4.3",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.31",
     "sass": "^1.54.0",
     "unplugin-icons": "^0.14.15",
     "vite-svg-loader": "^3.6.0"
